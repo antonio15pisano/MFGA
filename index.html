@@ -266,6 +266,28 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
   }
 }
 
+
+/* =========================================================
+   MFGA KEEPER TRACKER
+   ========================================================= */
+.keeper-card{background:#fff;border:1px solid #ddd;border-radius:4px;overflow:hidden}
+.keeper-card .keeper-top{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 18px;background:#111;color:#fff}
+.keeper-card .keeper-top strong{font-size:17px;text-transform:uppercase}
+.keeper-card .keeper-top span{font:10px 'IBM Plex Mono';color:#aaa;text-transform:uppercase}
+.keeper-scroll{overflow-x:auto}
+.keeper-table{width:100%;min-width:1050px;border-collapse:collapse;table-layout:fixed;color:#111}
+.keeper-table th,.keeper-table td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center}
+.keeper-table th:last-child,.keeper-table td:last-child{border-right:0}
+.keeper-table thead th{background:#111;color:#fff;padding:11px 5px;font-size:11px;text-transform:uppercase}
+.keeper-table thead th:first-child{width:100px;text-align:left;padding-left:14px}
+.keeper-table .team-pick{display:block;font:9px 'IBM Plex Mono';color:#aaa;margin-bottom:3px}
+.keeper-table tbody td{height:38px;padding:5px;font-size:11px;background:#fff}
+.keeper-table tbody tr:nth-child(even) td{background:#fafafa}
+.keeper-table .round{width:100px;text-align:left;padding-left:14px!important;font-weight:800;color:#555;white-space:nowrap}
+.keeper-table .keeper{color:var(--red);font-weight:900}
+.keeper-table .empty{color:#c7c7c7}
+.keeper-note{padding:12px 18px;background:#fafafa;border-top:1px solid #ddd;color:#777;font-size:10px;line-height:1.5}
+
 </style>
 </head>
 <body>
@@ -313,6 +335,33 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 <main class="wrap">
 <div id="page-home" class="page active">
 
+  <section class="section" id="key-highlights">
+    <div class="section-head"><h2 class="display">Key Highlights</h2><small>MFGA headlines & league notes</small></div>
+    <div class="card dark">
+      <div class="headline"><b>Grasso enters MFGA X as reigning champion.</b><span>2025 title over Skin, 147–114.4.</span></div>
+      <div class="headline"><b>Draft order is set.</b><span>Filippo, Nicky, Tone, Frankie, Carmelo, Martir, Melio, Mark, Antonio, Berger, Skin, Grasso.</span></div>
+      <div class="headline"><b>One keeper.</b><span>Round 3 or later; keeper must remain on your roster all year.</span></div>
+      <div class="headline"><b>No draft-pick trading.</b><span>All trades are decided by league vote.</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="keeper-tracker">
+    <div class="section-head"><h2 class="display">Keeper Tracker</h2><small>2026 season · updated weekly</small></div>
+    <div class="keeper-card">
+      <div class="keeper-top"><strong>2026 Keeper Board</strong><span>12 Teams · 15 Rounds</span></div>
+      <div class="keeper-scroll">
+        <table class="keeper-table">
+          <thead><tr>
+            <th>Round</th>
+            <th><span class="team-pick">Pick 1</span>Filippo</th><th><span class="team-pick">Pick 2</span>Nicky</th><th><span class="team-pick">Pick 3</span>Tone</th><th><span class="team-pick">Pick 4</span>Frankie</th><th><span class="team-pick">Pick 5</span>Carmelo</th><th><span class="team-pick">Pick 6</span>Martir</th><th><span class="team-pick">Pick 7</span>Melio</th><th><span class="team-pick">Pick 8</span>Mark</th><th><span class="team-pick">Pick 9</span>Antonio</th><th><span class="team-pick">Pick 10</span>Berger</th><th><span class="team-pick">Pick 11</span>Skin</th><th><span class="team-pick">Pick 12</span>Grasso</th>
+          </tr></thead>
+          <tbody id="keeper-body"></tbody>
+        </table>
+      </div>
+      <div class="keeper-note">Keepers are highlighted in red. Only one player drafted in Round 3 or later may be kept. Player must remain on the roster all season. No trades or pick-ups.</div>
+    </div>
+  </section>
+
   <section class="section" id="season">
   <div class="section-head"><h2 class="display">2026 Season</h2><small>Current league center</small></div>
   <div class="main-grid" style="margin-top:15px">
@@ -349,14 +398,7 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
       </div>
     </div>
     <aside>
-      <div class="card dark">
-        <h3>Off-Season Headlines</h3>
-        <div class="headline"><b>Grasso enters MFGA X as reigning champion.</b><span>2025 title over Skin, 147–114.4.</span></div>
-        <div class="headline"><b>Draft order is set.</b><span>Filippo, Nicky, Tone, Frankie, Carmelo, Martir, Melio, Mark, Antonio, Berger, Skin, Grasso.</span></div>
-        <div class="headline"><b>One keeper.</b><span>Round 3 or later; keeper must remain on your roster all year.</span></div>
-        <div class="headline"><b>No draft-pick trading.</b><span>All trades are decided by league vote.</span></div>
-      </div>
-      <div class="card" style="margin-top:15px"><h3>Weekly Format</h3><div class="stat"><span>Week 1</span><b>Rivalry Week</b></div><div class="stat"><span>Weeks 3, 8, 13</span><b>Division Leaders</b></div><div class="stat"><span>Weeks 1–14</span><b>Regular Season</b></div><div class="stat"><span>Weeks 15–17</span><b>Playoffs</b></div></div>
+
     </aside>
   </div>
 
@@ -767,6 +809,15 @@ function mfgaChampionFormerItalics(value){
   });
 })();
 
+
+const KEEPERS = [
+  {round:3,team:"Frankie",player:"Allen, Jo"},{round:3,team:"Mark",player:"Smith-Njiba"},{round:3,team:"Berger",player:"Hurts"},
+  {round:4,team:"Grasso",player:"Cook"},{round:5,team:"Nicky",player:"Hall"},{round:5,team:"Carmelo",player:"McMillian"},{round:5,team:"Antonio",player:"Smith, Dev"},
+  {round:7,team:"Tone",player:"Skattebo"},{round:7,team:"Martir",player:"Rice"},{round:8,team:"Filippo",player:"Odunze"},{round:8,team:"Melio",player:"Samuel Sr, D"},{round:14,team:"Skin",player:"Ferguson"}
+];
+const KEEPER_TEAMS=["Filippo","Nicky","Tone","Frankie","Carmelo","Martir","Melio","Mark","Antonio","Berger","Skin","Grasso"];
+const keeperBody=document.getElementById('keeper-body');
+if(keeperBody){for(let round=1;round<=15;round++){const tr=document.createElement('tr');const rc=document.createElement('td');rc.className='round';rc.textContent='Round '+round;tr.appendChild(rc);KEEPER_TEAMS.forEach(team=>{const td=document.createElement('td');const k=KEEPERS.find(x=>x.round===round&&x.team===team);if(k){td.className='keeper';td.textContent=k.player}else{td.className='empty';td.textContent='—'}tr.appendChild(td)});keeperBody.appendChild(tr)}}
 </script>
 
 <script>
