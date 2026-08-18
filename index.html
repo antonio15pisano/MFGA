@@ -139,6 +139,27 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 .keeper-card .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media(max-width:760px){.keeper-table{min-width:1050px}}
 
+
+/* Digital Keeper Tracker */
+.digital-section-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 17px;background:#111;color:#fff;border-bottom:3px solid #d9253f}
+.digital-section-head h3{margin:3px 0 0;font-size:22px;text-transform:uppercase}
+.digital-kicker{font-size:9px;letter-spacing:1.6px;color:#aaa;font-weight:800}
+.digital-status{font-size:10px;letter-spacing:.7px;color:#bbb;white-space:nowrap}
+.keeper-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.digital-keeper-table{width:100%;min-width:1120px;border-collapse:collapse;table-layout:fixed;background:#fff}
+.digital-keeper-table th,.digital-keeper-table td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center;height:38px;padding:5px;white-space:nowrap;font-size:12px}
+.digital-keeper-table th:last-child,.digital-keeper-table td:last-child{border-right:0}
+.digital-keeper-table thead th{background:#19191c;color:#fff;text-transform:uppercase;font-size:10px;padding:8px 4px}
+.digital-keeper-table thead th:first-child{width:92px;text-align:left;padding-left:12px}
+.digital-keeper-table thead th span{display:block;color:#999;font-size:8px;margin-bottom:2px}
+.digital-keeper-table tbody th{background:#f3f3f3;text-align:left;padding-left:12px;color:#555;font-size:11px}
+.digital-keeper-table tbody tr:nth-child(even) td{background:#fafafa}
+.digital-keeper-table .keeper{color:#d9253f;font-weight:900}
+.digital-keeper-table td{font-weight:600;color:#aaa}
+.keeper-footer{display:flex;justify-content:space-between;gap:20px;padding:11px 16px;background:#f7f7f7;border-top:1px solid #ddd;color:#777;font-size:10px;text-transform:uppercase}
+.keeper-footer b{color:#d9253f}
+@media(max-width:760px){.digital-section-head{align-items:flex-start}.digital-status{font-size:8px}.keeper-footer{flex-direction:column;gap:5px}}
+
 </style>
 </head>
 <body>
@@ -146,7 +167,7 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
   <div class="topbar">
     <div class="brand"><img src="mfga-logo.png" alt="MFGA Fantasy Football League logo"><span class="x-badge">X</span></div>
     <nav class="nav">
-    <a href="#home" data-page="home">Home</a><a href="#season" data-page="home" data-scroll="season">2026 Season</a><a href="#meet" data-page="meet">Meet the League</a><a href="#hall-of-champions" data-page="hall-of-champions">Hall of Champions</a><a href="#record-history" data-page="record-history">Record History</a><a href="#rules" data-page="rules">Rules &amp; Info</a><a href="#drafts" data-page="drafts">Draft Boards</a>
+    <a href="#home" data-page="home">Home</a><a href="#season" data-page="home" data-scroll="season" data-scroll="season">2026 Season</a><a href="#meet" data-page="meet">Meet the League</a><a href="#hall-of-champions" data-page="hall-of-champions">Hall of Champions</a><a href="#record-history" data-page="record-history">Record History</a><a href="#rules" data-page="rules">Rules &amp; Info</a><a href="#drafts" data-page="drafts">Draft Boards</a>
     </nav>
   </div>
 </header>
@@ -166,16 +187,16 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
   <div class="ticker-inner">
     <div class="ticker-label">League Desk</div>
     <div class="ticker-items">
-      <span><strong>2026</strong> Season 10</span><span><strong>12</strong> Teams</span><span><strong>4</strong> Divisions</span><span><strong>$150</strong> Buy-In</span><span><strong>Aug 30</strong> Draft Day</span><span><strong>Nov 24</strong> Trade Deadline</span><span><strong>Previous Winner</strong> Anthony Grasso</span>
+      <span><strong>2026</strong> - Season 10</span><span><strong>12</strong> - Teams</span><span><strong>4</strong> - Divisions</span><span><strong>$150</strong> - Buy-In</span><span><strong>Aug 30</strong> - Draft Day</span><span><strong>Nov 24</strong> - Trade Deadline</span><span><strong>Previous Winner</strong> - Anthony Grasso</span>
     </div>
   </div>
   <div class="ticker-inner ticker-row-2">
     <div class="ticker-label">2026 Snapshot</div>
     <div class="ticker-items">
-      <span><strong>Current 1 Seed</strong> TBD</span>
-      <span><strong>Current Most Points</strong> TBD</span>
-      <span><strong>Current 12 Seed</strong> TBD</span>
-      <span><strong>Current Least Points</strong> TBD</span>
+      <span><strong>Current 1 Seed</strong> - TBD</span>
+      <span><strong>Current Most Points</strong> - TBD</span>
+      <span><strong>Current 12 Seed</strong> - TBD</span>
+      <span><strong>Current Least Points</strong> - TBD</span>
       <a class="league-desk-link" href="https://fantasy.espn.com/football/league?leagueId=640928" target="_blank" rel="noopener noreferrer">
         <strong>ESPN League</strong> ↗
       </a>
@@ -188,22 +209,25 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 
   <section class="section" id="season">
   
-<div class="card keeper-card" style="margin-top:15px">
-  <div class="section-head" style="margin-bottom:10px">
-    <h3 style="margin:0">Keeper Tracker</h3>
-    <small>2026 Keepers · Updated Weekly</small>
-  </div>
 
-  <div class="table-wrap">
-    <table class="keeper-table">
-      <thead>
-        <tr>
-          <th>Round</th>
-          <th>Filippo</th><th>Nicky</th><th>Tone</th><th>Frankie</th>
-          <th>Carmelo</th><th>Martir</th><th>Melio</th><th>Mark</th>
-          <th>Antonio</th><th>Berger</th><th>Skin</th><th>Grasso</th>
-        </tr>
-      </thead>
+<div class="card dark key-highlights-card" style="margin-top:15px">
+  <h3>Key Highlights</h3>
+  <div class="headline"><b>Grasso enters MFGA X as reigning champion.</b><span>2025 title over Skin, 147–114.4.</span></div>
+  <div class="headline"><b>Draft order is set.</b><span>Filippo, Nicky, Tone, Frankie, Carmelo, Martir, Melio, Mark, Antonio, Berger, Skin, Grasso.</span></div>
+  <div class="headline"><b>One keeper.</b><span>Round 3 or later; keeper must remain on your roster all year.</span></div>
+  <div class="headline"><b>No draft-pick trading.</b><span>All trades are decided by league vote.</span></div>
+</div>
+
+<div class="card keeper-card" style="margin-top:15px">
+  <div class="digital-section-head">
+    <div><div class="digital-kicker">2026 SEASON</div><h3>Keeper Tracker</h3></div>
+    <div class="digital-status">12 TEAMS · 15 ROUNDS · UPDATED WEEKLY</div>
+  </div>
+  <div class="keeper-scroll">
+    <table class="keeper-table digital-keeper-table">
+      <thead><tr>
+        <th>ROUND</th><th><span>01</span>Filippo</th><th><span>02</span>Nicky</th><th><span>03</span>Tone</th><th><span>04</span>Frankie</th><th><span>05</span>Carmelo</th><th><span>06</span>Martir</th><th><span>07</span>Melio</th><th><span>08</span>Mark</th><th><span>09</span>Antonio</th><th><span>10</span>Berger</th><th><span>11</span>Skin</th><th><span>12</span>Grasso</th>
+      </tr></thead>
       <tbody>
         <tr><th>Round 1</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
         <tr><th>Round 2</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
@@ -223,8 +247,7 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
       </tbody>
     </table>
   </div>
-
-  <p class="note">*Can only keep 1 player drafted in Round 3 or later. This tracker will be updated throughout the season for eligible players. Player being kept must remain on your team all year. No Trades / Pick Ups.</p>
+  <div class="keeper-footer"><span><b>KEEPER RULE</b> One keeper drafted Round 3 or later.</span><span><b>STATUS</b> Updated weekly</span></div>
 </div>
 
 <div class="section-head"><h2 class="display">2026 Season</h2><small>Current league center</small></div>
