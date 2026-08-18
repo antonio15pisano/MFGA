@@ -104,35 +104,41 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 .schedule-orange{color:#ef7d22!important;font-weight:700}
 .schedule-rival{color:#111!important;font-weight:700}
 
-/* MFGA Keeper Tracker */
-.keeper-card{margin-top:15px}
-.keeper-table{width:100%;border-collapse:collapse;min-width:1050px;background:#fff}
-.keeper-table th{background:#111;color:#eee;padding:9px 8px;text-align:center;font:700 10px 'IBM Plex Mono';text-transform:uppercase;white-space:nowrap}
-.keeper-table th:first-child,.keeper-table td:first-child{text-align:left;width:90px}
-.keeper-table td{padding:8px 7px;border-bottom:1px solid #e2e2e2;text-align:center;font:12px 'IBM Plex Mono';white-space:nowrap;height:34px}
-.keeper-table td:first-child{font-weight:700;color:#222}
-.keeper-table tr:nth-child(even){background:#f7f7f7}
-.keeper-name{color:var(--red);font-weight:700}
-.keeper-note{font:10px 'IBM Plex Mono';color:#777;line-height:1.5;margin:10px 0 0}
-/* Digital playoff picture */
-.playoff-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.playoff-col{min-width:0}
-.playoff-col + .playoff-col{border-left:1px solid #ddd;padding-left:18px}
-.playoff-label{font:700 12px 'IBM Plex Mono';color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-.playoff-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e2e2;padding:12px 0;font-size:14px}
-.playoff-row b{font-family:'IBM Plex Mono'}
-.playoff-matchup{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;border-bottom:1px solid #e2e2e2;padding:12px 0;font-size:14px}
-.playoff-matchup span:last-child{text-align:right}
-.playoff-vs{color:var(--red);font:700 11px 'IBM Plex Mono';text-transform:uppercase}
-.playoff-note{margin-top:15px;padding-top:13px;border-top:1px solid #e2e2e2;color:#777;font:11px 'IBM Plex Mono';line-height:1.5}
-.playoff-note div+div{margin-top:6px}
-@media(max-width:900px){.playoff-grid{grid-template-columns:1fr}.playoff-col + .playoff-col{border-left:0;border-top:1px solid #ddd;padding-left:0;padding-top:15px}}
-
-@media(max-width:600px){
+.keeper-table th,.keeper-table td{white-space:nowrap;text-align:center}
+.keeper-table th:first-child{position:sticky;left:0;z-index:2;text-align:left;min-width:88px}
+.keeper-table .keeper{color:var(--red);font-weight:800}
+.playoff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.playoff-grid>div+div{border-left:1px solid #ddd;padding-left:20px}
+.playoff-note{font:700 12px 'IBM Plex Mono',monospace;color:var(--red);margin:12px 0 0}
+.playoff-disclaimer{font:11px 'IBM Plex Mono',monospace;color:#777;margin:15px 0 0}
+.playoff-disclaimer b{color:var(--red)}
+@media(max-width:760px){
+  .playoff-grid{grid-template-columns:1fr;gap:10px}
+  .playoff-grid>div+div{border-left:0;border-top:1px solid #ddd;padding-left:0;padding-top:12px}
   .keeper-table{min-width:1050px}
-  .keeper-table th:first-child,.keeper-table td:first-child{width:90px;min-width:90px}
-  .playoff-row,.playoff-matchup{font-size:13px}
 }
+
+
+.keeper-list-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.keeper-list-item{border:1px solid #ddd;border-radius:8px;padding:14px;background:#fff;display:grid;grid-template-columns:1fr auto;column-gap:12px;align-items:center}
+.keeper-list-item span{font:700 11px 'IBM Plex Mono',monospace;text-transform:uppercase;color:#555}
+.keeper-list-item b{font-size:16px;color:var(--red);text-align:right}
+.keeper-list-item small{grid-column:1/-1;margin-top:5px;color:#777;font:10px 'IBM Plex Mono',monospace}
+@media(max-width:760px){.keeper-list-grid{grid-template-columns:1fr}.keeper-list-item b{font-size:15px}}
+
+
+/* Keeper Tracker: homepage-only digital table */
+.keeper-table{width:100%;border-collapse:collapse;table-layout:fixed;background:#fff}
+.keeper-table th,.keeper-table td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center;height:38px;padding:5px;white-space:nowrap;font-size:12px}
+.keeper-table th:last-child,.keeper-table td:last-child{border-right:0}
+.keeper-table thead th{background:#111;color:#fff;text-transform:uppercase;font-size:11px;letter-spacing:.3px}
+.keeper-table thead th:first-child{width:92px;text-align:left;padding-left:12px}
+.keeper-table tbody th{background:#fafafa;text-align:left;padding-left:12px;color:#555}
+.keeper-table tbody tr:nth-child(even) td{background:#fafafa}
+.keeper-table .keeper{color:#d9253f;font-weight:900}
+.keeper-card .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:760px){.keeper-table{min-width:1050px}}
+
 </style>
 </head>
 <body>
@@ -180,79 +186,48 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 <main class="wrap">
 <div id="page-home" class="page active">
 
-  <section class="section" id="key-highlights">
-    <div class="section-head"><h2 class="display">Key Highlights</h2><small>League updates</small></div>
-    <div class="card dark">
-      <div class="headline"><b>Grasso enters MFGA X as reigning champion.</b><span>2025 title over Skin, 147–114.4.</span></div>
-      <div class="headline"><b>Draft order is set.</b><span>Filippo, Nicky, Tone, Frankie, Carmelo, Martir, Melio, Mark, Antonio, Berger, Skin, Grasso.</span></div>
-      <div class="headline"><b>One keeper.</b><span>Round 3 or later; keeper must remain on your roster all year.</span></div>
-      <div class="headline"><b>No draft-pick trading.</b><span>All trades are decided by league vote.</span></div>
-    </div>
-  </section>
-
   <section class="section" id="season">
-  <div class="section-head"><h2 class="display">2026 Season</h2><small>Current league center</small></div>
+  
+<div class="card keeper-card" style="margin-top:15px">
+  <div class="section-head" style="margin-bottom:10px">
+    <h3 style="margin:0">Keeper Tracker</h3>
+    <small>2026 Keepers · Updated Weekly</small>
+  </div>
 
-  <section class="section" id="keeper-tracker">
-    <div class="section-head"><h2 class="display">Keeper Tracker</h2><small>Updated weekly</small></div>
-    <div class="card keeper-card">
-      <div class="table-wrap">
-        <table class="keeper-table">
-          <thead><tr><th>Round</th><th>Filippo</th><th>Nicky</th><th>Tone</th><th>Frankie</th><th>Carmelo</th><th>Martir</th><th>Melio</th><th>Mark</th><th>Antonio</th><th>Berger</th><th>Skin</th><th>Grasso</th></tr></thead>
-          <tbody>
-            <tr><td>Round 1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 2</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 3</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Allen, Jo</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Smith-Njiba</td><td>—</td><td class="keeper-name">Hurts</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Cook</td></tr>
-            <tr><td>Round 5</td><td>—</td><td class="keeper-name">Hall</td><td>—</td><td>—</td><td class="keeper-name">McMillian</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Smith, Dev</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 6</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 7</td><td>—</td><td>—</td><td class="keeper-name">Skattebo</td><td>—</td><td>—</td><td class="keeper-name">Rice</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 8</td><td class="keeper-name">Odunze</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Samuel Sr, D</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 9</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 10</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 11</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 12</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 13</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-            <tr><td>Round 14</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Ferguson</td><td>—</td></tr>
-            <tr><td>Round 15</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="keeper-note">*Can only keep 1 player drafted in Round 3 or later. This tracker will be updated throughout the season for eligible players. Player being kept must remain on your team all year. No Trades / Pick Ups.</p>
-    </div>
-  </section>
+  <div class="table-wrap">
+    <table class="keeper-table">
+      <thead>
+        <tr>
+          <th>Round</th>
+          <th>Filippo</th><th>Nicky</th><th>Tone</th><th>Frankie</th>
+          <th>Carmelo</th><th>Martir</th><th>Melio</th><th>Mark</th>
+          <th>Antonio</th><th>Berger</th><th>Skin</th><th>Grasso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th>Round 1</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 2</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 3</th><td>—</td><td>—</td><td>—</td><td class="keeper">Allen, Jo</td><td>—</td><td>—</td><td>—</td><td class="keeper">Smith-Njiba</td><td>—</td><td class="keeper">Hurts</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 4</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper">Cook</td></tr>
+        <tr><th>Round 5</th><td>—</td><td class="keeper">Hall</td><td>—</td><td>—</td><td class="keeper">McMillian</td><td>—</td><td>—</td><td>—</td><td class="keeper">Smith, Dev</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 6</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 7</th><td>—</td><td>—</td><td class="keeper">Skattebo</td><td>—</td><td>—</td><td class="keeper">Rice</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 8</th><td class="keeper">Odunze</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper">Samuel Sr, D</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 9</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 10</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 11</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 12</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 13</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><th>Round 14</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper">Ferguson</td><td>—</td></tr>
+        <tr><th>Round 15</th><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
 
+  <p class="note">*Can only keep 1 player drafted in Round 3 or later. This tracker will be updated throughout the season for eligible players. Player being kept must remain on your team all year. No Trades / Pick Ups.</p>
+</div>
 
-  <section class="section" id="playoff-picture">
-    <div class="card">
-      <h3>Projected Playoff Picture</h3>
-      <div class="playoff-grid">
-        <div class="playoff-col">
-          <div class="playoff-label">Division Leaders</div>
-          <div class="playoff-row"><span>Seed 1</span><b>TBD</b></div>
-          <div class="playoff-row"><span>Seed 2</span><b>TBD</b></div>
-          <div class="playoff-row"><span>Seed 3</span><b>TBD</b></div>
-          <div class="playoff-row"><span>Seed 4</span><b>TBD</b></div>
-        </div>
-        <div class="playoff-col">
-          <div class="playoff-label">Wild Cards</div>
-          <div class="playoff-row"><span>Seed 5</span><b>TBD</b></div>
-          <div class="playoff-row"><span>Seed 6</span><b>TBD</b></div>
-        </div>
-        <div class="playoff-col">
-          <div class="playoff-label">Matchups</div>
-          <div class="playoff-matchup"><span>Team A</span><b class="playoff-vs">vs</b><span>Team B</span></div>
-          <div class="playoff-matchup"><span>Team C</span><b class="playoff-vs">vs</b><span>Team D</span></div>
-          <div class="playoff-note" style="border-top:0;padding-top:13px"><div>#1 seed plays the lowest winning seed</div></div>
-        </div>
-      </div>
-      <div class="playoff-note">
-        <div><strong>Byes:</strong> Seeds 1–2</div>
-        <div><strong>Tiebreakers:</strong> head-to-head → points scored → points against. Division leaders occupy seeds 1–4.</div>
-      </div>
-    </div>
-  </section>
-
+<div class="section-head"><h2 class="display">2026 Season</h2><small>Current league center</small></div>
 
   <div class="main-grid" style="margin-top:15px">
     <div>
@@ -264,18 +239,58 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
         <div class="table-wrap"><table><thead><tr><th>Rk</th><th>Team</th><th>W</th><th>L</th><th>%</th><th>PF</th><th>PA</th><th>+/-</th><th>Avg PF</th><th>Avg PA</th><th>Playoff %</th></tr></thead><tbody id="current-standings"></tbody></table></div>
       </div>
       <div class="card" id="power-rankings-2026" style="margin-top:15px">
-        <div class="section-head" style="margin-bottom:10px"><h3 style="margin:0">2026 Power Rankings</h3><small>Weekly MFGA Rankings</small></div>
-        <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Team</th><th>Record</th><th>Movement</th><th>Analysis</th></tr></thead><tbody id="power-rankings-body"><tr><td>—</td><td colspan="4">TBD — rankings will be added after Week 1.</td></tr></tbody></table></div>
+        <div class="section-head" style="margin-bottom:10px">
+          <h3 style="margin:0">2026 Power Rankings</h3>
+          <small>Weekly MFGA Rankings</small>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rank</th><th>Team</th><th>Record</th><th>Movement</th><th>Analysis</th></tr></thead>
+            <tbody id="power-rankings-body">
+              <tr><td>—</td><td colspan="4">TBD — rankings will be added after Week 1.</td></tr>
+            </tbody>
+          </table>
+        </div>
         <div class="note">Weekly rankings will be created from the updated Statbook and league performance.</div>
       </div>
+      <div class="card" style="margin-top:15px">
+        <h3>Projected Playoff Picture</h3>
+        <div class="playoff-grid">
+          <div>
+            <div class="eyebrow">Division Leaders</div>
+            <div class="stat"><span>Seed 1</span><b>TBD</b></div>
+            <div class="stat"><span>Seed 2</span><b>TBD</b></div>
+            <div class="stat"><span>Seed 3</span><b>TBD</b></div>
+            <div class="stat"><span>Seed 4</span><b>TBD</b></div>
+          </div>
+          <div>
+            <div class="eyebrow">Wild Cards</div>
+            <div class="stat"><span>Seed 5</span><b>TBD</b></div>
+            <div class="stat"><span>Seed 6</span><b>TBD</b></div>
+          </div>
+          <div>
+            <div class="eyebrow">Matchups</div>
+            <div class="stat"><span>Team A vs Team B</span><b>—</b></div>
+            <div class="stat"><span>Team C vs Team D</span><b>—</b></div>
+            <p class="playoff-note">#1 seed plays the lowest winning seed</p>
+          </div>
+        </div>
+        <div class="playoff-disclaimer">
+          <b>Byes:</b> Seeds 1–2
+        </div>
+        <p class="playoff-disclaimer" style="margin-top:7px"><b>Tiebreakers:</b> head-to-head → points scored → points against. Division leaders occupy seeds 1–4.</p>
+      </div>
     </div>
+    <aside>
+    </aside>
   </div>
+
   <div class="card" style="margin-top:15px">
     <h3>2026 Regular Season Schedule</h3>
     <div class="table-wrap"><table><thead><tr><th>Team</th><th>Wk 1</th><th>Wk 2</th><th>Wk 3</th><th>Wk 4</th><th>Wk 5</th><th>Wk 6</th><th>Wk 7</th><th>Wk 8</th><th>Wk 9</th><th>Wk 10</th><th>Wk 11</th><th>Wk 12</th><th>Wk 13</th><th>Wk 14</th></tr></thead><tbody id="schedule-body"></tbody></table></div>
     <p style="font:10px 'IBM Plex Mono';color:#777;margin-bottom:0">P1/P2 = pick within a division; DL = divisional leader game. Division members play twice, rivals twice, everyone else once.</p>
   </div>
-  </section>
+</section>
 
   <section class="section" id="shortcuts">
     <div class="section-head"><h2 class="display">League Center</h2><small>Everything else is one click away</small></div>
@@ -287,6 +302,9 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
     </div>
   </section>
 </div>
+
+
+
 
 <section class="section page" id="page-meet">
   <div class="section-head"><h2 class="display">Meet the League</h2><small>MFGA members · current &amp; historical</small></div>
@@ -370,7 +388,7 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
     </ul><h3 style="margin-top:22px">Schedule Format</h3><ul class="rule-list">
       <li>After keepers, last year's division leaders draft their divisions snake-style, best team first.</li>
       <li>Four divisions, three teams each.</li><li>Week 1 is Rivalry Week.</li><li>Weeks 3, 8 and 13 are Divisional Champions Weeks, subject to NFL bye weeks.</li><li>Weeks 1–14 regular season; Weeks 15–17 playoffs.</li>
-    </ul><h3 style="margin-top:22px">Weekly Format</h3><div class="stat"><span>Week 1</span><b>Rivalry Week</b></div><div class="stat"><span>Weeks 3, 8, 13</span><b>Division Leaders</b></div><div class="stat"><span>Weeks 1–14</span><b>Regular Season</b></div><div class="stat"><span>Weeks 15–17</span><b>Playoffs</b></div></div>
+    </ul></div>
   </div>
 
   <div class="grid grid-2" style="margin-top:15px">
@@ -385,6 +403,14 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
     <div class="score-box"><h4>Kicking</h4><ul><li>PAT made = 1</li><li>PAT missed = −1</li><li>FG missed = −1</li><li>30–39 yd FG = 3</li><li>40–49 yd FG = 4</li><li>50–59 yd FG = 5</li><li>60+ yd FG = 6</li></ul></div>
     <div class="score-box"><h4>Miscellaneous</h4><ul><li>Kickoff return TD = 6</li><li>Punt return TD = 6</li><li>Fumble recovered for TD = 6</li><li>Fumble lost = −2</li><li>Interception return TD = 6</li><li>Fumble return TD = 6</li><li>Blocked punt/FG return TD = 6</li><li>2pt return = 2</li><li>Safety = 1</li></ul></div>
   </div></div>
+  <div class="card" style="margin-top:15px">
+    <h3>Weekly Format</h3>
+    <div class="stat"><span>Week 1</span><b>Rivalry Week</b></div>
+    <div class="stat"><span>Weeks 3, 8, 13</span><b>Division Leaders</b></div>
+    <div class="stat"><span>Weeks 1–14</span><b>Regular Season</b></div>
+    <div class="stat"><span>Weeks 15–17</span><b>Playoffs</b></div>
+  </div>
+
 </section>
 
 <section class="section page" id="page-drafts">
