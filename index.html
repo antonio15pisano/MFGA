@@ -160,6 +160,46 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 .keeper-footer b{color:#d9253f}
 @media(max-width:760px){.digital-section-head{align-items:flex-start}.digital-status{font-size:8px}.keeper-footer{flex-direction:column;gap:5px}}
 
+
+/* 2026 Season dashboard layout */
+.season-dashboard-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:15px;
+  align-items:stretch;
+}
+.season-dashboard-grid > div:first-child{
+  display:contents;
+}
+.season-dashboard-grid > aside{
+  display:none;
+}
+.season-dashboard-grid > div:first-child > .card:nth-child(1){
+  grid-column:1;
+  grid-row:1;
+  margin-top:0 !important;
+}
+.season-dashboard-grid > div:first-child > .card:nth-child(2){
+  grid-column:1 / -1;
+  grid-row:2;
+}
+.season-dashboard-grid > div:first-child > .card:nth-child(3){
+  grid-column:2;
+  grid-row:1;
+  margin-top:0 !important;
+}
+@media(max-width:900px){
+  .season-dashboard-grid{
+    grid-template-columns:1fr;
+  }
+  .season-dashboard-grid > div:first-child > .card:nth-child(1),
+  .season-dashboard-grid > div:first-child > .card:nth-child(2),
+  .season-dashboard-grid > div:first-child > .card:nth-child(3){
+    grid-column:1;
+    grid-row:auto;
+  }
+}
+
 </style>
 </head>
 <body>
