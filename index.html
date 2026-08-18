@@ -104,190 +104,35 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 .schedule-orange{color:#ef7d22!important;font-weight:700}
 .schedule-rival{color:#111!important;font-weight:700}
 
-/* =========================================================
-   MFGA MOBILE OPTIMIZATION
-   Desktop styles remain unchanged.
-   ========================================================= */
-@media (max-width: 768px) {
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+/* MFGA Keeper Tracker */
+.keeper-card{margin-top:15px}
+.keeper-table{width:100%;border-collapse:collapse;min-width:1050px;background:#fff}
+.keeper-table th{background:#111;color:#eee;padding:9px 8px;text-align:center;font:700 10px 'IBM Plex Mono';text-transform:uppercase;white-space:nowrap}
+.keeper-table th:first-child,.keeper-table td:first-child{text-align:left;width:90px}
+.keeper-table td{padding:8px 7px;border-bottom:1px solid #e2e2e2;text-align:center;font:12px 'IBM Plex Mono';white-space:nowrap;height:34px}
+.keeper-table td:first-child{font-weight:700;color:#222}
+.keeper-table tr:nth-child(even){background:#f7f7f7}
+.keeper-name{color:var(--red);font-weight:700}
+.keeper-note{font:10px 'IBM Plex Mono';color:#777;line-height:1.5;margin:10px 0 0}
+/* Digital playoff picture */
+.playoff-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.playoff-col{min-width:0}
+.playoff-col + .playoff-col{border-left:1px solid #ddd;padding-left:18px}
+.playoff-label{font:700 12px 'IBM Plex Mono';color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.playoff-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e2e2;padding:12px 0;font-size:14px}
+.playoff-row b{font-family:'IBM Plex Mono'}
+.playoff-matchup{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;border-bottom:1px solid #e2e2e2;padding:12px 0;font-size:14px}
+.playoff-matchup span:last-child{text-align:right}
+.playoff-vs{color:var(--red);font:700 11px 'IBM Plex Mono';text-transform:uppercase}
+.playoff-note{margin-top:15px;padding-top:13px;border-top:1px solid #e2e2e2;color:#777;font:11px 'IBM Plex Mono';line-height:1.5}
+.playoff-note div+div{margin-top:6px}
+@media(max-width:900px){.playoff-grid{grid-template-columns:1fr}.playoff-col + .playoff-col{border-left:0;border-top:1px solid #ddd;padding-left:0;padding-top:15px}}
 
-  body {
-    font-size: 15px;
-  }
-
-  /* Header / main navigation */
-  .topbar {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-
-  .brand {
-    justify-content: center;
-    padding: 12px 10px;
-  }
-
-  .nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-
-  .nav a {
-    padding: 10px 9px;
-    font-size: 11px;
-    line-height: 1.2;
-  }
-
-  /* League Desk / Snapshot ticker */
-  .ticker {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-
-  .ticker-row {
-    min-width: max-content;
-  }
-
-  .ticker-item {
-    padding: 10px 12px;
-    font-size: 11px;
-  }
-
-  /* Main content */
-  main {
-    width: 100%;
-  }
-
-  .section {
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .section-head {
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .section-head h2,
-  .display {
-    font-size: clamp(24px, 8vw, 38px);
-    line-height: 1;
-  }
-
-  /* Cards / grids stack cleanly */
-  .grid,
-  .cards,
-  .card-grid,
-  .two-col,
-  .three-col {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Tables remain readable and can scroll horizontally */
-  .table-wrap,
-  .table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  table {
-    min-width: 620px;
-  }
-
-  /* Schedule / matchup cards */
-  .schedule,
-  .matchups {
-    width: 100%;
-  }
-
-  /* Images and draft boards */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Draft board images should use the available phone width */
-  .draft-board,
-  .draft-board img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Buttons / links are easier to tap */
-  button,
-  .btn,
-  .button {
-    min-height: 44px;
-  }
-
-  /* Prevent long names/URLs from breaking the layout */
-  a,
-  span,
-  div {
-    overflow-wrap: anywhere;
-  }
-
-  /* Footer */
-  footer {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+@media(max-width:600px){
+  .keeper-table{min-width:1050px}
+  .keeper-table th:first-child,.keeper-table td:first-child{width:90px;min-width:90px}
+  .playoff-row,.playoff-matchup{font-size:13px}
 }
-
-@media (max-width: 480px) {
-  .nav a {
-    padding: 9px 7px;
-    font-size: 10px;
-  }
-
-  .section {
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-
-  .section-head h2,
-  .display {
-    font-size: clamp(22px, 9vw, 32px);
-  }
-
-  .ticker-item {
-    padding: 9px 10px;
-    font-size: 10px;
-  }
-}
-
-
-/* =========================================================
-   MFGA KEEPER TRACKER
-   ========================================================= */
-.keeper-card{background:#fff;border:1px solid #ddd;border-radius:4px;overflow:hidden}
-.keeper-card .keeper-top{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 18px;background:#111;color:#fff}
-.keeper-card .keeper-top strong{font-size:17px;text-transform:uppercase}
-.keeper-card .keeper-top span{font:10px 'IBM Plex Mono';color:#aaa;text-transform:uppercase}
-.keeper-scroll{overflow-x:auto}
-.keeper-table{width:100%;min-width:1050px;border-collapse:collapse;table-layout:fixed;color:#111}
-.keeper-table th,.keeper-table td{border-bottom:1px solid #ddd;border-right:1px solid #ddd;text-align:center}
-.keeper-table th:last-child,.keeper-table td:last-child{border-right:0}
-.keeper-table thead th{background:#111;color:#fff;padding:11px 5px;font-size:11px;text-transform:uppercase}
-.keeper-table thead th:first-child{width:100px;text-align:left;padding-left:14px}
-.keeper-table .team-pick{display:block;font:9px 'IBM Plex Mono';color:#aaa;margin-bottom:3px}
-.keeper-table tbody td{height:38px;padding:5px;font-size:11px;background:#fff}
-.keeper-table tbody tr:nth-child(even) td{background:#fafafa}
-.keeper-table .round{width:100px;text-align:left;padding-left:14px!important;font-weight:800;color:#555;white-space:nowrap}
-.keeper-table .keeper{color:var(--red);font-weight:900}
-.keeper-table .empty{color:#c7c7c7}
-.keeper-note{padding:12px 18px;background:#fafafa;border-top:1px solid #ddd;color:#777;font-size:10px;line-height:1.5}
-
 </style>
 </head>
 <body>
@@ -336,7 +181,7 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 <div id="page-home" class="page active">
 
   <section class="section" id="key-highlights">
-    <div class="section-head"><h2 class="display">Key Highlights</h2><small>MFGA headlines & league notes</small></div>
+    <div class="section-head"><h2 class="display">Key Highlights</h2><small>League updates</small></div>
     <div class="card dark">
       <div class="headline"><b>Grasso enters MFGA X as reigning champion.</b><span>2025 title over Skin, 147–114.4.</span></div>
       <div class="headline"><b>Draft order is set.</b><span>Filippo, Nicky, Tone, Frankie, Carmelo, Martir, Melio, Mark, Antonio, Berger, Skin, Grasso.</span></div>
@@ -346,19 +191,61 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
   </section>
 
   <section class="section" id="keeper-tracker">
-    <div class="section-head"><h2 class="display">Keeper Tracker</h2><small>2026 season · updated weekly</small></div>
-    <div class="keeper-card">
-      <div class="keeper-top"><strong>2026 Keeper Board</strong><span>12 Teams · 15 Rounds</span></div>
-      <div class="keeper-scroll">
+    <div class="section-head"><h2 class="display">Keeper Tracker</h2><small>Updated weekly</small></div>
+    <div class="card keeper-card">
+      <div class="table-wrap">
         <table class="keeper-table">
-          <thead><tr>
-            <th>Round</th>
-            <th><span class="team-pick">Pick 1</span>Filippo</th><th><span class="team-pick">Pick 2</span>Nicky</th><th><span class="team-pick">Pick 3</span>Tone</th><th><span class="team-pick">Pick 4</span>Frankie</th><th><span class="team-pick">Pick 5</span>Carmelo</th><th><span class="team-pick">Pick 6</span>Martir</th><th><span class="team-pick">Pick 7</span>Melio</th><th><span class="team-pick">Pick 8</span>Mark</th><th><span class="team-pick">Pick 9</span>Antonio</th><th><span class="team-pick">Pick 10</span>Berger</th><th><span class="team-pick">Pick 11</span>Skin</th><th><span class="team-pick">Pick 12</span>Grasso</th>
-          </tr></thead>
-          <tbody id="keeper-body"></tbody>
+          <thead><tr><th>Round</th><th>Filippo</th><th>Nicky</th><th>Tone</th><th>Frankie</th><th>Carmelo</th><th>Martir</th><th>Melio</th><th>Mark</th><th>Antonio</th><th>Berger</th><th>Skin</th><th>Grasso</th></tr></thead>
+          <tbody>
+            <tr><td>Round 1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 2</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 3</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Allen, Jo</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Smith-Njiba</td><td>—</td><td class="keeper-name">Hurts</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Cook</td></tr>
+            <tr><td>Round 5</td><td>—</td><td class="keeper-name">Hall</td><td>—</td><td>—</td><td class="keeper-name">McMillian</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Smith, Dev</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 6</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 7</td><td>—</td><td>—</td><td class="keeper-name">Skattebo</td><td>—</td><td>—</td><td class="keeper-name">Rice</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 8</td><td class="keeper-name">Odunze</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Samuel Sr, D</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 9</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 10</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 11</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 12</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 13</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Round 14</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="keeper-name">Ferguson</td><td>—</td></tr>
+            <tr><td>Round 15</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          </tbody>
         </table>
       </div>
-      <div class="keeper-note">Keepers are highlighted in red. Only one player drafted in Round 3 or later may be kept. Player must remain on the roster all season. No trades or pick-ups.</div>
+      <p class="keeper-note">*Can only keep 1 player drafted in Round 3 or later. This tracker will be updated throughout the season for eligible players. Player being kept must remain on your team all year. No Trades / Pick Ups.</p>
+    </div>
+  </section>
+
+  <section class="section" id="playoff-picture">
+    <div class="card">
+      <h3>Projected Playoff Picture</h3>
+      <div class="playoff-grid">
+        <div class="playoff-col">
+          <div class="playoff-label">Division Leaders</div>
+          <div class="playoff-row"><span>Seed 1</span><b>TBD</b></div>
+          <div class="playoff-row"><span>Seed 2</span><b>TBD</b></div>
+          <div class="playoff-row"><span>Seed 3</span><b>TBD</b></div>
+          <div class="playoff-row"><span>Seed 4</span><b>TBD</b></div>
+        </div>
+        <div class="playoff-col">
+          <div class="playoff-label">Wild Cards</div>
+          <div class="playoff-row"><span>Seed 5</span><b>TBD</b></div>
+          <div class="playoff-row"><span>Seed 6</span><b>TBD</b></div>
+        </div>
+        <div class="playoff-col">
+          <div class="playoff-label">Matchups</div>
+          <div class="playoff-matchup"><span>Team A</span><b class="playoff-vs">vs</b><span>Team B</span></div>
+          <div class="playoff-matchup"><span>Team C</span><b class="playoff-vs">vs</b><span>Team D</span></div>
+          <div class="playoff-note" style="border-top:0;padding-top:13px"><div>#1 seed plays the lowest winning seed</div></div>
+        </div>
+      </div>
+      <div class="playoff-note">
+        <div><strong>Byes:</strong> Seeds 1–2</div>
+        <div><strong>Tiebreakers:</strong> head-to-head → points scored → points against. Division leaders occupy seeds 1–4.</div>
+      </div>
     </div>
   </section>
 
@@ -374,40 +261,18 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
         <div class="table-wrap"><table><thead><tr><th>Rk</th><th>Team</th><th>W</th><th>L</th><th>%</th><th>PF</th><th>PA</th><th>+/-</th><th>Avg PF</th><th>Avg PA</th><th>Playoff %</th></tr></thead><tbody id="current-standings"></tbody></table></div>
       </div>
       <div class="card" id="power-rankings-2026" style="margin-top:15px">
-        <div class="section-head" style="margin-bottom:10px">
-          <h3 style="margin:0">2026 Power Rankings</h3>
-          <small>Weekly MFGA Rankings</small>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Rank</th><th>Team</th><th>Record</th><th>Movement</th><th>Analysis</th></tr></thead>
-            <tbody id="power-rankings-body">
-              <tr><td>—</td><td colspan="4">TBD — rankings will be added after Week 1.</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="section-head" style="margin-bottom:10px"><h3 style="margin:0">2026 Power Rankings</h3><small>Weekly MFGA Rankings</small></div>
+        <div class="table-wrap"><table><thead><tr><th>Rank</th><th>Team</th><th>Record</th><th>Movement</th><th>Analysis</th></tr></thead><tbody id="power-rankings-body"><tr><td>—</td><td colspan="4">TBD — rankings will be added after Week 1.</td></tr></tbody></table></div>
         <div class="note">Weekly rankings will be created from the updated Statbook and league performance.</div>
       </div>
-      <div class="card" style="margin-top:15px">
-        <h3>Projected Playoff Picture</h3>
-        <div class="grid grid-2">
-          <div><div class="eyebrow">Division Leaders</div><div class="stat"><span>Seed 1</span><b>TBD</b></div><div class="stat"><span>Seed 2</span><b>TBD</b></div><div class="stat"><span>Seed 3</span><b>TBD</b></div><div class="stat"><span>Seed 4</span><b>TBD</b></div></div>
-          <div><div class="eyebrow">Wild Cards</div><div class="stat"><span>Seed 5</span><b>TBD</b></div><div class="stat"><span>Seed 6</span><b>TBD</b></div><div class="stat"><span>Byes</span><b>Seeds 1–2</b></div><div class="stat"><span>Matchups</span><b>3v6 · 4v5</b></div></div>
-        </div>
-        <p style="font-size:11px;color:#777;margin-bottom:0">Tiebreakers: head-to-head → points scored → points against. Division leaders occupy seeds 1–4.</p>
-      </div>
     </div>
-    <aside>
-
-    </aside>
   </div>
-
   <div class="card" style="margin-top:15px">
     <h3>2026 Regular Season Schedule</h3>
     <div class="table-wrap"><table><thead><tr><th>Team</th><th>Wk 1</th><th>Wk 2</th><th>Wk 3</th><th>Wk 4</th><th>Wk 5</th><th>Wk 6</th><th>Wk 7</th><th>Wk 8</th><th>Wk 9</th><th>Wk 10</th><th>Wk 11</th><th>Wk 12</th><th>Wk 13</th><th>Wk 14</th></tr></thead><tbody id="schedule-body"></tbody></table></div>
     <p style="font:10px 'IBM Plex Mono';color:#777;margin-bottom:0">P1/P2 = pick within a division; DL = divisional leader game. Division members play twice, rivals twice, everyone else once.</p>
   </div>
-</section>
+  </section>
 
   <section class="section" id="shortcuts">
     <div class="section-head"><h2 class="display">League Center</h2><small>Everything else is one click away</small></div>
@@ -502,7 +367,7 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
     </ul><h3 style="margin-top:22px">Schedule Format</h3><ul class="rule-list">
       <li>After keepers, last year's division leaders draft their divisions snake-style, best team first.</li>
       <li>Four divisions, three teams each.</li><li>Week 1 is Rivalry Week.</li><li>Weeks 3, 8 and 13 are Divisional Champions Weeks, subject to NFL bye weeks.</li><li>Weeks 1–14 regular season; Weeks 15–17 playoffs.</li>
-    </ul></div>
+    </ul><h3 style="margin-top:22px">Weekly Format</h3><div class="stat"><span>Week 1</span><b>Rivalry Week</b></div><div class="stat"><span>Weeks 3, 8, 13</span><b>Division Leaders</b></div><div class="stat"><span>Weeks 1–14</span><b>Regular Season</b></div><div class="stat"><span>Weeks 15–17</span><b>Playoffs</b></div></div>
   </div>
 
   <div class="grid grid-2" style="margin-top:15px">
@@ -809,15 +674,6 @@ function mfgaChampionFormerItalics(value){
   });
 })();
 
-
-const KEEPERS = [
-  {round:3,team:"Frankie",player:"Allen, Jo"},{round:3,team:"Mark",player:"Smith-Njiba"},{round:3,team:"Berger",player:"Hurts"},
-  {round:4,team:"Grasso",player:"Cook"},{round:5,team:"Nicky",player:"Hall"},{round:5,team:"Carmelo",player:"McMillian"},{round:5,team:"Antonio",player:"Smith, Dev"},
-  {round:7,team:"Tone",player:"Skattebo"},{round:7,team:"Martir",player:"Rice"},{round:8,team:"Filippo",player:"Odunze"},{round:8,team:"Melio",player:"Samuel Sr, D"},{round:14,team:"Skin",player:"Ferguson"}
-];
-const KEEPER_TEAMS=["Filippo","Nicky","Tone","Frankie","Carmelo","Martir","Melio","Mark","Antonio","Berger","Skin","Grasso"];
-const keeperBody=document.getElementById('keeper-body');
-if(keeperBody){for(let round=1;round<=15;round++){const tr=document.createElement('tr');const rc=document.createElement('td');rc.className='round';rc.textContent='Round '+round;tr.appendChild(rc);KEEPER_TEAMS.forEach(team=>{const td=document.createElement('td');const k=KEEPERS.find(x=>x.round===round&&x.team===team);if(k){td.className='keeper';td.textContent=k.player}else{td.className='empty';td.textContent='—'}tr.appendChild(td)});keeperBody.appendChild(tr)}}
 </script>
 
 <script>
