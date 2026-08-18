@@ -103,6 +103,169 @@ table:has(#reg-history) thead th.sort-desc::after,table:has(#po-history) thead t
 .schedule-red{color:#f00!important;font-weight:700}
 .schedule-orange{color:#ef7d22!important;font-weight:700}
 .schedule-rival{color:#111!important;font-weight:700}
+
+/* =========================================================
+   MFGA MOBILE OPTIMIZATION
+   Desktop styles remain unchanged.
+   ========================================================= */
+@media (max-width: 768px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  /* Header / main navigation */
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .brand {
+    justify-content: center;
+    padding: 12px 10px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .nav a {
+    padding: 10px 9px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  /* League Desk / Snapshot ticker */
+  .ticker {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .ticker-row {
+    min-width: max-content;
+  }
+
+  .ticker-item {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  /* Main content */
+  main {
+    width: 100%;
+  }
+
+  .section {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section-head {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .section-head h2,
+  .display {
+    font-size: clamp(24px, 8vw, 38px);
+    line-height: 1;
+  }
+
+  /* Cards / grids stack cleanly */
+  .grid,
+  .cards,
+  .card-grid,
+  .two-col,
+  .three-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Tables remain readable and can scroll horizontally */
+  .table-wrap,
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 620px;
+  }
+
+  /* Schedule / matchup cards */
+  .schedule,
+  .matchups {
+    width: 100%;
+  }
+
+  /* Images and draft boards */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Draft board images should use the available phone width */
+  .draft-board,
+  .draft-board img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Buttons / links are easier to tap */
+  button,
+  .btn,
+  .button {
+    min-height: 44px;
+  }
+
+  /* Prevent long names/URLs from breaking the layout */
+  a,
+  span,
+  div {
+    overflow-wrap: anywhere;
+  }
+
+  /* Footer */
+  footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav a {
+    padding: 9px 7px;
+    font-size: 10px;
+  }
+
+  .section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .section-head h2,
+  .display {
+    font-size: clamp(22px, 9vw, 32px);
+  }
+
+  .ticker-item {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+}
+
 </style>
 </head>
 <body>
