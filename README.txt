@@ -1,4 +1,1 @@
-MFGA X Website v2
-
-Open index.html to view locally. Upload the entire folder to GitHub Pages for free hosting.
-The site contains structured league pages plus every page of the 33-page Statbook as an archive.
+MFGA master-format build. Preserves all league data, H2H, playoff H2H, history, rules, schedules, draft boards, logo, scoreboard area and member profiles. Official 18-member name/alias mapping supplied by Antonio is applied only to display names; underlying Statbook keys/data are preserved. Former members are italicized and marked with the site-wide disclaimer.
