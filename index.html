@@ -867,7 +867,8 @@ function regRow(name){return DATA.regszn.find(r=>cleanName(r[0])===name)}
 function poRow(name){return DATA.playoffs.find(r=>cleanName(r[0])===name)}
 function profileData(name){
  const r=regRow(name),po=poRow(name),historyKey=Object.keys(DATA.history).find(k=>k.replace(/\*$/,'')===name),seasons=historyKey?DATA.history[historyKey]:[];
- const champs=DATA.champions.filter(c=>String(c[1]).split(' (')[0].trim()===(fullNames[name]||name));
+ const champAliases={Skin:['Skin','Anthony "Skin" Gallo'],Antonio:['Antonio','Antonio Pisano'],Martir:['Martir','Joe Martir'],Fil:['Fil','Filippo Gallo'],Berger:['Berger','Michael Berger'],Carmelo:['Carmelo','Carmelo Mazzaferro'],Melio:['Melio','Matt Melio'],Frankie:['Frankie','Frankie Saracino'],Grasso:['Grasso','Anthony Grasso'],Mark:['Mark','Mark Farrell'],Nicky:['Nicky','Nick Antioco'],Tone:['Tone','Antonio Martir'],Gallo:['Gallo','Anthony Gallo'],Coupe:['Coupe','Joe Coupe'],Matt:['Matt','Matt Coupe'],Lorenzo:['Lorenzo','Lorenzo Pisano'],Pete:['Pete','Pete Caleca'],Rinaldi:['Rinaldi','Joe Rinaldi']};
+const champs=DATA.champions.filter(c=>{const winner=String(c[1]).split(' (')[0].trim(); return (champAliases[name]||[fullNames[name]||name]).includes(winner);});
  const divAliases={Fil:['Fil','Filippo'],Martir:['Martir'],Antonio:['Antonio'],Berger:['Berger'],Skin:['Skin'],Carmelo:['Carmelo'],Melio:['Melio'],Frankie:['Frankie'],Grasso:['Grasso'],Mark:['Mark'],Nicky:['Nicky'],Tone:['Tone'],Gallo:['Gallo'],Coupe:['Coupe'],Matt:['Matt'],Lorenzo:['Lorenzo'],Pete:['Pete'],Rinaldi:['Rinaldi']}; const divs=DATA.divisions.filter(row=>(divAliases[name]||[name]).some(alias=>row.slice(1).includes(alias))).map(row=>row[0]);
  const h2h=Object.entries(DATA.h2h_reg).filter(([k])=>k.startsWith(name+'|'));
  return {r,po,seasons,champs,divs,h2h};
@@ -1043,15 +1044,30 @@ Object.entries(DATA.placement_counts).forEach(([team,vals])=>{const tr=document.
 // Season outcome mapping is derived from the official championship-outcome records.
 const seasonOutcome={};
 const nameToTeam={
-  "Antonio Pisano":"Antonio","Joe Martir":"Martir","Filippo Gallo":"Fil","Michael Berger":"Berger",
-  "Anthony \"Skin\" Gallo":"Skin","Carmelo Mazzaferro":"Carmelo","Matt Melio":"Melio","Frankie Saracino":"Frankie",
-  "Anthony Grasso":"Grasso","Mark Farrell":"Mark","Nick Antioco":"Nicky","Antonio Martir":"Tone",
-  "Anthony Gallo":"Gallo","Joe Coupe":"Coupe","Matt Coupe":"Matt","Lorenzo Pisano":"Lorenzo",
-  "Pete Caleca":"Pete","Joe Rinaldi":"Rinaldi"
+  "Antonio":"Antonio","Antonio Pisano":"Antonio",
+  "Martir":"Martir","Joe Martir":"Martir",
+  "Fil":"Fil","Filippo Gallo":"Fil",
+  "Berger":"Berger","Michael Berger":"Berger",
+  "Skin":"Skin","Anthony \"Skin\" Gallo":"Skin",
+  "Carmelo":"Carmelo","Carmelo Mazzaferro":"Carmelo",
+  "Melio":"Melio","Matt Melio":"Melio",
+  "Frankie":"Frankie","Frankie Saracino":"Frankie",
+  "Grasso":"Grasso","Anthony Grasso":"Grasso",
+  "Mark":"Mark","Mark Farrell":"Mark",
+  "Nicky":"Nicky","Nick Antioco":"Nicky",
+  "Tone":"Tone","Antonio Martir":"Tone",
+  "Gallo":"Gallo","Anthony Gallo":"Gallo",
+  "Coupe":"Coupe","Joe Coupe":"Coupe",
+  "Matt":"Matt","Matt Coupe":"Matt",
+  "Lorenzo":"Lorenzo","Lorenzo Pisano":"Lorenzo",
+  "Pete":"Pete","Pete Caleca":"Pete",
+  "Rinaldi":"Rinaldi","Joe Rinaldi":"Rinaldi"
 };
 function teamFromOutcomeText(text){
-  const s=String(text||'');
-  for(const [full,team] of Object.entries(nameToTeam)) if(s.startsWith(full+' ') || s===full) return team;
+  const s=String(text||'').trim();
+  for(const [label,team] of Object.entries(nameToTeam)){
+    if(s===label || s.startsWith(label+' ')) return team;
+  }
   return null;
 }
 (DATA.champions||[]).forEach(c=>{
