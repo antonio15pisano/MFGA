@@ -455,35 +455,6 @@ table:has(#current-standings) thead th.sort-desc::after{
   font-weight:700 !important;
 }
 
-
-
-/* Keep existing content cards readable without changing their structure. */
-
-
-/* MFGA FOOTBALL FIELD BACKGROUND TEST — keep cards white */
-body{
-  background:#18251b !important;
-  background-image:
-    linear-gradient(rgba(7,18,10,.45),rgba(7,18,10,.45)),
-    url("football-bg.png") !important;
-  background-size:cover !important;
-  background-position:center top !important;
-  background-attachment:fixed !important;
-  background-repeat:no-repeat !important;
-}
-
-/* Let the football background show through the page's outer white canvas,
-   while preserving the existing white content cards/panels. */
-main,
-.page,
-.page-wrap,
-.content,
-.container,
-.site-main,
-.section-wrap{
-  background:transparent !important;
-}
-
 </style>
 
 <!-- MFGA Google Analytics -->
