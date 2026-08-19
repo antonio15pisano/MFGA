@@ -982,18 +982,29 @@ function h2hTable(headId,bodyId,obj){
   const teams=["Antonio","Martir","Fil","Berger","Skin","Carmelo","Melio","Frankie","Grasso","Mark","Nicky","Tone","Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"];
   const inactive=new Set(["Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"]);
   const blockedPairs=new Set(["Gallo|Tone","Tone|Gallo","Gallo|Nicky","Nicky|Gallo"]);
+  // Only these three teams have a dedicated Tie column in the regular-season matrix.
+  // Playoffs contain no ties, so no Tie columns are shown there.
+  const tieTeams=new Set(["Skin","Carmelo","Gallo"]);
+  const isPlayoff=!Object.values(obj).some(v=>Array.isArray(v)&&v.length>=3);
   const head=document.getElementById(headId),body=document.getElementById(bodyId);
-  head.innerHTML='<tr><th>You (V) OPP (&gt;)</th>'+teams.map(t=>`<th colspan="${obj[t+'|'+t]?'3':'2'}">${t}</th>`).join('')+'</tr><tr><th></th>'+teams.map(t=>obj[t+'|'+t]?'<th>Win</th><th>Loss</th><th>Tie</th>':'<th>Win</th><th>Loss</th>').join('')+'</tr>';
+  head.innerHTML='<tr><th>You (V) OPP (&gt;)</th>'+teams.map(t=>`<th colspan="${!isPlayoff && tieTeams.has(t)?3:2}">${t}</th>`).join('')+'</tr><tr><th></th>'+teams.map(t=>!isPlayoff && tieTeams.has(t)?'<th>Win</th><th>Loss</th><th>Tie</th>':'<th>Win</th><th>Loss</th>').join('')+'</tr>';
   teams.forEach(a=>{
     const tr=document.createElement('tr');
     tr.innerHTML=`<td class="${inactive.has(a)?'row-inactive':''}">${a}${inactive.has(a)?'*':''}</td>`+teams.map(b=>{
-      if(a===b)return '<td>—</td>';
-      if(blockedPairs.has(a+'|'+b))return '<td class="h2h-blocked">—</td>';
+      const showTie=!isPlayoff && tieTeams.has(b);
+      const span=showTie?3:2;
+      if(a===b)return Array.from({length:span},()=>'<td class="h2h-diagonal">—</td>').join('');
+      if(blockedPairs.has(a+'|'+b))return Array.from({length:span},()=>'<td class="h2h-blocked">—</td>').join('');
       const v=obj[a+'|'+b];
-      if(!v)return `<td class="${inactive.has(a)||inactive.has(b)?'inactive-empty':''}">—</td>`;
-      const [w,l,t]=v;
-      const cls=(inactive.has(a)||inactive.has(b))?'inactive':(t||w===l?'h2h-tie':(w>l?'win':w<l?'loss':''));
-      return `<td class="${cls}">${w}–${l}${t?`–${t}`:''}</td>`;
+      if(!v)return Array.from({length:span},()=>`<td class="${inactive.has(a)||inactive.has(b)?'inactive-empty':''}">—</td>`).join('');
+      const w=Number(v[0]||0),l=Number(v[1]||0),t=Number(v[2]||0);
+      const isInactive=inactive.has(a)||inactive.has(b);
+      const tied=(t>0)||(w===l);
+      const cls=isInactive?'inactive':(tied?'h2h-tie':(w>l?'win':w<l?'loss':''));
+      if(showTie){
+        return `<td class="${cls}">${w}</td><td class="${cls}">${l}</td><td class="${cls}">${t||0}</td>`;
+      }
+      return `<td class="${cls}">${w}</td><td class="${cls}">${l}</td>`;
     }).join('');
     body.appendChild(tr);
   });
