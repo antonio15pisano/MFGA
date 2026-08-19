@@ -470,6 +470,21 @@ table:has(#current-standings) thead th.sort-desc::after{
 .season-history-legend .silver{background:#dedede;color:#4f4f4f;}
 .season-history-legend .brown{background:#e5d7c4;color:#665443;}
 
+
+/* Hall of Champions — original banners only */
+.hall-banner-grid{width:100%;margin-top:14px;}
+.hall-banner-row{display:flex;justify-content:center;align-items:flex-start;gap:10px;width:100%;}
+.hall-banner-row-2{margin-top:12px;}
+.hall-banner-row img{display:block;width:calc((100% - 50px)/6);height:auto;object-fit:contain;}
+.hall-banner-row-2 img{width:calc((100% - 20px)/6);}
+@media(max-width:900px){
+  .hall-banner-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+  .hall-banner-row img,.hall-banner-row-2 img{width:100%;}
+}
+@media(max-width:600px){
+  .hall-banner-row{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
 </style>
 
 <!-- MFGA Google Analytics -->
@@ -699,7 +714,22 @@ table:has(#current-standings) thead th.sort-desc::after{
 
 <section class="section page" id="page-hall-of-champions">
   <div class="section-head"><h2 class="display">Hall of Champions</h2><small>MFGA Championship History</small></div>
-  <div class="card"><p style="font-size:12px;color:#666;margin-top:0">Every MFGA champion and championship matchup, from 2017 through the latest completed season.</p><div id="hall-of-champions-list"></div></div>
+  <div class="hall-banner-grid">
+    <div class="hall-banner-row hall-banner-row-1">
+      <img src="hall-of-champions/1.png" alt="MFGA Season 1 Champion">
+      <img src="hall-of-champions/2.png" alt="MFGA Season 2 Champion">
+      <img src="hall-of-champions/3.png" alt="MFGA Season 3 Champion">
+      <img src="hall-of-champions/4.png" alt="MFGA Season 4 Champion">
+      <img src="hall-of-champions/5.png" alt="MFGA Season 5 Champion">
+      <img src="hall-of-champions/6.png" alt="MFGA Season 6 Champion">
+    </div>
+    <div class="hall-banner-row hall-banner-row-2">
+      <img src="hall-of-champions/7.png" alt="MFGA Season 7 Champion">
+      <img src="hall-of-champions/8.png" alt="MFGA Season 8 Champion">
+      <img src="hall-of-champions/9.png" alt="MFGA Season 9 Champion">
+    </div>
+  </div>
+  <div class="card" style="margin-top:22px"><p style="font-size:12px;color:#666;margin-top:0">Every MFGA champion and championship matchup, from 2017 through the latest completed season.</p><div id="hall-of-champions-list"></div></div>
 </section>
 
 <section class="section page" id="page-record-history">
