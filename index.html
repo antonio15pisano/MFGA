@@ -1211,6 +1211,90 @@ header,.header{border-bottom-color:#c5222d!important}
   }
 }
 
+
+/* HALL OF CHAMPIONS — 6 BANNERS / 3 CENTERED */
+#page-hall-of-champions .hall-banner-grid{
+  display:block!important;
+  width:100%!important;
+  overflow:visible!important;
+  padding:18px!important;
+  box-sizing:border-box!important;
+}
+#page-hall-of-champions .hall-banner-row{
+  display:grid!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:14px!important;
+  width:100%!important;
+  align-items:start!important;
+}
+#page-hall-of-champions .hall-banner-row + .hall-banner-row{
+  margin-top:18px!important;
+}
+#page-hall-of-champions .hall-banner-row-2{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:flex-start!important;
+  gap:14px!important;
+}
+#page-hall-of-champions .hall-banner-row img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  min-width:0!important;
+  object-fit:contain!important;
+  margin:0!important;
+}
+#page-hall-of-champions .hall-banner-row-2 img{
+  width:calc((100% - 70px)/6)!important;
+  flex:0 0 calc((100% - 70px)/6)!important;
+  max-width:calc((100% - 70px)/6)!important;
+}
+@media(max-width:900px){
+  #page-hall-of-champions .hall-banner-row{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  #page-hall-of-champions .hall-banner-row-2{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  #page-hall-of-champions .hall-banner-row-2 img{
+    width:100%!important;
+    max-width:100%!important;
+    flex:none!important;
+  }
+}
+@media(max-width:600px){
+  #page-hall-of-champions .hall-banner-row,
+  #page-hall-of-champions .hall-banner-row-2{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+
+/* Record History filter/reset buttons — readable on white */
+#page-record-history .tab,
+#page-record-history button,
+#page-record-history .btn{
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+  background:#fff!important;
+  border-color:#ccc!important;
+}
+#page-record-history .tab.active{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  background:#111!important;
+  border-color:#111!important;
+}
+#page-record-history .tab:hover,
+#page-record-history button:hover,
+#page-record-history .btn:hover{
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+  background:#f3f3f3!important;
+}
+
 </style>
 
 <!-- MFGA Google Analytics -->
