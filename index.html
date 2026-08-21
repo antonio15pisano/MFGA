@@ -485,6 +485,539 @@ table:has(#current-standings) thead th.sort-desc::after{
   .hall-banner-row{grid-template-columns:repeat(2,minmax(0,1fr));}
 }
 
+
+
+/* ============================================================
+   MFGA THEME OPTION 2 — CLASSIC AMERICAN FOOTBALL PROGRAM
+   Visual redesign only. Existing content/JS untouched.
+   ============================================================ */
+:root{
+  --mfga-navy:#0b1f3a;
+  --mfga-red:#c5222d;
+  --mfga-blue:#234d78;
+  --mfga-gold:#c7a24a;
+  --mfga-cream:#f5f2e9;
+  --mfga-white:#ffffff;
+  --mfga-ink:#17202a;
+  --mfga-gray:#69727c;
+}
+
+/* Warm paper + deep navy environment instead of a literal field */
+body{
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,255,255,.10), transparent 38%),
+    linear-gradient(180deg,#0b1f3a 0 18%,#152a42 18% 18.2%,#f5f2e9 18.2% 100%);
+  color:var(--mfga-ink);
+}
+
+/* Thin red-white-blue edge treatment */
+body:after{
+  content:"";
+  position:fixed;
+  top:0;left:0;right:0;
+  height:4px;
+  z-index:9999;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    var(--mfga-red) 0 33.33%,
+    #fff 33.33% 66.66%,
+    var(--mfga-blue) 66.66% 100%);
+}
+
+/* Header: classic football program */
+header,.header{
+  background:var(--mfga-navy);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  box-shadow:0 8px 22px rgba(0,0,0,.22);
+}
+.nav a{
+  color:#e9edf2;
+  font-weight:700;
+  letter-spacing:.035em;
+  border-bottom:3px solid transparent;
+}
+.nav a:hover,.nav a.active{
+  color:#fff;
+  border-bottom-color:var(--mfga-red);
+}
+
+/* Hero: premium sports-brand treatment */
+.hero{
+  background:
+    linear-gradient(110deg,rgba(11,31,58,.98),rgba(11,31,58,.90) 58%,rgba(197,34,45,.90)),
+    #0b1f3a;
+  border-bottom:0;
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:auto -10% -70px auto;
+  width:55%;
+  height:190px;
+  transform:rotate(-5deg);
+  background:rgba(255,255,255,.035);
+  border-top:1px solid rgba(255,255,255,.10);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:5px;
+  background:linear-gradient(90deg,var(--mfga-red) 0 32%,var(--mfga-gold) 32% 68%,var(--mfga-blue) 68%);
+}
+.hero-inner{position:relative;z-index:2}
+.hero .kicker{
+  color:#d9bc72;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800;
+}
+.hero .display{
+  color:#fff;
+  letter-spacing:.015em;
+}
+.hero p{color:#dfe6ee}
+
+/* Main site = an old-school premium media guide */
+.page{
+  background:var(--mfga-cream);
+  border:0;
+  box-shadow:0 12px 35px rgba(7,20,38,.10);
+}
+.section{
+  position:relative;
+}
+.section:before{
+  content:"";
+  display:block;
+  height:2px;
+  margin-bottom:20px;
+  background:linear-gradient(90deg,var(--mfga-navy) 0 72%,var(--mfga-red) 72% 86%,var(--mfga-gold) 86%);
+}
+.section-head{
+  border-left:0;
+  padding-left:0;
+}
+.section-head h2{
+  color:var(--mfga-navy);
+  letter-spacing:.01em;
+}
+.section-head small{
+  color:var(--mfga-gray);
+  font-weight:700;
+}
+
+/* Cards: flatter, more editorial */
+.card{
+  background:#fff;
+  border:1px solid #dedbd2;
+  border-top:3px solid var(--mfga-navy);
+  border-radius:2px;
+  box-shadow:0 3px 10px rgba(11,31,58,.06);
+}
+.card.dark{
+  background:var(--mfga-navy);
+  border-color:var(--mfga-navy);
+  border-top-color:var(--mfga-red);
+  color:#fff;
+}
+
+/* Tables */
+table{
+  border-color:#dedbd2;
+}
+table th{
+  background:var(--mfga-navy)!important;
+  color:#fff!important;
+  border-color:#263e5b!important;
+}
+table td{
+  border-color:#e3e0d8;
+  background:#fff;
+}
+table tr:nth-child(even) td{
+  background:#faf9f5;
+}
+
+/* Buttons */
+button,.btn{
+  background:var(--mfga-red);
+  border-color:var(--mfga-red);
+  color:#fff;
+  border-radius:2px;
+  font-weight:800;
+}
+button:hover,.btn:hover{
+  background:var(--mfga-navy);
+  border-color:var(--mfga-navy);
+}
+
+/* Hall of Champions */
+.hall-banner-grid{
+  background:#ebe7dc;
+  border:1px solid #d5d0c3;
+  border-top:4px solid var(--mfga-gold);
+  box-shadow:inset 0 1px 0 #fff;
+}
+
+/* Footer */
+footer{
+  background:var(--mfga-navy);
+  color:#dbe3eb;
+  border-top:4px solid var(--mfga-red);
+}
+
+@media(max-width:760px){
+  body{
+    background:linear-gradient(180deg,#0b1f3a 0 15%,#f5f2e9 15% 100%);
+  }
+  .page{border:0}
+}
+
+
+/* ============================================================
+   MFGA THEME OPTION 3 — VINTAGE AMERICAN FOOTBALL / PROGRAM
+   Visual redesign only. Existing content + JS untouched.
+   ============================================================ */
+:root{
+  --navy:#101c2d;
+  --navy2:#1c3048;
+  --red:#a9212b;
+  --red2:#7f1821;
+  --cream:#f0eadc;
+  --paper:#fbf8f0;
+  --tan:#d7c7a6;
+  --gold:#b9974d;
+  --ink:#1a2028;
+  --muted:#69717a;
+}
+
+/* Vintage paper meets stadium night */
+body{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.07),transparent 38%),
+    linear-gradient(180deg,var(--navy) 0 17%,#27374a 17% 17.25%,var(--cream) 17.25% 100%);
+  color:var(--ink);
+}
+
+/* Classic red/white/navy trim */
+body:after{
+  content:"";
+  position:fixed;
+  top:0;left:0;right:0;height:5px;
+  z-index:9999;pointer-events:none;
+  background:
+    linear-gradient(90deg,var(--red) 0 28%,#f8f4e9 28% 50%,
+    var(--gold) 50% 54%,#f8f4e9 54% 72%,var(--red) 72%);
+}
+
+/* Dark stadium-program header */
+header,.header{
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,.18);
+  box-shadow:0 6px 20px rgba(0,0,0,.24);
+}
+.nav a{
+  color:#e9e5db;
+  border-bottom:3px solid transparent;
+  font-weight:800;
+  letter-spacing:.025em;
+}
+.nav a:hover,.nav a.active{
+  color:#fff;
+  border-bottom-color:var(--red);
+}
+
+/* Hero = vintage championship poster */
+.hero{
+  background:
+    linear-gradient(100deg,rgba(16,28,45,.98),rgba(16,28,45,.91) 63%,rgba(127,24,33,.93)),
+    var(--navy);
+  border:0;
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:700px;height:700px;
+  right:-330px;top:-380px;
+  border:2px solid rgba(255,255,255,.10);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 22px rgba(255,255,255,.035),
+    0 0 0 44px rgba(255,255,255,.025);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;height:7px;
+  background:
+    linear-gradient(90deg,var(--red) 0 36%,var(--cream) 36% 64%,var(--red) 64%);
+}
+.hero-inner{position:relative;z-index:2}
+.hero .kicker{
+  color:#d6bc7a;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:900;
+}
+.hero .display{
+  color:#fff;
+  text-shadow:2px 2px 0 rgba(0,0,0,.25);
+}
+.hero p{color:#e5e7e9}
+
+/* Old-school program paper */
+.page{
+  background:
+    linear-gradient(rgba(255,255,255,.72),rgba(255,255,255,.72)),
+    var(--cream);
+  border:0;
+  box-shadow:0 12px 35px rgba(16,28,45,.11);
+}
+.section{
+  position:relative;
+}
+.section:before{
+  content:"";
+  display:block;
+  height:3px;
+  margin-bottom:18px;
+  background:
+    linear-gradient(90deg,var(--navy) 0 52%,var(--red) 52% 76%,var(--gold) 76%);
+}
+.section-head{
+  border:0;
+  padding:0;
+}
+.section-head h2{
+  color:var(--navy);
+}
+.section-head small{
+  color:var(--red2);
+  font-weight:800;
+}
+
+/* Cards resemble printed program blocks */
+.card{
+  background:var(--paper);
+  border:1px solid #d8cfbd;
+  border-top:3px solid var(--navy);
+  border-radius:0;
+  box-shadow:2px 4px 0 rgba(16,28,45,.04);
+}
+.card.dark{
+  background:var(--navy);
+  border-color:var(--navy);
+  border-top-color:var(--red);
+  color:#fff;
+}
+
+/* Tables */
+table{
+  border-color:#d8cfbd;
+}
+table th{
+  background:var(--navy)!important;
+  color:#f7f3e9!important;
+  border-color:#30445b!important;
+}
+table td{
+  background:var(--paper);
+  border-color:#ded6c7;
+}
+table tr:nth-child(even) td{
+  background:#f5f0e5;
+}
+
+/* Buttons */
+button,.btn{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+  border-radius:0;
+  font-weight:900;
+}
+button:hover,.btn:hover{
+  background:var(--navy);
+  border-color:var(--navy);
+}
+
+/* Hall of Champions gets a framed trophy-room feel */
+.hall-banner-grid{
+  background:#e4dccb;
+  border:1px solid #cfc3aa;
+  border-top:5px solid var(--gold);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 4px 12px rgba(16,28,45,.07);
+}
+
+/* Footer */
+footer{
+  background:var(--navy);
+  color:#dedbd3;
+  border-top:5px solid var(--red);
+}
+
+@media(max-width:760px){
+  body{
+    background:linear-gradient(180deg,var(--navy) 0 15%,var(--cream) 15% 100%);
+  }
+}
+
+
+/* MFGA Option 3 refinements */
+.hero:before{display:none}
+
+/* Key Highlights — make the weekly bulletin visually distinct */
+.key-highlights,
+#key-highlights,
+.highlights{
+  border:2px solid #b9974d;
+  background:#f8f3e7;
+  padding:14px;
+  box-shadow:0 4px 0 rgba(16,28,45,.06);
+}
+.key-highlights .headline,
+#key-highlights .headline,
+.highlights .headline{
+  border:1px solid #d4c6aa;
+  border-left:4px solid #a9212b;
+  background:#fbf8f0;
+  padding:11px 13px;
+  margin:0;
+}
+.key-highlights .headline + .headline,
+#key-highlights .headline + .headline,
+.highlights .headline + .headline{
+  margin-top:8px;
+}
+.key-highlights .headline b,
+#key-highlights .headline b,
+.highlights .headline b{
+  color:#101c2d;
+}
+.key-highlights .headline span,
+#key-highlights .headline span,
+.highlights .headline span{
+  color:#69717a;
+}
+
+
+/* MFGA RED / WHITE / BLUE POP THEME REFINEMENT */
+:root{
+  --mfga-navy:#0b1f3a;
+  --mfga-blue:#174d82;
+  --mfga-red:#c5222d;
+  --mfga-red2:#951a25;
+  --mfga-white:#ffffff;
+  --mfga-paper:#fbfaf6;
+  --mfga-lightblue:#e9f0f7;
+  --mfga-ink:#17202a;
+  --mfga-muted:#69717a;
+  --mfga-gold:#b9974d; /* retained only for existing historical result coding */
+}
+body:after{
+  background:linear-gradient(90deg,var(--mfga-red) 0 33.33%,#fff 33.33% 66.66%,var(--mfga-blue) 66.66%);
+}
+header,.header{
+  background:linear-gradient(90deg,var(--mfga-navy),#102f52 62%,var(--mfga-red2));
+  border-bottom:4px solid var(--mfga-red);
+}
+.nav a:hover,.nav a.active{border-bottom-color:var(--mfga-red)}
+.hero{
+  background:linear-gradient(110deg,#071a33,#123b62 62%,#951a25);
+}
+.hero:after{
+  background:linear-gradient(90deg,var(--mfga-red) 0 33%,#fff 33% 66%,var(--mfga-blue) 66%);
+}
+.hero .kicker{color:#fff}
+.section:before{
+  background:linear-gradient(90deg,var(--mfga-navy) 0 34%,var(--mfga-red) 34% 67%,var(--mfga-blue) 67%);
+}
+.section-head h2{color:var(--mfga-navy)}
+.section-head small{color:var(--mfga-red)}
+.card{border-top-color:var(--mfga-blue)}
+.card.dark{border-top-color:var(--mfga-red)}
+button,.btn{background:var(--mfga-red);border-color:var(--mfga-red)}
+button:hover,.btn:hover{background:var(--mfga-navy);border-color:var(--mfga-navy)}
+table th{background:var(--mfga-navy)!important}
+.hall-banner-grid{
+  border-top-color:var(--mfga-red);
+  background:linear-gradient(180deg,#eef3f8,#fff);
+}
+
+/* Key Highlights — gold typography, stronger pop */
+.key-highlights,
+#key-highlights,
+.highlights{
+  border:3px solid var(--mfga-navy);
+  background:linear-gradient(180deg,#f7f9fb,#fff);
+  padding:14px;
+  box-shadow:0 6px 0 rgba(11,31,58,.10);
+}
+.key-highlights .headline,
+#key-highlights .headline,
+.highlights .headline{
+  border:2px solid var(--mfga-blue);
+  border-left:6px solid var(--mfga-red);
+  background:var(--mfga-navy);
+  padding:13px 15px;
+  margin:0;
+  box-shadow:0 3px 0 rgba(11,31,58,.08);
+}
+.key-highlights .headline + .headline,
+#key-highlights .headline + .headline,
+.highlights .headline + .headline{margin-top:9px}
+.key-highlights .headline b,
+#key-highlights .headline b,
+.highlights .headline b{
+  color:#c7a24a;
+  font-weight:900;
+}
+.key-highlights .headline span,
+#key-highlights .headline span,
+.highlights .headline span{
+  color:#fff;
+}
+
+
+/* MFGA FINAL RED / WHITE / BLUE */
+.hero:before{display:none!important}
+body:after{background:linear-gradient(90deg,#c5222d 0 33.33%,#fff 33.33% 66.66%,#174d82 66.66%)!important}
+header,.header{border-bottom-color:#c5222d!important}
+.nav a:hover,.nav a.active{border-bottom-color:#c5222d!important}
+.hero:after{background:linear-gradient(90deg,#c5222d 0 33%,#fff 33% 66%,#174d82 66%)!important}
+.section:before{background:linear-gradient(90deg,#0b1f3a 0 34%,#c5222d 34% 67%,#174d82 67%)!important}
+.section-head small{color:#c5222d!important}
+.card{border-top-color:#174d82!important}
+.card.dark{border-top-color:#c5222d!important}
+
+/* Key Highlights */
+.key-highlights-card{
+ border:3px solid #0b1f3a!important;background:#eef2f6!important;
+ padding:14px!important;box-shadow:0 6px 0 rgba(11,31,58,.12)!important;
+}
+.key-highlights-card>h3{color:#0b1f3a!important;border-bottom:3px solid #c5222d!important;padding-bottom:8px!important}
+.key-highlights-card .headline{
+ display:block!important;border:2px solid #174d82!important;border-left:7px solid #c5222d!important;
+ background:#0b1f3a!important;padding:14px 16px!important;margin:0!important;
+}
+.key-highlights-card .headline+.headline{margin-top:10px!important}
+.key-highlights-card .headline b,.key-highlights-card .headline span{
+ color:#d1ad55!important;-webkit-text-fill-color:#d1ad55!important;
+}
+.key-highlights-card .headline span{display:block!important;margin-top:5px!important;font-weight:700!important}
+
+/* 2026 page */
+#page-season .weekly-matchups{border-top:4px solid #c5222d!important}
+#page-season .card{border-top-color:#174d82!important}
+
 </style>
 
 <!-- MFGA Google Analytics -->
@@ -502,7 +1035,7 @@ table:has(#current-standings) thead th.sort-desc::after{
   <div class="topbar">
     <div class="brand"><img src="mfga-logo.png" alt="MFGA Fantasy Football League logo"><span class="x-badge">X</span></div>
     <nav class="nav">
-    <a href="#home" data-page="home">Home</a><a href="#season" data-page="home" data-scroll="season" data-scroll="season">2026 Season</a><a href="#meet" data-page="meet">Meet the League</a><a href="#hall-of-champions" data-page="hall-of-champions">Hall of Champions</a><a href="#record-history" data-page="record-history">Record History</a><a href="#rules" data-page="rules">Rules &amp; Info</a><a href="#drafts" data-page="drafts">Draft Boards</a>
+    <a href="#home" data-page="home">Home</a><a href="#season" data-page="season">2026 Season</a><a href="#meet" data-page="meet">Meet the League</a><a href="#hall-of-champions" data-page="hall-of-champions">Hall of Champions</a><a href="#record-history" data-page="record-history">Record History</a><a href="#rules" data-page="rules">Rules &amp; Info</a><a href="#drafts" data-page="drafts">Draft Boards</a>
     </nav>
   </div>
 </header>
@@ -543,16 +1076,15 @@ table:has(#current-standings) thead th.sort-desc::after{
 <main class="wrap">
 <div id="page-home" class="page active">
 
-  <section class="section" id="season">
+  <section class="section" id="home-weekly">
   
 
 <div class="card dark key-highlights-card" style="margin-top:15px">
   <h3>Key Highlights</h3>
   <div class="headline"><b>Grasso enters MFGA X as reigning champion.</b><span>2025 title over Skin, 147–114.4.</span></div>
   <div class="headline"><b>Draft order is set.</b><span>Filippo, Nicky, Tone, Frankie, Carmelo, Martir, Melio, Mark, Antonio, Berger, Skin, Grasso.</span></div>
-  <div class="headline"><b>Keepers Lock August 24th at Noon</b><span>Week 2 preseason ends 8/23. If your keeper gets hurt, you can change your keeper for 1rd pick earlier than they were drafted.</span></div>
-  <div class="headline"><b>Draft Day Agenda</b><span>Arrive as early as you want, order food by 1pm, Draft by 2pm.</span></div>
-  <div class="headline"><b>Website is out</b><span>Save or Bookmark this link. Updates will happen live, I will send refresh updates when needed.</span></div>
+  <div class="headline"><b>One keeper.</b><span>Round 3 or later; keeper must remain on your roster all year.</span></div>
+  <div class="headline"><b>No draft-pick trading.</b><span>All trades are decided by league vote.</span></div>
 </div>
 
 <div class="card keeper-card" style="margin-top:15px">
@@ -587,11 +1119,19 @@ table:has(#current-standings) thead th.sort-desc::after{
   <div class="keeper-footer"><span><b>KEEPER RULE</b> One keeper drafted Round 3 or later.</span><span><b>STATUS</b> Updated weekly</span></div>
 </div>
 
+</section>
+</div>
+
+
+
+
+
+<section class="section page" id="page-season">
 <div class="section-head"><h2 class="display">2026 Season</h2><small>Current league center</small></div>
 
   <div class="weekly-matchups">
   <div class="section-head">
-    <h2 class="display">THIS WEEK'S MATCHUPS</h2>
+    <h2 id="this-weeks-matchups" class="display">THIS WEEK'S MATCHUPS</h2>
     <small>WEEK 1 · 2026 SEASON</small>
   </div>
   <div class="matchup-grid">
@@ -698,12 +1238,8 @@ table:has(#current-standings) thead th.sort-desc::after{
     <p style="font:10px 'IBM Plex Mono';color:#777;margin-bottom:0">P1/P2 = pick within a division; DL = divisional leader game. Division members play twice, rivals twice, everyone else once.</p>
   </div>
 
+
 </section>
-</div>
-
-
-
-
 <section class="section page" id="page-meet">
   <div class="section-head"><h2 class="display">Meet the League</h2><small>MFGA members · current &amp; historical</small></div>
   <div class="card" style="margin-bottom:15px"><p style="margin:0;color:#69737b;font-size:12px">Click any member to open their MFGA career homepage — records, championships, division titles, playoff history and season-by-season results. Former members are shown in italics.</p></div>
@@ -715,23 +1251,21 @@ table:has(#current-standings) thead th.sort-desc::after{
 
 <section class="section page" id="page-hall-of-champions">
   <div class="section-head"><h2 class="display">Hall of Champions</h2><small>MFGA Championship History</small></div>
-<div class="hall-banner-grid" id="hall-banner-grid">
-  <div class="hall-banner-row">
-    <img class="hall-banner" src="1.png" alt="MFGA Championship Season 1">
-    <img class="hall-banner" src="2.png" alt="MFGA Championship Season 2">
-    <img class="hall-banner" src="3.png" alt="MFGA Championship Season 3">
-    <img class="hall-banner" src="4.png" alt="MFGA Championship Season 4">
-    <img class="hall-banner" src="5.png" alt="MFGA Championship Season 5">
-    <img class="hall-banner" src="6.png" alt="MFGA Championship Season 6">
+  <div class="hall-banner-grid">
+    <div class="hall-banner-row hall-banner-row-1">
+      <img src="hall-of-champions/1.png" alt="MFGA Season 1 Champion">
+      <img src="hall-of-champions/2.png" alt="MFGA Season 2 Champion">
+      <img src="hall-of-champions/3.png" alt="MFGA Season 3 Champion">
+      <img src="hall-of-champions/4.png" alt="MFGA Season 4 Champion">
+      <img src="hall-of-champions/5.png" alt="MFGA Season 5 Champion">
+      <img src="hall-of-champions/6.png" alt="MFGA Season 6 Champion">
+    </div>
+    <div class="hall-banner-row hall-banner-row-2">
+      <img src="hall-of-champions/7.png" alt="MFGA Season 7 Champion">
+      <img src="hall-of-champions/8.png" alt="MFGA Season 8 Champion">
+      <img src="hall-of-champions/9.png" alt="MFGA Season 9 Champion">
+    </div>
   </div>
-  <div class="hall-banner-row bottom">
-    <img class="hall-banner" src="7.png" alt="MFGA Championship Season 7">
-    <img class="hall-banner" src="8.png" alt="MFGA Championship Season 8">
-    <img class="hall-banner" src="9.png" alt="MFGA Championship Season 9">
-  </div>
-</div>
-
-  
   <div class="card" style="margin-top:22px"><p style="font-size:12px;color:#666;margin-top:0">Every MFGA champion and championship matchup, from 2017 through the latest completed season.</p><div id="hall-of-champions-list"></div></div>
 </section>
 
@@ -839,7 +1373,7 @@ table:has(#current-standings) thead th.sort-desc::after{
 <footer><strong>Let's Make Football Great Again</strong>MFGA X · Est. 2017 · Official League Headquarters</footer>
 
 <script>
-const DATA = {"regszn":[["Frankie","43","27","0",".614","8,719.7","8,061.5","+658.2","124.6","115.2","70","5"],["Skin","68","51","3",".570","15,136.8","14,450.8","+686.0","124.1","118.4","122","9"],["Antonio","68","54","0",".557","15,046.7","14,424.1","+622.6","123.3","118.2","122","9"],["Melio","43","40","0",".518","10,342.8","10,486.7","\u2212143.9","124.6","126.3","83","6"],["Filippo","63","59","0",".516","14,668.3","14,126.3","+542.0","120.2","115.8","122","9"],["Martir","62","60","0",".508","14,341.8","14,611.3","\u2212269.5","117.6","119.8","122","9"],["Carmelo","60","61","1",".496","13,966.4","14,385.0","\u2212418.6","114.5","117.9","122","9"],["Berger","54","55","0",".495","12,626.8","13,196.6","\u2212569.8","115.8","121.1","109","8"],["Mark","32","34","0",".485","7,647.1","7,583.1","+64.0","115.9","114.9","66","5"],["Nicky","6","8","0",".429","1,613.7","1,682.2","\u221268.5","115.3","120.2","14","1"],["Grasso","10","18","0",".357","3,152.3","3,348.5","\u2212196.2","112.6","119.6","28","2"],["Tone","5","9","0",".357","1,599.8","1,790.4","\u2212190.6","114.3","127.9","14","1"],["Lorenzo*","8","5","0",".615","1,484.0","1,329.0","+155","114.2","102.2","13","1"],["Coupe*","54","54","0",".500","12,786.9","12,565.1","+221.8","118.4","116.3","108","8"],["Pete*","13","13","0",".500","2,934.5","2,831.5","+103","112.9","108.9","26","2"],["Gallo*","49","57","2",".463","12,840.0","12,759.2","+80.8","118.9","118.1","108","8"],["Matt*","38","57","0",".400","10,452.5","11,324.1","\u2212871.6","110.0","119.2","95","7"],["Rinaldi*","40","54","0",".426","10,990.5","11,395.2","\u2212404.7","116.9","121.2","94","7"]],"playoffs":[["Grasso","3","0","1.000","3","521.7","341","180.7","173.9","113.7","1","2","0.500","1","1","1.000","1.000"],["Melio","5","2",".714","7","976.1","886.5","89.6","139.4","126.6","4","6",".667","2","2","1.000",".500"],["Antonio","8","4",".667","12","1647.3","1507.1","140.2","137.3","125.6","6","9",".667","2","3",".667",".333"],["Skin","6","5",".545","11","1388","1334.8","53.2","126.2","121.3","6","9",".667","1","2",".500",".167"],["Filippo","5","5",".500","10","1329.8","1333.1","\u22121.2","133.0","133.1","5","9",".556","0","2","0.000","0.000"],["Frankie","2","4",".333","6","644.1","769.2","\u2212125.1","107.4","128.2","4","5",".800","0","1","0.000","0.000"],["Martir","2","5",".286","7","834.6","866.7","\u221232.1","119.2","123.8","5","9",".556","0","1","0.000","0.000"],["Carmelo","0","4",".000","4","472.1","618.9","\u2212146.8","118.0","154.7","4","9",".444","0","0","#DIV/0!","0.000"],["Berger","0","3",".000","3","304.9","453.7","\u2212148.8","101.6","151.2","3","8",".375","0","0","#DIV/0!","0.000"],["Mark","0","2",".000","2","205","310.7","\u221229","83","112","2","5",".400","0","0","#DIV/0!","0.000"],["Nicky","0","0","\u2014","0","0","0","0","\u2014","\u2014","0","1","0.000","0","0","#DIV/0!","#DIV/0!"],["Tone","0","0","\u2014","0","0","0","0","\u2014","\u2014","0","1","0.000","0","0","#DIV/0!","#DIV/0!"],["Matt*","3","0","1.000","3","394.5","325.5","69","131.5","108.5","1","7",".143","1","1","1.000","1.000"],["Rinaldi*","4","1",".800","5","754.2","659","95","150.8","131.8","2","7",".286","1","1","1.000",".500"],["Coupe*","4","3",".571","7","868.1","912.9","\u221244.8","124.0","130.4","4","8",".500","1","3",".333",".250"],["Gallo*","3","5",".375","8","967.7","965.1","2.6","121.0","120.6","5","8",".625","0","1","0.000","0.000"],["Pete*","0","1","0.000","1","118","128","\u221210","118","128","1","2",".500","0","0","#DIV/0!","0.000"],["Lorenzo*","0","1","0.000","1","112","128","\u221216","112","128","1","1","1.000","0","0","#DIV/0!","0.000"]],"champions":[[2025,"Anthony Grasso (I Chase Brown Ladds Lol)","Skin (Brooklyn $kin)","147 \u2013 114.4","Chase Brown (31.6)","Jaylen Waddle (0.7)","Michael Berger (Thomas The Tank Engine) 10\u20134","Mark Farrell (JJ and Farrell, LLP) 1841.6","Filippo Gallo (Eat My Josh) 4\u201310","Carmelo Mazzaferro (Don Nabers) 1483","Jonathan Taylor (Colts)"],[2024,"Matt Melio (Just Gibb Me My Money)","Filippo Gallo (April LaPorta)","203.4 \u2013 87.1","Joe Burrow (46)","Colts D/ST (\u22124)","Skin (Brooklyn $kin) 13\u20131","Skin (Brooklyn $kin) 1971","Joe Coupe (Walking Demon) 2\u201312","Anthony Grasso (See Me Next Year) 1322","Ja'Marr Chase (Bengals)"],[2023,"Antonio Pisano (AMON Another Level)","Joe Coupe (Hamlin's Cardio Club)","178.4 \u2013 108.7","Kyren Williams (30.1)","Cole Kmet (0)","Joe Coupe (Hamlin's Cardio Club) 11\u20133","Skin (Brooklyn $kin) 1937.1","Carmelo Mazzaferro (Just Joshin) 3\u201311","Matt Coupe (Baby Coupes) 1359","Damar Hamlin (Bills)"],[2022,"Skin (Brooklyn $kin)","Frankie Saracino (Josh Me Off)","161.3 \u2013 121.6*","Tom Brady (46.9)","Bills vs Bengals game suspended","Anthony Gallo (I'm The Chico) 11\u20133","Anthony Gallo (I'm The Chico) 1940.5","Joe Martir (Make A Wish) 3\u201311","Matt Coupe (Baby Coupes) 1413.9","Justin Jefferson (Vikings)"],[2021,"Matt Melio (CeeDeez Nuts)","Anthony Gallo (I'm A Dog Woof)","129.6 \u2013 111.4","Russell Wilson (29.9)","Ezekiel Elliott (4 Points)","Matt Melio (CeeDeez Nuts) 13\u20131","Matt Melio (CeeDeez Nuts) 2102.2","Joe Coupe (Walking Demon) 3\u201311","Joe Coupe (Walking Demon) 1420.2","Jonathan Taylor (Colts)"],[2020,"Matt Coupe (Kansas City Coupes)","Filippo Gallo (Brooklyn Shem)","115.5 \u2013 102","Stefon Diggs (43.5)","Derrick Henry (9 Points)","Joe Coupe (Walking Demons) 10\u20133","Carmelo Mazzaferro (The Cinderella Story) 1690","Matt Melio (Team Grapee) 1\u201312","Mark Farrell (The Magic Pen Factory) 1238","Antonio Brown (Buccaneers)"],[2019,"Joe Rinaldi (Coopers Troopers)","Joe Martir (Make A Wish)","140.5 \u2013 135.5","Michael Thomas (33.5)","Emmanuel Sanders (9 Points)","Filippo Gallo (Brooklyn Shem) 10\u20133","Filippo Gallo (Brooklyn Shem) 1770.5","Pete Caleca (Cosby's Dealer) 3\u201310","Pete Caleca (Cosby's Dealer) 1226","Dalvin Cook (Vikings)"],[2018,"Joe Coupe (Aaron Hernandez Pinata Co.)","Antonio Pisano (The McCaffinator)","171 \u2013 169","Antonio Brown (43.5)","Stefon Diggs (9 Points)","Joe Coupe (Aaron Hernandez Pinata Co.) 10\u20133","Antonio Pisano (The McCaffinator) 1878","Joe Rinaldi (2Gurleys 1 Cup) 2\u201311","Anthony Gallo (Thailand Cave Wonderers) 1339","James Conner (Steelers)"],[2017,"Antonio Pisano (Show Me The Money)","Joe Coupe (James White Power)","115 \u2013 102","CJ Anderson (25)","Antonio Brown (0 \u00b7 Hurt)","Joe Coupe (James White Power) 9\u20134","Filippo Gallo (Brooklyn BBC) 1547","Joe Rinaldi (2Gurleys 1 Cup) 3\u201310","Joe Rinaldi (2Gurleys 1 Cup) 1268","Alvin Kamara (Saints)"]],"divisions":[["2017","Coupe","Lorenzo","\u2014","\u2014"],["2018","Coupe","Pete","Martir","Filippo"],["2019","Filippo","Antonio","\u2014","\u2014"],["2020","Coupe","Berger","\u2014","\u2014"],["2021","Melio","Gallo","Skin","\u2014"],["2022","Gallo","Frankie","Filippo","\u2014"],["2023","Coupe","Skin","Antonio","\u2014"],["2024","Skin","Martir","Filippo","Melio"],["2025","Berger","Antonio","Mark","Melio"]],"placement_counts":{"Antonio":{"1":2,"2":1,"4":2,"6":1,"7":1,"8":1,"11":1},"Martir":{"2":1,"3":1,"4":1,"6":2,"8":2,"11":1,"12":1},"Filippo":{"2":2,"3":1,"4":1,"6":1,"9":1,"10":2,"12":1},"Berger":{"3":1,"4":1,"5":1,"8":1,"9":3,"11":1},"Skin":{"1":1,"2":1,"3":1,"6":1,"7":2,"8":1},"Carmelo":{"5":4,"7":2,"8":1,"11":1,"12":1},"Melio":{"1":2,"5":1,"6":1,"9":1,"12":1},"Frankie":{"2":1,"4":1,"5":1,"6":1,"7":1},"Grasso":{"1":1,"10":1},"Mark":{"5":1,"6":1,"7":2,"10":1},"Nicky":{"9":1},"Tone":{"10":1},"Gallo*":{"2":1,"3":1,"4":2,"6":1,"9":1,"10":1,"12":1},"Coupe*":{"1":1,"2":2,"3":1,"9":1,"10":1,"11":1,"12":1},"Matt*":{"1":1,"8":2,"10":1,"11":3},"Rinaldi*":{"1":1,"4":1,"7":1,"8":1,"9":1,"10":1,"12":1},"Lorenzo*":{"3":1},"Pete*":{"5":1,"12":1}},"history":{"Antonio":[[2017,8,5,0],[2018,8,5,0],[2019,10,3,0],[2020,3,10,0],[2021,6,8,0],[2022,7,7,0],[2023,9,5,0],[2024,8,6,0],[2025,9,5,0]],"Martir":[[2017,6,7,0],[2018,10,3,0],[2019,8,5,0],[2020,8,5,0],[2021,7,7,0],[2022,3,11,0],[2023,6,8,0],[2024,9,5,0],[2025,5,9,0]],"Filippo":[[2017,6,7,0],[2018,6,7,0],[2019,10,3,0],[2020,9,4,0],[2021,5,9,0],[2022,10,4,0],[2023,4,10,0],[2024,9,5,0],[2025,4,10,0]],"Berger":[[2018,6,7,0],[2019,5,8,0],[2020,10,3,0],[2021,6,8,0],[2022,4,10,0],[2023,9,5,0],[2024,4,10,0],[2025,10,4,0]],"Skin":[[2017,6,6,1],[2018,5,7,1],[2019,7,6,0],[2020,5,7,1],[2021,7,7,0],[2022,7,7,0],[2023,9,5,0],[2024,13,1,0],[2025,9,5,0]],"Carmelo":[[2017,7,6,0],[2018,2,11,0],[2019,9,4,0],[2020,9,3,1],[2021,7,7,0],[2022,7,7,0],[2023,3,11,0],[2024,10,4,0],[2025,6,8,0]],"Melio":[[2020,1,12,0],[2021,13,1,0],[2022,7,7,0],[2023,5,9,0],[2024,9,5,0],[2025,8,6,0]],"Frankie":[[2021,8,6,0],[2022,11,3,0],[2023,9,5,0],[2024,9,5,0],[2025,6,8,0]],"Grasso":[[2024,3,11,0],[2025,7,7,0]],"Mark":[[2017,5,8,0],[2018,7,6,0],[2019,7,6,0],[2020,4,9,0],[2025,9,5,0]],"Nicky":[[2025,6,8,0]],"Tone":[[2025,5,9,0]],"Gallo":[[2017,6,6,1],[2018,6,6,1],[2019,3,10,0],[2020,4,9,0],[2021,9,5,0],[2022,11,3,0],[2023,8,6,0],[2024,2,12,0]],"Coupe":[[2017,9,4,0],[2018,10,3,0],[2019,4,9,0],[2020,10,3,0],[2021,3,11,0],[2022,5,9,0],[2023,11,3,0],[2024,2,12,0]],"Matt":[[2018,5,8,0],[2019,3,10,0],[2020,9,4,0],[2021,5,9,0],[2022,6,8,0],[2023,4,10,0],[2024,6,8,0]],"Rinaldi":[[2017,3,10,0],[2018,2,11,0],[2019,9,4,0],[2020,5,8,0],[2021,8,6,0],[2022,6,8,0],[2023,7,7,0]],"Lorenzo":[[2017,8,5,0]],"Pete":[[2018,10,3,0],[2019,3,10,0]]},"schedule":{"Berger":["RIVAL","P1 (1)","Antonio","P2 (1)","P1 (4)","P1 (3)","P2 (2)","Mark","P1 (2)","P2 (3)","P2 (4)","P2 (1)","Melio","P1 (1)"],"P1 (1)":["RIVAL","Berger","P2 (1)","P1 (2)","P2 (4)","P2 (3)","Antonio","P1 (3)","P2 (2)","Mark","Melio","P1 (4)","P2 (1)","Berger"],"P2 (1)":["RIVAL","P2 (2)","P1 (1)","Berger","Melio","Mark","P1 (2)","P2 (3)","Antonio","P1 (3)","P1 (4)","Berger","P1 (1)","P2 (4)"],"Antonio":["RIVAL","P1 (2)","Berger","P2 (2)","P2 (3)","P2 (4)","P1 (1)","Melio","P2 (1)","P1 (4)","P1 (3)","P2 (2)","Mark","P1 (2)"],"P1 (2)":["RIVAL","Antonio","P2 (2)","P1 (1)","Mark","Melio","P2 (1)","P1 (4)","Berger","P2 (4)","P2 (3)","P1 (3)","P2 (2)","Antonio"],"P2 (2)":["RIVAL","P2 (1)","P1 (2)","Antonio","P1 (3)","P1 (4)","Berger","P2 (4)","P1 (1)","Melio","Mark","Antonio","P1 (2)","P2 (3)"],"Mark":["RIVAL","P1 (3)","Melio","P2 (3)","P1 (2)","P2 (1)","P2 (4)","Berger","P1 (4)","P1 (1)","P2 (2)","P2 (3)","Antonio","P1 (3)"],"P1 (3)":["RIVAL","Mark","P2 (3)","P1 (4)","P2 (2)","Berger","Melio","P1 (1)","P2 (4)","P2 (1)","Antonio","P1 (2)","P2 (3)","Mark"],"P2 (3)":["RIVAL","P2 (4)","P1 (3)","Mark","Antonio","P1 (1)","P1 (4)","P2 (1)","Melio","Berger","P1 (2)","Mark","P1 (3)","P2 (2)"],"Melio":["RIVAL","P1 (4)","Mark","P2 (4)","P2 (1)","P1 (2)","P1 (3)","Antonio","P2 (3)","P2 (2)","P1 (1)","P2 (4)","Berger","P1 (4)"],"P1 (4)":["RIVAL","Melio","P2 (4)","P1 (3)","Berger","P2 (2)","P2 (3)","P1 (2)","Mark","Antonio","P2 (1)","P1 (1)","P2 (4)","Melio"],"P2 (4)":["RIVAL","P2 (3)","P1 (4)","Melio","P1 (1)","Antonio","Mark","P2 (2)","P1 (3)","P1 (2)","Berger","Melio","P1 (4)","P2 (1)"]},"h2h_reg":{"Antonio|Martir":[9,8,0],"Martir|Antonio":[8,9,0],"Antonio|Filippo":[5,5,0],"Filippo|Antonio":[5,5,0],"Antonio|Berger":[6,5,0],"Berger|Antonio":[5,6,0],"Antonio|Skin":[3,7,0],"Skin|Antonio":[7,3,0],"Antonio|Carmelo":[7,1,0],"Carmelo|Antonio":[1,7,0],"Antonio|Melio":[4,5,0],"Melio|Antonio":[5,4,0],"Antonio|Frankie":[3,2,0],"Frankie|Antonio":[2,3,0],"Antonio|Grasso":[2,2,0],"Grasso|Antonio":[2,2,0],"Antonio|Mark":[5,3,0],"Mark|Antonio":[3,5,0],"Antonio|Nicky":[1,0,0],"Nicky|Antonio":[0,1,0],"Antonio|Tone":[0,1,0],"Tone|Antonio":[1,0,0],"Martir|Filippo":[4,3,0],"Filippo|Martir":[3,4,0],"Martir|Berger":[3,8,0],"Berger|Martir":[8,3,0],"Martir|Skin":[5,4,0],"Skin|Martir":[4,5,0],"Martir|Carmelo":[3,3,0],"Carmelo|Martir":[3,3,0],"Martir|Melio":[5,4,0],"Melio|Martir":[4,5,0],"Martir|Frankie":[3,3,0],"Frankie|Martir":[3,3,0],"Martir|Grasso":[2,1,0],"Grasso|Martir":[1,2,0],"Martir|Mark":[3,4,0],"Mark|Martir":[4,3,0],"Martir|Nicky":[0,1,0],"Nicky|Martir":[1,0,0],"Martir|Tone":[0,1,0],"Tone|Martir":[1,0,0],"Filippo|Berger":[3,6,0],"Berger|Filippo":[6,3,0],"Filippo|Skin":[7,8,0],"Skin|Filippo":[8,7,0],"Filippo|Carmelo":[6,10,0],"Carmelo|Filippo":[10,6,0],"Filippo|Melio":[5,1,0],"Melio|Filippo":[1,5,0],"Filippo|Frankie":[2,3,0],"Frankie|Filippo":[3,2,0],"Filippo|Grasso":[3,0,0],"Grasso|Filippo":[0,3,0],"Filippo|Mark":[1,4,0],"Mark|Filippo":[4,1,0],"Filippo|Nicky":[0,1,0],"Nicky|Filippo":[1,0,0],"Filippo|Tone":[0,2,0],"Tone|Filippo":[2,0,0],"Berger|Skin":[4,8,0],"Skin|Berger":[8,4,0],"Berger|Carmelo":[6,6,0],"Carmelo|Berger":[6,6,0],"Berger|Melio":[3,4,0],"Melio|Berger":[4,3,0],"Berger|Frankie":[4,3,0],"Frankie|Berger":[3,4,0],"Berger|Grasso":[1,1,0],"Grasso|Berger":[1,1,0],"Berger|Mark":[4,2,0],"Mark|Berger":[2,4,0],"Berger|Nicky":[1,0,0],"Nicky|Berger":[0,1,0],"Berger|Tone":[1,0,0],"Tone|Berger":[0,1,0],"Skin|Carmelo":[8,8,1],"Carmelo|Skin":[8,8,1],"Skin|Melio":[4,1,0],"Melio|Skin":[1,4,0],"Skin|Frankie":[3,3,0],"Frankie|Skin":[3,3,0],"Skin|Grasso":[2,0,0],"Grasso|Skin":[0,2,0],"Skin|Mark":[3,3,0],"Mark|Skin":[3,3,0],"Skin|Nicky":[0,1,0],"Nicky|Skin":[1,0,0],"Skin|Tone":[1,0,0],"Tone|Skin":[0,1,0],"Carmelo|Melio":[2,4,0],"Melio|Carmelo":[4,2,0],"Carmelo|Frankie":[1,4,0],"Frankie|Carmelo":[4,1,0],"Carmelo|Grasso":[2,1,0],"Grasso|Carmelo":[1,2,0],"Carmelo|Mark":[4,2,0],"Mark|Carmelo":[2,4,0],"Carmelo|Nicky":[1,0,0],"Nicky|Carmelo":[0,1,0],"Carmelo|Tone":[1,0,0],"Tone|Carmelo":[0,1,0],"Melio|Frankie":[4,4,0],"Frankie|Melio":[4,4,0],"Melio|Grasso":[2,0,0],"Grasso|Melio":[0,2,0],"Melio|Mark":[1,2,0],"Mark|Melio":[2,1,0],"Melio|Nicky":[1,1,0],"Nicky|Melio":[1,1,0],"Melio|Tone":[1,1,0],"Tone|Melio":[1,1,0],"Frankie|Grasso":[1,1,0],"Grasso|Frankie":[1,1,0],"Frankie|Mark":[1,0,0],"Mark|Frankie":[0,1,0],"Frankie|Nicky":[2,0,0],"Nicky|Frankie":[0,2,0],"Frankie|Tone":[1,0,0],"Tone|Frankie":[0,1,0],"Grasso|Mark":[1,0,0],"Mark|Grasso":[0,1,0],"Grasso|Nicky":[1,0,0],"Nicky|Grasso":[0,1,0],"Grasso|Tone":[1,0,0],"Tone|Grasso":[0,1,0],"Mark|Nicky":[1,0,0],"Nicky|Mark":[0,1,0],"Mark|Tone":[1,0,0],"Tone|Mark":[0,1,0],"Nicky|Tone":[2,0,0],"Tone|Nicky":[0,2,0],"Mark|Gallo":[1,3,0],"Gallo|Mark":[3,1,0],"Mark|Coupe":[0,3,0],"Coupe|Mark":[3,0,0],"Mark|Matt":[3,2,0],"Matt|Mark":[2,3,0],"Mark|Lorenzo":[1,1,0],"Lorenzo|Mark":[1,1,0],"Mark|Pete":[2,2,0],"Pete|Mark":[2,2,0],"Mark|Rinaldi":[3,0,0],"Rinaldi|Mark":[0,3,0],"Nicky|Gallo":[0,0,0],"Gallo|Nicky":[0,0,0],"Tone|Gallo":[0,0,0],"Gallo|Tone":[0,0,0],"Gallo|Coupe":[4,7,0],"Coupe|Gallo":[7,4,0],"Gallo|Matt":[3,2,0],"Matt|Gallo":[2,3,0],"Gallo|Lorenzo":[0,1,0],"Lorenzo|Gallo":[1,0,0],"Gallo|Pete":[0,1,0],"Pete|Gallo":[1,0,0],"Gallo|Rinaldi":[8,5,0],"Rinaldi|Gallo":[5,8,0],"Coupe|Matt":[6,5,0],"Matt|Coupe":[5,6,0],"Coupe|Lorenzo":[0,1,0],"Lorenzo|Coupe":[1,0,0],"Coupe|Pete":[0,1,0],"Pete|Coupe":[1,0,0],"Coupe|Rinaldi":[6,4,0],"Rinaldi|Coupe":[4,6,0],"Matt|Pete":[1,3,0],"Pete|Matt":[3,1,0],"Matt|Rinaldi":[3,3,0],"Rinaldi|Matt":[3,3,0],"Lorenzo|Rinaldi":[1,0,0],"Rinaldi|Lorenzo":[0,1,0],"Pete|Rinaldi":[1,2,0],"Rinaldi|Pete":[2,1,0],"Gallo|Antonio":[5,6,0],"Antonio|Gallo":[6,5,0],"Gallo|Martir":[5,5,0],"Martir|Gallo":[5,5,0],"Gallo|Filippo":[5,6,0],"Filippo|Gallo":[6,5,0],"Gallo|Berger":[4,2,0],"Berger|Gallo":[2,4,0],"Gallo|Skin":[3,7,2],"Skin|Gallo":[7,3,2],"Gallo|Carmelo":[4,7,0],"Carmelo|Gallo":[7,4,0],"Gallo|Melio":[1,5,0],"Melio|Gallo":[5,1,0],"Gallo|Frankie":[2,2,0],"Frankie|Gallo":[2,2,0],"Gallo|Grasso":[0,1,0],"Grasso|Gallo":[1,0,0],"Coupe|Antonio":[4,2,0],"Antonio|Coupe":[2,4,0],"Coupe|Martir":[4,5,0],"Martir|Coupe":[5,4,0],"Coupe|Filippo":[5,7,0],"Filippo|Coupe":[7,5,0],"Coupe|Berger":[4,2,0],"Berger|Coupe":[2,4,0],"Coupe|Skin":[4,6,0],"Skin|Coupe":[6,4,0],"Coupe|Carmelo":[6,6,0],"Carmelo|Coupe":[6,6,0],"Coupe|Melio":[3,4,0],"Melio|Coupe":[4,3,0],"Coupe|Frankie":[0,7,0],"Frankie|Coupe":[7,0,0],"Coupe|Grasso":[2,0,0],"Grasso|Coupe":[0,2,0],"Matt|Antonio":[2,7,0],"Antonio|Matt":[7,2,0],"Matt|Martir":[4,6,0],"Martir|Matt":[6,4,0],"Matt|Filippo":[0,7,0],"Filippo|Matt":[7,0,0],"Matt|Berger":[5,6,0],"Berger|Matt":[6,5,0],"Matt|Skin":[3,1,0],"Skin|Matt":[1,3,0],"Matt|Carmelo":[3,2,0],"Carmelo|Matt":[2,3,0],"Matt|Melio":[4,5,0],"Melio|Matt":[5,4,0],"Matt|Frankie":[3,5,0],"Frankie|Matt":[5,3,0],"Matt|Grasso":[1,0,0],"Grasso|Matt":[0,1,0],"Lorenzo|Antonio":[1,1,0],"Antonio|Lorenzo":[1,1,0],"Lorenzo|Martir":[2,0,0],"Martir|Lorenzo":[0,2,0],"Lorenzo|Filippo":[1,0,0],"Filippo|Lorenzo":[0,1,0],"Lorenzo|Skin":[1,1,0],"Skin|Lorenzo":[1,1,0],"Lorenzo|Carmelo":[0,1,0],"Carmelo|Lorenzo":[1,0,0],"Pete|Antonio":[0,3,0],"Antonio|Pete":[3,0,0],"Pete|Martir":[0,3,0],"Martir|Pete":[3,0,0],"Pete|Filippo":[1,0,0],"Filippo|Pete":[0,1,0],"Pete|Berger":[2,0,0],"Berger|Pete":[0,2,0],"Pete|Skin":[1,0,0],"Skin|Pete":[0,1,0],"Pete|Carmelo":[1,1,0],"Carmelo|Pete":[1,1,0],"Rinaldi|Antonio":[3,4,0],"Antonio|Rinaldi":[4,3,0],"Rinaldi|Martir":[4,7,0],"Martir|Rinaldi":[7,4,0],"Rinaldi|Filippo":[3,8,0],"Filippo|Rinaldi":[8,3,0],"Rinaldi|Berger":[4,1,0],"Berger|Rinaldi":[1,4,0],"Rinaldi|Skin":[4,5,0],"Skin|Rinaldi":[5,4,0],"Rinaldi|Carmelo":[6,4,0],"Carmelo|Rinaldi":[4,6,0],"Rinaldi|Melio":[1,1,0],"Melio|Rinaldi":[1,1,0],"Rinaldi|Frankie":[1,2,0],"Frankie|Rinaldi":[2,1,0]},"h2h_play":{"Antonio|Martir":[1,1],"Martir|Antonio":[1,1],"Antonio|Filippo":[0,1],"Filippo|Antonio":[1,0],"Antonio|Skin":[2,1],"Skin|Antonio":[1,2],"Antonio|Gallo":[1,0],"Gallo|Antonio":[0,1],"Antonio|Coupe":[2,1],"Coupe|Antonio":[1,2],"Antonio|Lorenzo":[1,0],"Lorenzo|Antonio":[0,1],"Antonio|Pete":[1,0],"Pete|Antonio":[0,1],"Martir|Filippo":[0,1],"Filippo|Martir":[1,0],"Martir|Skin":[0,1],"Skin|Martir":[1,0],"Martir|Mark":[1,0],"Mark|Martir":[0,1],"Martir|Matt":[0,1],"Matt|Martir":[1,0],"Martir|Pete":[0,1],"Pete|Martir":[1,0],"Filippo|Carmelo":[1,0],"Carmelo|Filippo":[0,1],"Filippo|Melio":[0,1],"Melio|Filippo":[1,0],"Filippo|Frankie":[1,1],"Frankie|Filippo":[1,1],"Filippo|Gallo":[0,1],"Gallo|Filippo":[1,0],"Filippo|Coupe":[1,0],"Coupe|Filippo":[0,1],"Filippo|Matt":[0,1],"Matt|Filippo":[1,0],"Filippo|Rinaldi":[0,1],"Rinaldi|Filippo":[1,0],"Berger|Frankie":[0,1],"Frankie|Berger":[1,0],"Berger|Grasso":[0,1],"Grasso|Berger":[1,0],"Berger|Matt":[0,1],"Matt|Berger":[1,0],"Skin|Melio":[2,1],"Melio|Skin":[1,2],"Skin|Frankie":[1,0],"Frankie|Skin":[0,1],"Skin|Grasso":[0,1],"Grasso|Skin":[1,0],"Skin|Gallo":[1,1],"Gallo|Skin":[1,1],"Carmelo|Melio":[0,1],"Melio|Carmelo":[1,0],"Carmelo|Gallo":[0,1],"Gallo|Carmelo":[1,0],"Carmelo|Rinaldi":[0,1],"Rinaldi|Carmelo":[1,0],"Melio|Gallo":[1,0],"Gallo|Melio":[0,1],"Melio|Matt":[1,0],"Matt|Melio":[0,1],"Melio|Rinaldi":[1,0],"Rinaldi|Melio":[0,1],"Frankie|Gallo":[0,1],"Gallo|Frankie":[1,0],"Frankie|Coupe":[0,1],"Coupe|Frankie":[1,0],"Frankie|Rinaldi":[0,1],"Rinaldi|Frankie":[1,0],"Grasso|Mark":[1,0],"Mark|Grasso":[0,1],"Gallo|Coupe":[0,2],"Coupe|Gallo":[2,0],"Coupe|Mark":[0,2],"Mark|Coupe":[2,0]}};
+const DATA = {"regszn":[["Frankie","43","27","0",".614","8,719.7","8,061.5","+658.2","124.6","115.2","70","5"],["Skin","68","51","3",".570","15,136.8","14,450.8","+686.0","124.1","118.4","122","9"],["Antonio","68","54","0",".557","15,046.7","14,424.1","+622.6","123.3","118.2","122","9"],["Melio","43","40","0",".518","10,342.8","10,486.7","\u2212143.9","124.6","126.3","83","6"],["Fil","63","59","0",".516","14,668.3","14,126.3","+542.0","120.2","115.8","122","9"],["Martir","62","60","0",".508","14,341.8","14,611.3","\u2212269.5","117.6","119.8","122","9"],["Carmelo","60","61","1",".496","13,966.4","14,385.0","\u2212418.6","114.5","117.9","122","9"],["Berger","54","55","0",".495","12,626.8","13,196.6","\u2212569.8","115.8","121.1","109","8"],["Mark","32","34","0",".485","7,647.1","7,583.1","+64.0","115.9","114.9","66","5"],["Nicky","6","8","0",".429","1,613.7","1,682.2","\u221268.5","115.3","120.2","14","1"],["Grasso","10","18","0",".357","3,152.3","3,348.5","\u2212196.2","112.6","119.6","28","2"],["Tone","5","9","0",".357","1,599.8","1,790.4","\u2212190.6","114.3","127.9","14","1"],["Lorenzo*","8","5","0",".615","1,484.0","1,329.0","+155","114.2","102.2","13","1"],["Coupe*","54","54","0",".500","12,786.9","12,565.1","+221.8","118.4","116.3","108","8"],["Pete*","13","13","0",".500","2,934.5","2,831.5","+103","112.9","108.9","26","2"],["Gallo*","49","57","2",".463","12,840.0","12,759.2","+80.8","118.9","118.1","108","8"],["Matt*","38","57","0",".400","10,452.5","11,324.1","\u2212871.6","110.0","119.2","95","7"],["Rinaldi*","40","54","0",".426","10,990.5","11,395.2","\u2212404.7","116.9","121.2","94","7"]],"playoffs":[["Grasso","3","0","1.000","3","521.7","341","180.7","173.9","113.7","1","2","0.500","1","1","1.000","1.000"],["Melio","5","2",".714","7","976.1","886.5","89.6","139.4","126.6","4","6",".667","2","2","1.000",".500"],["Antonio","8","4",".667","12","1647.3","1507.1","140.2","137.3","125.6","6","9",".667","2","3",".667",".333"],["Skin","6","5",".545","11","1388","1334.8","53.2","126.2","121.3","6","9",".667","1","2",".500",".167"],["Fil","5","5",".500","10","1329.8","1333.1","\u22121.2","133.0","133.1","5","9",".556","0","2","0.000","0.000"],["Frankie","2","4",".333","6","644.1","769.2","\u2212125.1","107.4","128.2","4","5",".800","0","1","0.000","0.000"],["Martir","2","5",".286","7","834.6","866.7","\u221232.1","119.2","123.8","5","9",".556","0","1","0.000","0.000"],["Carmelo","0","4",".000","4","472.1","618.9","\u2212146.8","118.0","154.7","4","9",".444","0","0","#DIV/0!","0.000"],["Berger","0","3",".000","3","304.9","453.7","\u2212148.8","101.6","151.2","3","8",".375","0","0","#DIV/0!","0.000"],["Mark","0","2",".000","2","205","310.7","\u221229","83","112","2","5",".400","0","0","#DIV/0!","0.000"],["Nicky","0","0","\u2014","0","0","0","0","\u2014","\u2014","0","1","0.000","0","0","#DIV/0!","#DIV/0!"],["Tone","0","0","\u2014","0","0","0","0","\u2014","\u2014","0","1","0.000","0","0","#DIV/0!","#DIV/0!"],["Matt*","3","0","1.000","3","394.5","325.5","69","131.5","108.5","1","7",".143","1","1","1.000","1.000"],["Rinaldi*","4","1",".800","5","754.2","659","95","150.8","131.8","2","7",".286","1","1","1.000",".500"],["Coupe*","4","3",".571","7","868.1","912.9","\u221244.8","124.0","130.4","4","8",".500","1","3",".333",".250"],["Gallo*","3","5",".375","8","967.7","965.1","2.6","121.0","120.6","5","8",".625","0","1","0.000","0.000"],["Pete*","0","1","0.000","1","118","128","\u221210","118","128","1","2",".500","0","0","#DIV/0!","0.000"],["Lorenzo*","0","1","0.000","1","112","128","\u221216","112","128","1","1","1.000","0","0","#DIV/0!","0.000"]],"champions":[[2025,"Anthony Grasso (I Chase Brown Ladds Lol)","Skin (Brooklyn $kin)","147 \u2013 114.4","Chase Brown (31.6)","Jaylen Waddle (0.7)","Michael Berger (Thomas The Tank Engine) 10\u20134","Mark Farrell (JJ and Farrell, LLP) 1841.6","Filippo Gallo (Eat My Josh) 4\u201310","Carmelo Mazzaferro (Don Nabers) 1483","Jonathan Taylor (Colts)"],[2024,"Matt Melio (Just Gibb Me My Money)","Filippo Gallo (April LaPorta)","203.4 \u2013 87.1","Joe Burrow (46)","Colts D/ST (\u22124)","Skin (Brooklyn $kin) 13\u20131","Skin (Brooklyn $kin) 1971","Joe Coupe (Walking Demon) 2\u201312","Anthony Grasso (See Me Next Year) 1322","Ja'Marr Chase (Bengals)"],[2023,"Antonio Pisano (AMON Another Level)","Joe Coupe (Hamlin's Cardio Club)","178.4 \u2013 108.7","Kyren Williams (30.1)","Cole Kmet (0)","Joe Coupe (Hamlin's Cardio Club) 11\u20133","Skin (Brooklyn $kin) 1937.1","Carmelo Mazzaferro (Just Joshin) 3\u201311","Matt Coupe (Baby Coupes) 1359","Damar Hamlin (Bills)"],[2022,"Skin (Brooklyn $kin)","Frankie Saracino (Josh Me Off)","161.3 \u2013 121.6*","Tom Brady (46.9)","Bills vs Bengals game suspended","Anthony Gallo (I'm The Chico) 11\u20133","Anthony Gallo (I'm The Chico) 1940.5","Joe Martir (Make A Wish) 3\u201311","Matt Coupe (Baby Coupes) 1413.9","Justin Jefferson (Vikings)"],[2021,"Matt Melio (CeeDeez Nuts)","Anthony Gallo (I'm A Dog Woof)","129.6 \u2013 111.4","Russell Wilson (29.9)","Ezekiel Elliott (4 Points)","Matt Melio (CeeDeez Nuts) 13\u20131","Matt Melio (CeeDeez Nuts) 2102.2","Joe Coupe (Walking Demon) 3\u201311","Joe Coupe (Walking Demon) 1420.2","Jonathan Taylor (Colts)"],[2020,"Matt Coupe (Kansas City Coupes)","Filippo Gallo (Brooklyn Shem)","115.5 \u2013 102","Stefon Diggs (43.5)","Derrick Henry (9 Points)","Joe Coupe (Walking Demons) 10\u20133","Carmelo Mazzaferro (The Cinderella Story) 1690","Matt Melio (Team Grapee) 1\u201312","Mark Farrell (The Magic Pen Factory) 1238","Antonio Brown (Buccaneers)"],[2019,"Joe Rinaldi (Coopers Troopers)","Joe Martir (Make A Wish)","140.5 \u2013 135.5","Michael Thomas (33.5)","Emmanuel Sanders (9 Points)","Filippo Gallo (Brooklyn Shem) 10\u20133","Filippo Gallo (Brooklyn Shem) 1770.5","Pete Caleca (Cosby's Dealer) 3\u201310","Pete Caleca (Cosby's Dealer) 1226","Dalvin Cook (Vikings)"],[2018,"Joe Coupe (Aaron Hernandez Pinata Co.)","Antonio Pisano (The McCaffinator)","171 \u2013 169","Antonio Brown (43.5)","Stefon Diggs (9 Points)","Joe Coupe (Aaron Hernandez Pinata Co.) 10\u20133","Antonio Pisano (The McCaffinator) 1878","Joe Rinaldi (2Gurleys 1 Cup) 2\u201311","Anthony Gallo (Thailand Cave Wonderers) 1339","James Conner (Steelers)"],[2017,"Antonio Pisano (Show Me The Money)","Joe Coupe (James White Power)","115 \u2013 102","CJ Anderson (25)","Antonio Brown (0 \u00b7 Hurt)","Joe Coupe (James White Power) 9\u20134","Filippo Gallo (Brooklyn BBC) 1547","Joe Rinaldi (2Gurleys 1 Cup) 3\u201310","Joe Rinaldi (2Gurleys 1 Cup) 1268","Alvin Kamara (Saints)"]],"divisions":[["2017","Coupe","Lorenzo","\u2014","\u2014"],["2018","Coupe","Pete","Martir","Filippo"],["2019","Filippo","Antonio","\u2014","\u2014"],["2020","Coupe","Berger","\u2014","\u2014"],["2021","Melio","Gallo","Skin","\u2014"],["2022","Gallo","Frankie","Filippo","\u2014"],["2023","Coupe","Skin","Antonio","\u2014"],["2024","Skin","Martir","Filippo","Melio"],["2025","Berger","Antonio","Mark","Melio"]],"placement_counts":{"Antonio":{"1":2,"2":1,"4":2,"6":1,"7":1,"8":1,"11":1},"Martir":{"2":1,"3":1,"4":1,"6":2,"8":2,"11":1,"12":1},"Fil":{"2":2,"3":1,"4":1,"6":1,"9":1,"10":2,"12":1},"Berger":{"3":1,"4":1,"5":1,"8":1,"9":3,"11":1},"Skin":{"1":1,"2":1,"3":1,"6":1,"7":2,"8":1},"Carmelo":{"5":4,"7":2,"8":1,"11":1,"12":1},"Melio":{"1":2,"5":1,"6":1,"9":1,"12":1},"Frankie":{"2":1,"4":1,"5":1,"6":1,"7":1},"Grasso":{"1":1,"10":1},"Mark":{"5":1,"6":1,"7":2,"10":1},"Nicky":{"9":1},"Tone":{"10":1},"Gallo*":{"2":1,"3":1,"4":2,"6":1,"9":1,"10":1,"12":1},"Coupe*":{"1":1,"2":2,"3":1,"9":1,"10":1,"11":1,"12":1},"Matt*":{"1":1,"8":2,"10":1,"11":3},"Rinaldi*":{"1":1,"4":1,"7":1,"8":1,"9":1,"10":1,"12":1},"Lorenzo*":{"3":1},"Pete*":{"5":1,"12":1}},"history":{"Antonio":[[2017,8,5,0],[2018,8,5,0],[2019,10,3,0],[2020,3,10,0],[2021,6,8,0],[2022,7,7,0],[2023,9,5,0],[2024,8,6,0],[2025,9,5,0]],"Martir":[[2017,6,7,0],[2018,10,3,0],[2019,8,5,0],[2020,8,5,0],[2021,7,7,0],[2022,3,11,0],[2023,6,8,0],[2024,9,5,0],[2025,5,9,0]],"Fil":[[2017,6,7,0],[2018,6,7,0],[2019,10,3,0],[2020,9,4,0],[2021,5,9,0],[2022,10,4,0],[2023,4,10,0],[2024,9,5,0],[2025,4,10,0]],"Berger":[[2018,6,7,0],[2019,5,8,0],[2020,10,3,0],[2021,6,8,0],[2022,4,10,0],[2023,9,5,0],[2024,4,10,0],[2025,10,4,0]],"Skin":[[2017,6,6,1],[2018,5,7,1],[2019,7,6,0],[2020,5,7,1],[2021,7,7,0],[2022,7,7,0],[2023,9,5,0],[2024,13,1,0],[2025,9,5,0]],"Carmelo":[[2017,7,6,0],[2018,2,11,0],[2019,9,4,0],[2020,9,3,1],[2021,7,7,0],[2022,7,7,0],[2023,3,11,0],[2024,10,4,0],[2025,6,8,0]],"Melio":[[2020,1,12,0],[2021,13,1,0],[2022,7,7,0],[2023,5,9,0],[2024,9,5,0],[2025,8,6,0]],"Frankie":[[2021,8,6,0],[2022,11,3,0],[2023,9,5,0],[2024,9,5,0],[2025,6,8,0]],"Grasso":[[2024,3,11,0],[2025,7,7,0]],"Mark":[[2017,5,8,0],[2018,7,6,0],[2019,7,6,0],[2020,4,9,0],[2025,9,5,0]],"Nicky":[[2025,6,8,0]],"Tone":[[2025,5,9,0]],"Gallo":[[2017,6,6,1],[2018,6,6,1],[2019,3,10,0],[2020,4,9,0],[2021,9,5,0],[2022,11,3,0],[2023,8,6,0],[2024,2,12,0]],"Coupe":[[2017,9,4,0],[2018,10,3,0],[2019,4,9,0],[2020,10,3,0],[2021,3,11,0],[2022,5,9,0],[2023,11,3,0],[2024,2,12,0]],"Matt":[[2018,5,8,0],[2019,3,10,0],[2020,9,4,0],[2021,5,9,0],[2022,6,8,0],[2023,4,10,0],[2024,6,8,0]],"Rinaldi":[[2017,3,10,0],[2018,2,11,0],[2019,9,4,0],[2020,5,8,0],[2021,8,6,0],[2022,6,8,0],[2023,7,7,0]],"Lorenzo":[[2017,8,5,0]],"Pete":[[2018,10,3,0],[2019,3,10,0]]},"schedule":{"Berger":["RIVAL","P1 (1)","Antonio","P2 (1)","P1 (4)","P1 (3)","P2 (2)","Mark","P1 (2)","P2 (3)","P2 (4)","P2 (1)","Melio","P1 (1)"],"P1 (1)":["RIVAL","Berger","P2 (1)","P1 (2)","P2 (4)","P2 (3)","Antonio","P1 (3)","P2 (2)","Mark","Melio","P1 (4)","P2 (1)","Berger"],"P2 (1)":["RIVAL","P2 (2)","P1 (1)","Berger","Melio","Mark","P1 (2)","P2 (3)","Antonio","P1 (3)","P1 (4)","Berger","P1 (1)","P2 (4)"],"Antonio":["RIVAL","P1 (2)","Berger","P2 (2)","P2 (3)","P2 (4)","P1 (1)","Melio","P2 (1)","P1 (4)","P1 (3)","P2 (2)","Mark","P1 (2)"],"P1 (2)":["RIVAL","Antonio","P2 (2)","P1 (1)","Mark","Melio","P2 (1)","P1 (4)","Berger","P2 (4)","P2 (3)","P1 (3)","P2 (2)","Antonio"],"P2 (2)":["RIVAL","P2 (1)","P1 (2)","Antonio","P1 (3)","P1 (4)","Berger","P2 (4)","P1 (1)","Melio","Mark","Antonio","P1 (2)","P2 (3)"],"Mark":["RIVAL","P1 (3)","Melio","P2 (3)","P1 (2)","P2 (1)","P2 (4)","Berger","P1 (4)","P1 (1)","P2 (2)","P2 (3)","Antonio","P1 (3)"],"P1 (3)":["RIVAL","Mark","P2 (3)","P1 (4)","P2 (2)","Berger","Melio","P1 (1)","P2 (4)","P2 (1)","Antonio","P1 (2)","P2 (3)","Mark"],"P2 (3)":["RIVAL","P2 (4)","P1 (3)","Mark","Antonio","P1 (1)","P1 (4)","P2 (1)","Melio","Berger","P1 (2)","Mark","P1 (3)","P2 (2)"],"Melio":["RIVAL","P1 (4)","Mark","P2 (4)","P2 (1)","P1 (2)","P1 (3)","Antonio","P2 (3)","P2 (2)","P1 (1)","P2 (4)","Berger","P1 (4)"],"P1 (4)":["RIVAL","Melio","P2 (4)","P1 (3)","Berger","P2 (2)","P2 (3)","P1 (2)","Mark","Antonio","P2 (1)","P1 (1)","P2 (4)","Melio"],"P2 (4)":["RIVAL","P2 (3)","P1 (4)","Melio","P1 (1)","Antonio","Mark","P2 (2)","P1 (3)","P1 (2)","Berger","Melio","P1 (4)","P2 (1)"]},"h2h_reg":{"Antonio|Martir":[9,8,0],"Martir|Antonio":[8,9,0],"Antonio|Fil":[5,5,0],"Fil|Antonio":[5,5,0],"Antonio|Berger":[6,5,0],"Berger|Antonio":[5,6,0],"Antonio|Skin":[3,7,0],"Skin|Antonio":[7,3,0],"Antonio|Carmelo":[7,1,0],"Carmelo|Antonio":[1,7,0],"Antonio|Melio":[4,5,0],"Melio|Antonio":[5,4,0],"Antonio|Frankie":[3,2,0],"Frankie|Antonio":[2,3,0],"Antonio|Grasso":[2,2,0],"Grasso|Antonio":[2,2,0],"Antonio|Mark":[5,3,0],"Mark|Antonio":[3,5,0],"Antonio|Nicky":[1,0,0],"Nicky|Antonio":[0,1,0],"Antonio|Tone":[0,1,0],"Tone|Antonio":[1,0,0],"Martir|Fil":[4,3,0],"Fil|Martir":[3,4,0],"Martir|Berger":[3,8,0],"Berger|Martir":[8,3,0],"Martir|Skin":[5,4,0],"Skin|Martir":[4,5,0],"Martir|Carmelo":[3,3,0],"Carmelo|Martir":[3,3,0],"Martir|Melio":[5,4,0],"Melio|Martir":[4,5,0],"Martir|Frankie":[3,3,0],"Frankie|Martir":[3,3,0],"Martir|Grasso":[2,1,0],"Grasso|Martir":[1,2,0],"Martir|Mark":[3,4,0],"Mark|Martir":[4,3,0],"Martir|Nicky":[0,1,0],"Nicky|Martir":[1,0,0],"Martir|Tone":[0,1,0],"Tone|Martir":[1,0,0],"Fil|Berger":[3,6,0],"Berger|Fil":[6,3,0],"Fil|Skin":[7,8,0],"Skin|Fil":[8,7,0],"Fil|Carmelo":[6,10,0],"Carmelo|Fil":[10,6,0],"Fil|Melio":[5,1,0],"Melio|Fil":[1,5,0],"Fil|Frankie":[2,3,0],"Frankie|Fil":[3,2,0],"Fil|Grasso":[3,0,0],"Grasso|Fil":[0,3,0],"Fil|Mark":[1,4,0],"Mark|Fil":[4,1,0],"Fil|Nicky":[0,1,0],"Nicky|Fil":[1,0,0],"Fil|Tone":[0,2,0],"Tone|Fil":[2,0,0],"Berger|Skin":[4,8,0],"Skin|Berger":[8,4,0],"Berger|Carmelo":[6,6,0],"Carmelo|Berger":[6,6,0],"Berger|Melio":[3,4,0],"Melio|Berger":[4,3,0],"Berger|Frankie":[4,3,0],"Frankie|Berger":[3,4,0],"Berger|Grasso":[1,1,0],"Grasso|Berger":[1,1,0],"Berger|Mark":[4,2,0],"Mark|Berger":[2,4,0],"Berger|Nicky":[1,0,0],"Nicky|Berger":[0,1,0],"Berger|Tone":[1,0,0],"Tone|Berger":[0,1,0],"Skin|Carmelo":[8,8,1],"Carmelo|Skin":[8,8,1],"Skin|Melio":[4,1,0],"Melio|Skin":[1,4,0],"Skin|Frankie":[3,3,0],"Frankie|Skin":[3,3,0],"Skin|Grasso":[2,0,0],"Grasso|Skin":[0,2,0],"Skin|Mark":[3,3,0],"Mark|Skin":[3,3,0],"Skin|Nicky":[0,1,0],"Nicky|Skin":[1,0,0],"Skin|Tone":[1,0,0],"Tone|Skin":[0,1,0],"Carmelo|Melio":[2,4,0],"Melio|Carmelo":[4,2,0],"Carmelo|Frankie":[1,4,0],"Frankie|Carmelo":[4,1,0],"Carmelo|Grasso":[2,1,0],"Grasso|Carmelo":[1,2,0],"Carmelo|Mark":[4,2,0],"Mark|Carmelo":[2,4,0],"Carmelo|Nicky":[1,0,0],"Nicky|Carmelo":[0,1,0],"Carmelo|Tone":[1,0,0],"Tone|Carmelo":[0,1,0],"Melio|Frankie":[4,4,0],"Frankie|Melio":[4,4,0],"Melio|Grasso":[2,0,0],"Grasso|Melio":[0,2,0],"Melio|Mark":[1,2,0],"Mark|Melio":[2,1,0],"Melio|Nicky":[1,1,0],"Nicky|Melio":[1,1,0],"Melio|Tone":[1,1,0],"Tone|Melio":[1,1,0],"Frankie|Grasso":[1,1,0],"Grasso|Frankie":[1,1,0],"Frankie|Mark":[1,0,0],"Mark|Frankie":[0,1,0],"Frankie|Nicky":[2,0,0],"Nicky|Frankie":[0,2,0],"Frankie|Tone":[1,0,0],"Tone|Frankie":[0,1,0],"Grasso|Mark":[1,0,0],"Mark|Grasso":[0,1,0],"Grasso|Nicky":[1,0,0],"Nicky|Grasso":[0,1,0],"Grasso|Tone":[1,0,0],"Tone|Grasso":[0,1,0],"Mark|Nicky":[1,0,0],"Nicky|Mark":[0,1,0],"Mark|Tone":[1,0,0],"Tone|Mark":[0,1,0],"Nicky|Tone":[2,0,0],"Tone|Nicky":[0,2,0],"Mark|Gallo":[1,3,0],"Gallo|Mark":[3,1,0],"Mark|Coupe":[0,3,0],"Coupe|Mark":[3,0,0],"Mark|Matt":[3,2,0],"Matt|Mark":[2,3,0],"Mark|Lorenzo":[1,1,0],"Lorenzo|Mark":[1,1,0],"Mark|Pete":[2,2,0],"Pete|Mark":[2,2,0],"Mark|Rinaldi":[3,0,0],"Rinaldi|Mark":[0,3,0],"Nicky|Gallo":[0,0,0],"Gallo|Nicky":[0,0,0],"Tone|Gallo":[0,0,0],"Gallo|Tone":[0,0,0],"Gallo|Coupe":[4,7,0],"Coupe|Gallo":[7,4,0],"Gallo|Matt":[3,2,0],"Matt|Gallo":[2,3,0],"Gallo|Lorenzo":[0,1,0],"Lorenzo|Gallo":[1,0,0],"Gallo|Pete":[0,1,0],"Pete|Gallo":[1,0,0],"Gallo|Rinaldi":[8,5,0],"Rinaldi|Gallo":[5,8,0],"Coupe|Matt":[6,5,0],"Matt|Coupe":[5,6,0],"Coupe|Lorenzo":[0,1,0],"Lorenzo|Coupe":[1,0,0],"Coupe|Pete":[0,1,0],"Pete|Coupe":[1,0,0],"Coupe|Rinaldi":[6,4,0],"Rinaldi|Coupe":[4,6,0],"Matt|Pete":[1,3,0],"Pete|Matt":[3,1,0],"Matt|Rinaldi":[3,3,0],"Rinaldi|Matt":[3,3,0],"Lorenzo|Rinaldi":[1,0,0],"Rinaldi|Lorenzo":[0,1,0],"Pete|Rinaldi":[1,2,0],"Rinaldi|Pete":[2,1,0],"Gallo|Antonio":[5,6,0],"Antonio|Gallo":[6,5,0],"Gallo|Martir":[5,5,0],"Martir|Gallo":[5,5,0],"Gallo|Fil":[5,6,0],"Fil|Gallo":[6,5,0],"Gallo|Berger":[4,2,0],"Berger|Gallo":[2,4,0],"Gallo|Skin":[3,7,2],"Skin|Gallo":[7,3,2],"Gallo|Carmelo":[4,7,0],"Carmelo|Gallo":[7,4,0],"Gallo|Melio":[1,5,0],"Melio|Gallo":[5,1,0],"Gallo|Frankie":[2,2,0],"Frankie|Gallo":[2,2,0],"Gallo|Grasso":[0,1,0],"Grasso|Gallo":[1,0,0],"Coupe|Antonio":[4,2,0],"Antonio|Coupe":[2,4,0],"Coupe|Martir":[4,5,0],"Martir|Coupe":[5,4,0],"Coupe|Fil":[5,7,0],"Fil|Coupe":[7,5,0],"Coupe|Berger":[4,2,0],"Berger|Coupe":[2,4,0],"Coupe|Skin":[4,6,0],"Skin|Coupe":[6,4,0],"Coupe|Carmelo":[6,6,0],"Carmelo|Coupe":[6,6,0],"Coupe|Melio":[3,4,0],"Melio|Coupe":[4,3,0],"Coupe|Frankie":[0,7,0],"Frankie|Coupe":[7,0,0],"Coupe|Grasso":[2,0,0],"Grasso|Coupe":[0,2,0],"Matt|Antonio":[2,7,0],"Antonio|Matt":[7,2,0],"Matt|Martir":[4,6,0],"Martir|Matt":[6,4,0],"Matt|Fil":[0,7,0],"Fil|Matt":[7,0,0],"Matt|Berger":[5,6,0],"Berger|Matt":[6,5,0],"Matt|Skin":[3,1,0],"Skin|Matt":[1,3,0],"Matt|Carmelo":[3,2,0],"Carmelo|Matt":[2,3,0],"Matt|Melio":[4,5,0],"Melio|Matt":[5,4,0],"Matt|Frankie":[3,5,0],"Frankie|Matt":[5,3,0],"Matt|Grasso":[1,0,0],"Grasso|Matt":[0,1,0],"Lorenzo|Antonio":[1,1,0],"Antonio|Lorenzo":[1,1,0],"Lorenzo|Martir":[2,0,0],"Martir|Lorenzo":[0,2,0],"Lorenzo|Fil":[1,0,0],"Fil|Lorenzo":[0,1,0],"Lorenzo|Skin":[1,1,0],"Skin|Lorenzo":[1,1,0],"Lorenzo|Carmelo":[0,1,0],"Carmelo|Lorenzo":[1,0,0],"Pete|Antonio":[0,3,0],"Antonio|Pete":[3,0,0],"Pete|Martir":[0,3,0],"Martir|Pete":[3,0,0],"Pete|Fil":[1,0,0],"Fil|Pete":[0,1,0],"Pete|Berger":[2,0,0],"Berger|Pete":[0,2,0],"Pete|Skin":[1,0,0],"Skin|Pete":[0,1,0],"Pete|Carmelo":[1,1,0],"Carmelo|Pete":[1,1,0],"Rinaldi|Antonio":[3,4,0],"Antonio|Rinaldi":[4,3,0],"Rinaldi|Martir":[4,7,0],"Martir|Rinaldi":[7,4,0],"Rinaldi|Fil":[3,8,0],"Fil|Rinaldi":[8,3,0],"Rinaldi|Berger":[4,1,0],"Berger|Rinaldi":[1,4,0],"Rinaldi|Skin":[4,5,0],"Skin|Rinaldi":[5,4,0],"Rinaldi|Carmelo":[6,4,0],"Carmelo|Rinaldi":[4,6,0],"Rinaldi|Melio":[1,1,0],"Melio|Rinaldi":[1,1,0],"Rinaldi|Frankie":[1,2,0],"Frankie|Rinaldi":[2,1,0]},"h2h_play":{"Antonio|Martir":[1,1],"Martir|Antonio":[1,1],"Antonio|Fil":[0,1],"Fil|Antonio":[1,0],"Antonio|Skin":[2,1],"Skin|Antonio":[1,2],"Antonio|Gallo":[1,0],"Gallo|Antonio":[0,1],"Antonio|Coupe":[2,1],"Coupe|Antonio":[1,2],"Antonio|Lorenzo":[1,0],"Lorenzo|Antonio":[0,1],"Antonio|Pete":[1,0],"Pete|Antonio":[0,1],"Martir|Fil":[0,1],"Fil|Martir":[1,0],"Martir|Skin":[0,1],"Skin|Martir":[1,0],"Martir|Mark":[1,0],"Mark|Martir":[0,1],"Martir|Matt":[0,1],"Matt|Martir":[1,0],"Martir|Pete":[0,1],"Pete|Martir":[1,0],"Fil|Carmelo":[1,0],"Carmelo|Fil":[0,1],"Fil|Melio":[0,1],"Melio|Fil":[1,0],"Fil|Frankie":[1,1],"Frankie|Fil":[1,1],"Fil|Gallo":[0,1],"Gallo|Fil":[1,0],"Fil|Coupe":[1,0],"Coupe|Fil":[0,1],"Fil|Matt":[0,1],"Matt|Fil":[1,0],"Fil|Rinaldi":[0,1],"Rinaldi|Fil":[1,0],"Berger|Frankie":[0,1],"Frankie|Berger":[1,0],"Berger|Grasso":[0,1],"Grasso|Berger":[1,0],"Berger|Matt":[0,1],"Matt|Berger":[1,0],"Skin|Melio":[2,1],"Melio|Skin":[1,2],"Skin|Frankie":[1,0],"Frankie|Skin":[0,1],"Skin|Grasso":[0,1],"Grasso|Skin":[1,0],"Skin|Gallo":[1,1],"Gallo|Skin":[1,1],"Carmelo|Melio":[0,1],"Melio|Carmelo":[1,0],"Carmelo|Gallo":[0,1],"Gallo|Carmelo":[1,0],"Carmelo|Rinaldi":[0,1],"Rinaldi|Carmelo":[1,0],"Melio|Gallo":[1,0],"Gallo|Melio":[0,1],"Melio|Matt":[1,0],"Matt|Melio":[0,1],"Melio|Rinaldi":[1,0],"Rinaldi|Melio":[0,1],"Frankie|Gallo":[0,1],"Gallo|Frankie":[1,0],"Frankie|Coupe":[0,1],"Coupe|Frankie":[1,0],"Frankie|Rinaldi":[0,1],"Rinaldi|Frankie":[1,0],"Grasso|Mark":[1,0],"Mark|Grasso":[0,1],"Gallo|Coupe":[0,2],"Coupe|Gallo":[2,0],"Coupe|Mark":[0,2],"Mark|Coupe":[2,0]}};
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const target=document.getElementById('page-'+page);
@@ -859,9 +1393,9 @@ function showPage(page){
 }
 document.querySelectorAll('[data-page]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault(); showPage(el.dataset.page); const scroll=el.dataset.scroll; if(scroll){setTimeout(()=>document.getElementById(scroll)?.scrollIntoView({behavior:'smooth',block:'start'}),120);}}));
 document.querySelectorAll('[data-page-jump]').forEach(el=>el.addEventListener('click',()=>showPage(el.dataset.pageJump)));
-const activeMembers=["Antonio","Martir","Filippo","Berger","Skin","Carmelo","Melio","Frankie","Grasso","Mark","Nicky","Tone","Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"];
+const activeMembers=["Antonio","Martir","Fil","Berger","Skin","Carmelo","Melio","Frankie","Grasso","Mark","Nicky","Tone","Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"];
 const formerMembers=new Set(["Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"]);
-const fullNames={Antonio:"Antonio Pisano",Martir:"Joe Martir",Filippo:"Filippo Gallo",Berger:"Michael Berger",Skin:'Anthony "Skin" Gallo',Carmelo:"Carmelo Mazzaferro",Melio:"Matt Melio",Frankie:"Frankie Saracino",Grasso:"Anthony Grasso",Mark:"Mark Farrell",Nicky:"Nick Antioco",Tone:"Antonio Martir",Gallo:"Anthony Gallo",Coupe:"Joe Coupe",Matt:"Matt Coupe",Lorenzo:"Lorenzo Pisano",Pete:"Pete Caleca",Rinaldi:"Joe Rinaldi"};
+const fullNames={Antonio:"Antonio Pisano",Martir:"Joe Martir",Fil:"Filippo Gallo",Berger:"Michael Berger",Skin:'Anthony "Skin" Gallo',Carmelo:"Carmelo Mazzaferro",Melio:"Matt Melio",Frankie:"Frankie Saracino",Grasso:"Anthony Grasso",Mark:"Mark Farrell",Nicky:"Nick Antioco",Tone:"Antonio Martir",Gallo:"Anthony Gallo",Coupe:"Joe Coupe",Matt:"Matt Coupe",Lorenzo:"Lorenzo Pisano",Pete:"Pete Caleca",Rinaldi:"Joe Rinaldi"};
 const roles={Antonio:"Commissioner",Grasso:"Reigning Champion"};
 const memberDirectory=document.getElementById('member-directory');
 const profileContent=document.getElementById('profile-content');
@@ -870,16 +1404,16 @@ function regRow(name){return DATA.regszn.find(r=>cleanName(r[0])===name)}
 function poRow(name){return DATA.playoffs.find(r=>cleanName(r[0])===name)}
 function profileData(name){
  const r=regRow(name),po=poRow(name),historyKey=Object.keys(DATA.history).find(k=>k.replace(/\*$/,'')===name),seasons=historyKey?DATA.history[historyKey]:[];
- const champAliases={Skin:['Skin','Anthony "Skin" Gallo'],Antonio:['Antonio','Antonio Pisano'],Martir:['Martir','Joe Martir'],Filippo:['Filippo','Filippo Gallo'],Berger:['Berger','Michael Berger'],Carmelo:['Carmelo','Carmelo Mazzaferro'],Melio:['Melio','Matt Melio'],Frankie:['Frankie','Frankie Saracino'],Grasso:['Grasso','Anthony Grasso'],Mark:['Mark','Mark Farrell'],Nicky:['Nicky','Nick Antioco'],Tone:['Tone','Antonio Martir'],Gallo:['Gallo','Anthony Gallo'],Coupe:['Coupe','Joe Coupe'],Matt:['Matt','Matt Coupe'],Lorenzo:['Lorenzo','Lorenzo Pisano'],Pete:['Pete','Pete Caleca'],Rinaldi:['Rinaldi','Joe Rinaldi']};
+ const champAliases={Skin:['Skin','Anthony "Skin" Gallo'],Antonio:['Antonio','Antonio Pisano'],Martir:['Martir','Joe Martir'],Fil:['Fil','Filippo Gallo'],Berger:['Berger','Michael Berger'],Carmelo:['Carmelo','Carmelo Mazzaferro'],Melio:['Melio','Matt Melio'],Frankie:['Frankie','Frankie Saracino'],Grasso:['Grasso','Anthony Grasso'],Mark:['Mark','Mark Farrell'],Nicky:['Nicky','Nick Antioco'],Tone:['Tone','Antonio Martir'],Gallo:['Gallo','Anthony Gallo'],Coupe:['Coupe','Joe Coupe'],Matt:['Matt','Matt Coupe'],Lorenzo:['Lorenzo','Lorenzo Pisano'],Pete:['Pete','Pete Caleca'],Rinaldi:['Rinaldi','Joe Rinaldi']};
 const champs=DATA.champions.filter(c=>{const winner=String(c[1]).split(' (')[0].trim(); return (champAliases[name]||[fullNames[name]||name]).includes(winner);});
- const divAliases={Filippo:['Filippo','Filippo'],Martir:['Martir'],Antonio:['Antonio'],Berger:['Berger'],Skin:['Skin'],Carmelo:['Carmelo'],Melio:['Melio'],Frankie:['Frankie'],Grasso:['Grasso'],Mark:['Mark'],Nicky:['Nicky'],Tone:['Tone'],Gallo:['Gallo'],Coupe:['Coupe'],Matt:['Matt'],Lorenzo:['Lorenzo'],Pete:['Pete'],Rinaldi:['Rinaldi']}; const divs=DATA.divisions.filter(row=>(divAliases[name]||[name]).some(alias=>row.slice(1).includes(alias))).map(row=>row[0]);
+ const divAliases={Fil:['Fil','Filippo'],Martir:['Martir'],Antonio:['Antonio'],Berger:['Berger'],Skin:['Skin'],Carmelo:['Carmelo'],Melio:['Melio'],Frankie:['Frankie'],Grasso:['Grasso'],Mark:['Mark'],Nicky:['Nicky'],Tone:['Tone'],Gallo:['Gallo'],Coupe:['Coupe'],Matt:['Matt'],Lorenzo:['Lorenzo'],Pete:['Pete'],Rinaldi:['Rinaldi']}; const divs=DATA.divisions.filter(row=>(divAliases[name]||[name]).some(alias=>row.slice(1).includes(alias))).map(row=>row[0]);
  const h2h=Object.entries(DATA.h2h_reg).filter(([k])=>k.startsWith(name+'|'));
  return {r,po,seasons,champs,divs,h2h};
 }
 activeMembers.forEach((name,i)=>{const d=profileData(name),r=d.r;const card=document.createElement('div');card.className='member-card'+(formerMembers.has(name)?' former-member':'');card.innerHTML=`<div class="member-num">MEMBER ${String(i+1).padStart(2,'0')}</div><h3>${fullNames[name]}</h3><div class="role">${formerMembers.has(name)?'Former MFGA Member':(roles[name]||'MFGA Member')}</div><div class="mini"><span>${r[1]}–${r[2]}${r[3]?`–${r[3]}`:''}</span><span>${r[4]} WIN%</span><span>${d.champs.length} CHAMP${d.champs.length===1?'':'S'}</span><span>${d.divs.length} DIVISION TITLES</span></div><div class="profile-link">VIEW MFGA PROFILE →</div>`;card.addEventListener('click',()=>showProfile(name));memberDirectory.appendChild(card)});
 function showProfile(name){if(typeof gtag==='function'){gtag('event','view_member_profile',{member_name:fullNames[name]||name});} const d=profileData(name),r=d.r,po=d.po;const seasonRows=d.seasons.slice().reverse().map(x=>{const cls=(seasonOutcome[String(x[0])]||{})[name]||'';return `<tr class="${cls}"><td>${x[0]}</td><td>${x[1]}–${x[2]}${x[3]?`–${x[3]}`:''}</td><td>${((x[1]+.5*x[3])/(x[1]+x[2]+x[3])).toFixed(3)}</td></tr>`}).join('');const accolades=[];d.champs.forEach(c=>accolades.push(`<div class="accolade"><b>🏆 ${c[0]} MFGA Championship</b><span>${c[3]}</span></div>`));d.divs.forEach(y=>accolades.push(`<div class="accolade"><b>🥇 ${y} Division Champion</b><span>Division title</span></div>`));if(po[10]>0)accolades.push(`<div class="accolade"><b>🏈 Playoff Appearances</b><span>${po[10]}</span></div>`);profileContent.innerHTML=`<div class="profile-hero"><div class="back" onclick="showPage('meet')">← BACK TO MEET THE LEAGUE</div><h1>${fullNames[name]}</h1><p>${formerMembers.has(name)?'Former MFGA Member':(roles[name]||'MFGA Member')} · ${d.seasons.length} recorded seasons</p><div class="profile-stats"><div class="profile-stat"><b>${r[1]}–${r[2]}${r[3]?`–${r[3]}`:''}</b><span>REGULAR-SEASON RECORD</span></div><div class="profile-stat"><b>${r[4]}</b><span>WIN %</span></div><div class="profile-stat"><b>${r[5]}</b><span>POINTS FOR</span></div><div class="profile-stat"><b>${r[6]}</b><span>POINTS AGAINST</span></div><div class="profile-stat"><b>${po[1]}–${po[2]}</b><span>PLAYOFF RECORD</span></div></div></div><div class="profile-grid"><div class="card"><h3>Accolades</h3>${accolades.join('')||'<div class="profile-note">No recorded accolades in the current Statbook data.</div>'}</div><div class="card"><h3>Career Snapshot</h3><div class="accolade"><b>Seasons</b><span>${d.seasons.length}</span></div><div class="accolade"><b>Playoff Appearances</b><span>${po[10]}</span></div><div class="accolade"><b>Playoff Win %</b><span>${po[3]}</span></div><div class="accolade"><b>Point Differential</b><span>${r[7]}</span></div><div class="accolade"><b>Avg. PF</b><span>${r[8]}</span></div></div></div><div class="card" style="margin-top:15px"><h3>Season History</h3><div class="season-history-legend"><span class="gold">Champion</span><span class="silver">Runner-up</span><span class="brown">Worst Record</span></div><div class="table-wrap"><table class="profile-table"><thead><tr><th>Year</th><th>Record</th><th>Win %</th></tr></thead><tbody>${seasonRows}</tbody></table></div></div><div class="card" style="margin-top:15px"><h3>Head-to-Head</h3><div class="table-wrap"><table class="profile-table"><thead><tr><th>Opponent</th><th>Record</th><th>Result</th></tr></thead><tbody>${d.h2h.map(([k,v])=>{const opp=k.split('|')[1],diff=v[0]-v[1];return `<tr><td>${fullNames[opp]||opp}</td><td>${v.join('–')}</td><td>${diff>0?'WIN':diff<0?'LOSS':(v[2]?'TIE':'EVEN')}</td></tr>`}).join('')}</tbody></table></div></div>`;showPage('profile')}
 
-const currentTeams=["Berger","Antonio","Mark","Melio","Frankie","Grasso","Skin","Filippo","Martir","Tone","Nicky","Carmelo"];
+const currentTeams=["Berger","Antonio","Mark","Melio","Frankie","Grasso","Skin","Fil","Martir","Tone","Nicky","Carmelo"];
 const divisionLeaders={blue:"Berger",green:"Antonio",red:"Mark",orange:"Melio"};
 const currentBody=document.getElementById('current-standings');
 const divisionFilter=document.getElementById('division-filter');
@@ -1003,7 +1537,7 @@ DATA.playoffs.forEach((r,i)=>{const tr=document.createElement('tr');if(r[0].incl
 })();
 
 function h2hTable(headId,bodyId,obj){
-  const teams=["Antonio","Martir","Filippo","Berger","Skin","Carmelo","Melio","Frankie","Grasso","Mark","Nicky","Tone","Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"];
+  const teams=["Antonio","Martir","Fil","Berger","Skin","Carmelo","Melio","Frankie","Grasso","Mark","Nicky","Tone","Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"];
   const inactive=new Set(["Gallo","Coupe","Matt","Lorenzo","Pete","Rinaldi"]);
   const blockedPairs=new Set(["Gallo|Tone","Tone|Gallo","Gallo|Nicky","Nicky|Gallo"]);
   // Only these three teams have a dedicated Tie column in the regular-season matrix.
@@ -1049,7 +1583,7 @@ const seasonOutcome={};
 const nameToTeam={
   "Antonio":"Antonio","Antonio Pisano":"Antonio",
   "Martir":"Martir","Joe Martir":"Martir",
-  "Filippo":"Filippo","Filippo Gallo":"Filippo",
+  "Fil":"Fil","Filippo Gallo":"Fil",
   "Berger":"Berger","Michael Berger":"Berger",
   "Skin":"Skin","Anthony \"Skin\" Gallo":"Skin",
   "Carmelo":"Carmelo","Carmelo Mazzaferro":"Carmelo",
@@ -1436,6 +1970,19 @@ function switchH2HTab(target, button){
     });
   });
 })();
+</script>
+
+
+<!-- MFGA 2026 Season target scroll -->
+<script>
+document.addEventListener('click', function(e){
+  const link=e.target.closest('a[data-target="this-weeks-matchups"]');
+  if(!link) return;
+  setTimeout(function(){
+    const target=document.getElementById('this-weeks-matchups');
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
+});
 </script>
 
 </body>
