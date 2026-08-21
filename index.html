@@ -1039,6 +1039,118 @@ header,.header{border-bottom-color:#c5222d!important}
   box-shadow:none!important;
 }
 
+
+/* HALL OF CHAMPIONS — BANNER IMAGE FIX */
+#page-hall-of-champions img{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+#page-hall-of-champions .hall-banner-grid{
+  display:grid!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:14px!important;
+  overflow:visible!important;
+}
+#page-hall-of-champions .hall-banner-grid > *{
+  min-width:0!important;
+}
+@media(max-width:900px){
+  #page-hall-of-champions .hall-banner-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+}
+@media(max-width:600px){
+  #page-hall-of-champions .hall-banner-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+
+/* HALL OF CHAMPIONS — CORRECT 6 / 3 ROW PLACEMENT */
+#page-hall-of-champions .hall-banner-grid{
+  display:block!important;
+  width:100%!important;
+  overflow:visible!important;
+  padding:18px!important;
+  box-sizing:border-box!important;
+}
+#page-hall-of-champions .hall-banner-row{
+  display:grid!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:14px!important;
+  width:100%!important;
+  align-items:start!important;
+}
+#page-hall-of-champions .hall-banner-row + .hall-banner-row{
+  margin-top:18px!important;
+}
+#page-hall-of-champions .hall-banner-row-2{
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+}
+#page-hall-of-champions .hall-banner-row-2 img:nth-child(1){grid-column:2!important}
+#page-hall-of-champions .hall-banner-row-2 img:nth-child(2){grid-column:3!important}
+#page-hall-of-champions .hall-banner-row-2 img:nth-child(3){grid-column:4!important}
+#page-hall-of-champions .hall-banner-row img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  min-width:0!important;
+  object-fit:contain!important;
+  margin:0!important;
+}
+@media(max-width:900px){
+  #page-hall-of-champions .hall-banner-row{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  #page-hall-of-champions .hall-banner-row-2 img:nth-child(1),
+  #page-hall-of-champions .hall-banner-row-2 img:nth-child(2),
+  #page-hall-of-champions .hall-banner-row-2 img:nth-child(3){
+    grid-column:auto!important;
+  }
+}
+@media(max-width:600px){
+  #page-hall-of-champions .hall-banner-row{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+
+/* HALL OF CHAMPIONS — TRUE CENTERED SECOND ROW */
+#page-hall-of-champions .hall-banner-row-2{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:flex-start!important;
+  gap:14px!important;
+}
+#page-hall-of-champions .hall-banner-row-2 img{
+  width:calc((100% - 70px)/6)!important;
+  flex:0 0 calc((100% - 70px)/6)!important;
+  max-width:calc((100% - 70px)/6)!important;
+  margin:0!important;
+}
+@media(max-width:900px){
+  #page-hall-of-champions .hall-banner-row-2{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  #page-hall-of-champions .hall-banner-row-2 img{
+    width:100%!important;
+    max-width:100%!important;
+    flex:none!important;
+  }
+}
+@media(max-width:600px){
+  #page-hall-of-champions .hall-banner-row-2{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
 </style>
 
 <!-- MFGA Google Analytics -->
