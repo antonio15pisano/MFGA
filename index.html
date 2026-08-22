@@ -1295,6 +1295,756 @@ header,.header{border-bottom-color:#c5222d!important}
   background:#f3f3f3!important;
 }
 
+
+/* Current Standings + Projected Playoff Picture */
+#page-season .season-dashboard-grid{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)!important;
+  gap:15px!important;
+  align-items:start!important;
+}
+#page-season .season-dashboard-grid .card{min-width:0!important}
+#page-season .season-dashboard-grid .table-wrap{overflow-x:visible!important}
+#page-season #current-standings{
+  width:100%!important;
+  min-width:0!important;
+  table-layout:fixed!important;
+}
+#page-season #current-standings th,
+#page-season #current-standings td{
+  white-space:nowrap!important;
+  padding-left:5px!important;
+  padding-right:5px!important;
+  font-size:10px!important;
+}
+#page-season #current-standings th:first-child,
+#page-season #current-standings td:first-child{width:26%!important}
+@media(max-width:900px){
+  #page-season .season-dashboard-grid{grid-template-columns:1fr!important}
+  #page-season .season-dashboard-grid .table-wrap{overflow-x:auto!important}
+  #page-season #current-standings{min-width:700px!important}
+}
+
+
+/* Current Standings — compact ranking/stat columns */
+#page-season #current-standings th:first-child,
+#page-season #current-standings td:first-child{
+  width:34%!important;
+  text-align:left!important;
+}
+#page-season #current-standings th:not(:first-child),
+#page-season #current-standings td:not(:first-child){
+  width:auto!important;
+  text-align:center!important;
+  padding-left:3px!important;
+  padding-right:3px!important;
+}
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:7%!important;
+}
+#page-season #current-standings th:nth-child(3),
+#page-season #current-standings td:nth-child(3){
+  width:10%!important;
+}
+#page-season #current-standings th:nth-child(4),
+#page-season #current-standings td:nth-child(4),
+#page-season #current-standings th:nth-child(5),
+#page-season #current-standings td:nth-child(5),
+#page-season #current-standings th:nth-child(6),
+#page-season #current-standings td:nth-child(6){
+  width:8%!important;
+}
+#page-season #current-standings th:nth-child(7),
+#page-season #current-standings td:nth-child(7){
+  width:11%!important;
+}
+#page-season #current-standings th:nth-child(8),
+#page-season #current-standings td:nth-child(8){
+  width:14%!important;
+}
+
+
+/* Current Standings — make Rk column narrow */
+#page-season #current-standings th:first-child,
+#page-season #current-standings td:first-child{
+  width:34%!important;
+}
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:4%!important;
+  min-width:34px!important;
+  max-width:42px!important;
+  padding-left:2px!important;
+  padding-right:2px!important;
+  text-align:center!important;
+}
+
+
+/* CURRENT STANDINGS — force every desktop column to fit */
+#page-season #current-standings-wrap,
+#page-season #current-standings-wrap .table-wrap,
+#page-season .current-standings-wrap,
+#page-season .current-standings-wrap .table-wrap{
+  overflow-x:visible!important;
+  width:100%!important;
+  max-width:100%!important;
+}
+
+#page-season #current-standings{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  table-layout:fixed!important;
+  font-size:9px!important;
+}
+
+#page-season #current-standings th,
+#page-season #current-standings td{
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  padding:6px 2px!important;
+  font-size:9px!important;
+  line-height:1.1!important;
+}
+
+/* Team name gets the most room */
+#page-season #current-standings th:nth-child(1),
+#page-season #current-standings td:nth-child(1){width:31%!important;text-align:left!important}
+
+/* Rk = deliberately tiny */
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:5%!important;
+  min-width:24px!important;
+  max-width:30px!important;
+  text-align:center!important;
+}
+
+/* Remaining numeric columns only get what they need */
+#page-season #current-standings th:nth-child(3),
+#page-season #current-standings td:nth-child(3){width:9%!important;text-align:center!important}
+#page-season #current-standings th:nth-child(4),
+#page-season #current-standings td:nth-child(4),
+#page-season #current-standings th:nth-child(5),
+#page-season #current-standings td:nth-child(5),
+#page-season #current-standings th:nth-child(6),
+#page-season #current-standings td:nth-child(6){width:8%!important;text-align:center!important}
+#page-season #current-standings th:nth-child(7),
+#page-season #current-standings td:nth-child(7){width:13%!important;text-align:center!important}
+#page-season #current-standings th:nth-child(8),
+#page-season #current-standings td:nth-child(8){width:18%!important;text-align:center!important}
+
+@media(max-width:900px){
+  #page-season #current-standings-wrap,
+  #page-season #current-standings-wrap .table-wrap,
+  #page-season .current-standings-wrap,
+  #page-season .current-standings-wrap .table-wrap{
+    overflow-x:auto!important;
+  }
+  #page-season #current-standings{
+    min-width:700px!important;
+  }
+}
+
+
+/* FINAL CURRENT STANDINGS COLUMN SIZING — 11 columns */
+#page-season #current-standings{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  table-layout:fixed!important;
+}
+#page-season #current-standings th,
+#page-season #current-standings td{
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  padding:6px 2px!important;
+  font-size:9px!important;
+}
+
+/* Rk */
+#page-season #current-standings th:nth-child(1),
+#page-season #current-standings td:nth-child(1){
+  width:5%!important; min-width:24px!important; max-width:30px!important;
+  text-align:center!important;
+}
+/* Team */
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:25%!important; text-align:left!important;
+}
+/* W L % */
+#page-season #current-standings th:nth-child(3),
+#page-season #current-standings td:nth-child(3),
+#page-season #current-standings th:nth-child(4),
+#page-season #current-standings td:nth-child(4),
+#page-season #current-standings th:nth-child(5),
+#page-season #current-standings td:nth-child(5){
+  width:6%!important; text-align:center!important;
+}
+/* PF PA +/- */
+#page-season #current-standings th:nth-child(6),
+#page-season #current-standings td:nth-child(6),
+#page-season #current-standings th:nth-child(7),
+#page-season #current-standings td:nth-child(7),
+#page-season #current-standings th:nth-child(8),
+#page-season #current-standings td:nth-child(8){
+  width:7%!important; text-align:center!important;
+}
+/* Avg PF / Avg PA */
+#page-season #current-standings th:nth-child(9),
+#page-season #current-standings td:nth-child(9),
+#page-season #current-standings th:nth-child(10),
+#page-season #current-standings td:nth-child(10){
+  width:8%!important; text-align:center!important;
+}
+/* Playoff % */
+#page-season #current-standings th:nth-child(11),
+#page-season #current-standings td:nth-child(11){
+  width:15%!important; text-align:center!important;
+}
+
+
+/* Current Standings — shorten Team column too */
+#page-season #current-standings th:nth-child(1),
+#page-season #current-standings td:nth-child(1){
+  width:4%!important;
+  min-width:24px!important;
+  max-width:28px!important;
+}
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:18%!important;
+  max-width:18%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+
+
+/* Current Standings — Team column only as wide as necessary for names */
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:14%!important;
+  max-width:14%!important;
+  padding-left:3px!important;
+  padding-right:3px!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  white-space:nowrap!important;
+  font-size:8.5px!important;
+}
+
+
+/* Current Standings — absolute minimum widths for Team + Playoff % */
+#page-season #current-standings{
+  table-layout:auto!important;
+}
+#page-season #current-standings th,
+#page-season #current-standings td{
+  padding-left:2px!important;
+  padding-right:2px!important;
+}
+
+/* Rk — number only */
+#page-season #current-standings th:nth-child(1),
+#page-season #current-standings td:nth-child(1){
+  width:1%!important;
+  min-width:22px!important;
+  white-space:nowrap!important;
+}
+
+/* Team — fit tightly around the actual team name */
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:1%!important;
+  min-width:0!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  font-size:8px!important;
+}
+
+/* Playoff % — fit tightly around the percentage */
+#page-season #current-standings th:nth-child(11),
+#page-season #current-standings td:nth-child(11){
+  width:1%!important;
+  min-width:0!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  font-size:8px!important;
+}
+
+/* Keep the numeric columns compact as well */
+#page-season #current-standings th:nth-child(n+3):not(:nth-child(11)),
+#page-season #current-standings td:nth-child(n+3):not(:nth-child(11)){
+  width:1%!important;
+  white-space:nowrap!important;
+}
+
+
+/* Current Standings / Projected Playoff Picture — give the dashboard more room */
+#page-season .season-dashboard-grid{
+  grid-template-columns:minmax(0,1.55fr) minmax(340px,1fr)!important;
+  gap:18px!important;
+}
+#page-season .season-dashboard-grid > .card{
+  padding:20px!important;
+}
+#page-season #current-standings{
+  font-size:9px!important;
+}
+
+
+/* 2026 Season — full-width standings + playoff matchup sections */
+#page-season .season-dashboard-grid{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  width:100%!important;
+  gap:22px!important;
+}
+#page-season .season-dashboard-grid > .card{
+  width:100%!important;
+  padding:22px!important;
+}
+
+/* Current Standings — bigger, readable type */
+#page-season #current-standings{
+  width:100%!important;
+  table-layout:auto!important;
+  font-size:12px!important;
+}
+#page-season #current-standings th,
+#page-season #current-standings td{
+  font-size:12px!important;
+  padding:9px 7px!important;
+}
+#page-season #current-standings th:nth-child(1),
+#page-season #current-standings td:nth-child(1){
+  min-width:38px!important;
+  width:1%!important;
+}
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:1%!important;
+  min-width:110px!important;
+  font-size:12px!important;
+}
+#page-season #current-standings th:nth-child(11),
+#page-season #current-standings td:nth-child(11){
+  width:1%!important;
+  min-width:82px!important;
+  font-size:12px!important;
+}
+
+/* Playoff Matchups — full-width */
+#page-season .playoff-grid{
+  width:100%!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:20px!important;
+}
+#page-season .playoff-grid > div{
+  width:100%!important;
+}
+#page-season .playoff-grid > div+div{
+  padding-left:20px!important;
+}
+@media(max-width:900px){
+  #page-season .playoff-grid{
+    grid-template-columns:1fr!important;
+  }
+  #page-season .playoff-grid > div+div{
+    border-left:0!important;
+    border-top:1px solid #ddd!important;
+    padding-left:0!important;
+    padding-top:15px!important;
+  }
+}
+
+
+/* 2026 Season — full-width standings and playoff sections */
+#page-season{
+  width:100%!important;
+}
+#page-season .container,
+#page-season .section-inner,
+#page-season .content,
+#page-season .season-content{
+  width:100%!important;
+  max-width:none!important;
+}
+
+/* Any two-column dashboard holding standings/playoff picture becomes stacked full width */
+#page-season .season-dashboard-grid,
+#page-season .dashboard-grid,
+#page-season .season-grid{
+  width:100%!important;
+  max-width:none!important;
+  grid-template-columns:1fr!important;
+}
+
+/* Current Standings table: full width, larger readable text, no desktop scroll */
+#page-season table{
+  width:100%!important;
+}
+#page-season .table-wrap{
+  width:100%!important;
+  max-width:none!important;
+  overflow-x:visible!important;
+}
+#page-season #current-standings{
+  width:100%!important;
+  min-width:0!important;
+  table-layout:auto!important;
+  font-size:12px!important;
+}
+#page-season #current-standings th,
+#page-season #current-standings td{
+  font-size:12px!important;
+  padding:9px 7px!important;
+  white-space:nowrap!important;
+}
+
+/* Keep Rk compact while giving names/readable stats room */
+#page-season #current-standings th:nth-child(1),
+#page-season #current-standings td:nth-child(1){
+  width:1%!important;
+  min-width:34px!important;
+}
+#page-season #current-standings th:nth-child(2),
+#page-season #current-standings td:nth-child(2){
+  width:1%!important;
+  min-width:130px!important;
+}
+#page-season #current-standings th:nth-child(11),
+#page-season #current-standings td:nth-child(11){
+  width:1%!important;
+  min-width:85px!important;
+}
+
+/* Projected Playoff Picture and matchup areas fill the page */
+#page-season .playoff-grid,
+#page-season .playoff-matchups,
+#page-season .projected-playoff-picture{
+  width:100%!important;
+  max-width:none!important;
+}
+#page-season .playoff-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:20px!important;
+}
+
+/* Cards containing those sections */
+#page-season .card{
+  max-width:none!important;
+}
+
+@media(max-width:900px){
+  #page-season .table-wrap{
+    overflow-x:auto!important;
+  }
+  #page-season #current-standings{
+    min-width:760px!important;
+  }
+  #page-season .playoff-grid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+
+/* 2026 SEASON — FULL-WIDTH STANDINGS + PLAYOFF PICTURE */
+#page-season .season-top-grid{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  width:100%!important;
+  max-width:none!important;
+  gap:20px!important;
+}
+
+#page-season .season-top-grid > .card{
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+
+/* Current Standings */
+#page-season .season-top-grid .standings-card{
+  width:100%!important;
+}
+#page-season .season-top-grid .standings-card .table-wrap{
+  width:100%!important;
+  overflow-x:visible!important;
+}
+#page-season .season-top-grid .standings-card table{
+  width:100%!important;
+  max-width:none!important;
+}
+
+/* Projected Playoff Picture */
+#page-season .season-top-grid .playoff-picture-card{
+  width:100%!important;
+}
+#page-season .season-top-grid .playoff-picture-card .playoff-grid{
+  width:100%!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:24px!important;
+}
+
+@media(max-width:900px){
+  #page-season .season-top-grid .playoff-picture-card .playoff-grid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+
+/* 2026 Season — Projected Playoff Picture + Draft Lottery split 50/50 */
+#page-season .season-top-grid .playoff-picture-card{
+  width:100%!important;
+}
+
+/* Keep the Playoff Picture itself half-width on the left */
+#page-season .season-top-grid .playoff-picture-card{
+  grid-column:1!important;
+}
+
+/* Put Draft Lottery beside the Playoff Picture */
+#page-season .season-top-grid .draft-lottery-card{
+  grid-column:2!important;
+}
+
+/* If Draft Lottery is contained inside the playoff card, create the split
+   at the card's internal section level instead. */
+#page-season .season-top-grid .playoff-picture-card > .draft-lottery,
+#page-season .season-top-grid .playoff-picture-card > .draft-lottery-section{
+  width:calc(50% - 10px)!important;
+  display:inline-block!important;
+  vertical-align:top!important;
+  margin-left:calc(50% + 10px)!important;
+}
+
+/* Actual layout: split the playoff card's two major sections */
+#page-season .season-top-grid .playoff-picture-card{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  column-gap:20px!important;
+}
+#page-season .season-top-grid .playoff-picture-card > h3{
+  grid-column:1 / -1!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .playoff-grid{
+  grid-column:1!important;
+  width:100%!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .draft-lottery-wrap{
+  grid-column:2!important;
+  width:100%!important;
+}
+
+@media(max-width:900px){
+  #page-season .season-top-grid .playoff-picture-card{
+    display:block!important;
+  }
+  #page-season .season-top-grid .playoff-picture-card > .playoff-grid,
+  #page-season .season-top-grid .playoff-picture-card > .draft-lottery-wrap{
+    width:100%!important;
+  }
+}
+
+
+/* FINAL: Projected Playoff Picture LEFT / Draft Lottery RIGHT, 50/50 */
+#page-season .season-top-grid .playoff-picture-card{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  column-gap:28px!important;
+  align-items:start!important;
+}
+
+/* Playoff Picture occupies the entire left half */
+#page-season .season-top-grid .playoff-picture-card > h3{
+  grid-column:1!important;
+  grid-row:1!important;
+  margin-bottom:4px!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .playoff-grid{
+  grid-column:1!important;
+  grid-row:2!important;
+  width:100%!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .playoff-disclaimer{
+  grid-column:1!important;
+  width:100%!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .status-disclaimer{
+  grid-row:3!important;
+}
+#page-season .season-top-grid .playoff-picture-card > p.playoff-disclaimer:not(.status-disclaimer){
+  grid-row:4!important;
+}
+
+/* Draft Lottery occupies the entire right half */
+#page-season .season-top-grid .playoff-picture-card > .lottery-block{
+  grid-column:2!important;
+  grid-row:1 / span 4!important;
+  width:100%!important;
+  margin-top:0!important;
+  padding-left:28px!important;
+  border-left:1px solid #d8d8d8!important;
+  box-sizing:border-box!important;
+}
+
+/* Make the lottery content use its half cleanly */
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-columns{
+  width:100%!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:18px!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-list{
+  width:100%!important;
+}
+
+@media(max-width:900px){
+  #page-season .season-top-grid .playoff-picture-card{
+    display:block!important;
+  }
+  #page-season .season-top-grid .playoff-picture-card > .lottery-block{
+    margin-top:22px!important;
+    padding-left:0!important;
+    border-left:0!important;
+    border-top:1px solid #d8d8d8!important;
+    padding-top:20px!important;
+  }
+}
+
+
+/* Draft Lottery — match Projected Playoff Picture header treatment */
+#page-season .season-top-grid .playoff-picture-card > .lottery-block{
+  border-top:0!important;
+  border-left:1px solid #d8d8d8!important;
+  padding-top:0!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head{
+  border-top:0!important;
+  border-bottom:0!important;
+  padding-top:0!important;
+  margin-top:0!important;
+  margin-bottom:12px!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head h3{
+  margin:0!important;
+  font-size:inherit!important;
+  color:inherit!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head small{
+  color:#c81f2b!important;
+  font-weight:700!important;
+  text-transform:uppercase!important;
+}
+
+/* Draft Lottery voting disclaimer */
+#page-season .lottery-disclaimer{
+  margin-top:18px!important;
+  padding:12px 14px!important;
+  border-top:1px solid #c81f2b!important;
+  font-size:12px!important;
+  line-height:1.45!important;
+  color:#4b4b4b!important;
+  background:rgba(255,255,255,.45)!important;
+}
+#page-season .lottery-disclaimer strong{
+  color:#1d2530!important;
+}
+
+
+/* Draft Lottery — match Projected Playoff Picture styling */
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  margin:0 0 12px 0!important;
+  padding:0!important;
+  border:0!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head h3,
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head .display{
+  font-family:inherit!important;
+  font-size:inherit!important;
+  line-height:1.1!important;
+  font-weight:800!important;
+  margin:0!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-head small{
+  color:#c81f2b!important;
+  font-weight:700!important;
+  letter-spacing:.03em!important;
+  text-transform:uppercase!important;
+  white-space:nowrap!important;
+}
+
+/* Lottery disclaimer — same clean disclaimer treatment as Playoff Picture */
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-disclaimer{
+  margin-top:18px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#777!important;
+  font-family:inherit!important;
+  font-size:12px!important;
+  line-height:1.45!important;
+  font-weight:400!important;
+}
+#page-season .season-top-grid .playoff-picture-card > .lottery-block .lottery-disclaimer strong{
+  color:#1d2530!important;
+  font-weight:700!important;
+}
+
+
+/* Draft Lottery rows — match Seed 1 / Seed 2 / Seed 3 playoff rows */
+#page-season .lottery-block .lottery-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  min-height:48px!important;
+  padding:0 0!important;
+  border-bottom:1px solid #ddd!important;
+  background:transparent!important;
+  border-radius:0!important;
+  box-sizing:border-box!important;
+}
+#page-season .lottery-block .lottery-row:last-child{
+  border-bottom:0!important;
+}
+#page-season .lottery-block .lottery-row span,
+#page-season .lottery-block .lottery-row b{
+  font-family:inherit!important;
+  font-size:16px!important;
+  line-height:1.2!important;
+}
+#page-season .lottery-block .lottery-row span{
+  font-weight:400!important;
+  color:#252a31!important;
+}
+#page-season .lottery-block .lottery-row b{
+  font-weight:800!important;
+  color:#252a31!important;
+}
+#page-season .lottery-block .lottery-columns{
+  gap:28px!important;
+}
+#page-season .lottery-block .lottery-list{
+  border:0!important;
+  background:transparent!important;
+  border-radius:0!important;
+}
+
 </style>
 
 <!-- MFGA Google Analytics -->
@@ -1480,6 +2230,10 @@ header,.header{border-bottom-color:#c5222d!important}
               <div class="lottery-row"><span>5th Pick</span><b>TBD</b></div>
               <div class="lottery-row"><span>6th Pick</span><b>TBD</b></div>
             </div>
+          </div>
+          <div class="lottery-disclaimer">
+            <strong>Votes will be based on rank and sent into a generator and refreshed after each pick is made.</strong>
+            For example, if Team A comes in 6th place overall, he will receive 6 votes for #6 Overall, while if Team B comes in last place overall, he will receive 1 vote for #6 Overall.
           </div>
         </div>
 </div>
