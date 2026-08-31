@@ -2611,7 +2611,6 @@ divisionFilter?.addEventListener('change',e=>renderCurrentStandings(e.target.val
 function keeperColor(name, round){
   if(round===1 || round===2) return "keeper-red";
   if(round===12 && (name==="Allen" || name==="McMillan")) return "";
-  if(round===14 && name==="Ferguson") return "keeper-red";
   return keeperRedNames && keeperRedNames.has(name) ? "keeper-red" : "";
 }
 const sb=document.getElementById('schedule-body');
@@ -3176,7 +3175,7 @@ document.addEventListener('click', function(e){
         let red = keeperRed.has(name);
         if(round === 1 || round === 2) red = true;
         if(round === 12 && (name === 'Allen' || name === 'McMillan')) red = false;
-        if(round === 14 && name === 'Ferguson' && cIdx === 5) red = false;
+        if(round === 14 && name === 'Ferguson') red = (cIdx === 11);
         cell.classList.toggle('keeper-red', red);
         cell.classList.toggle('keeper-black', !red);
         cell.style.setProperty('color', red ? '#df2635' : '#171b22', 'important');
@@ -3230,7 +3229,7 @@ document.addEventListener('click', function(e){
 
 <script>
 (function(){
-  const redCoords = new Set(['1,1', '1,10', '1,11', '1,12', '1,2', '1,3', '1,4', '1,5', '1,6', '1,7', '1,8', '1,9', '14,11', '14,6', '2,1', '2,10', '2,11', '2,12', '2,2', '2,3', '2,4', '2,5', '2,6', '2,7', '2,8', '2,9', '3,10', '3,4', '3,8', '4,12', '5,2', '5,5', '5,9', '7,3', '7,6', '8,1', '8,7']);
+  const redCoords = new Set(['1,1', '1,10', '1,11', '1,12', '1,2', '1,3', '1,4', '1,5', '1,6', '1,7', '1,8', '1,9', '14,11', '2,1', '2,10', '2,11', '2,12', '2,2', '2,3', '2,4', '2,5', '2,6', '2,7', '2,8', '2,9', '3,10', '3,4', '3,8', '4,12', '5,2', '5,5', '5,9', '7,3', '7,6', '8,1', '8,7']);
   function matchKeeperReference(){
     const table = document.querySelector('.digital-keeper-table');
     if(!table) return;
