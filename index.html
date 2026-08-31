@@ -26,7 +26,8 @@ a{color:inherit}.display{font-family:'Anton',sans-serif;text-transform:uppercase
 .h2h-table{min-width:1000px}.h2h-table th,.h2h-table td{text-align:center}.h2h-table th:first-child,.h2h-table td:first-child{text-align:left;position:sticky;left:0;background:#111;color:#fff;z-index:2}.h2h-table td{font-size:11px}.h2h-table td.win{background:#e2f3e8;color:#17633c;font-weight:700}.h2h-table td.loss{background:#f6e0e3;color:#8d1d2e}.h2h-table td.tie{background:#f4ecd1;color:#755b15}.h2h-table td.h2h-blocked,.h2h-table td.h2h-blocked:hover{background:#111!important;color:#111!important}
 .h2h-table th.inactive{background:#777;color:#ddd}.h2h-table td.inactive{background:#aaa !important;color:#222 !important;font-weight:400}.h2h-table td.row-inactive{background:#aaa !important;color:#222 !important;font-weight:400}.h2h-table td.inactive-empty{background:#111 !important;color:#111 !important}
 details{background:#fff;border:1px solid #d8d8d8;margin-bottom:9px}summary{cursor:pointer;list-style:none;padding:13px 15px;font:22px Anton;text-transform:uppercase}summary::-webkit-details-marker{display:none}.details-body{padding:0 15px 15px;border-top:1px solid #ddd}.details-body .table-wrap{border:0}
-.draft-card{background:#111;color:#eee;border:1px solid #333;padding:14px;margin-bottom:15px}.draft-card h3{margin:0 0 10px;color:#e2c067;font:24px Anton;text-transform:uppercase}.draft-card img{width:100%;height:auto;display:block;background:#fff}.draft-note{font:10px 'IBM Plex Mono';color:#aaa;margin-top:8px}
+.draft-card{background:#111;color:#eee;border:1px solid #333;padding:14px;margin-bottom:15px}.draft-card h3{margin:0 0 10px;color:#e2c067;font:24px Anton;text-transform:uppercase}.draft-card img{width:100%;height:auto;display:block;background:#fff}
+.draft-card iframe{max-width:100%;border:0;background:#fff;display:block}.draft-note{font:10px 'IBM Plex Mono';color:#aaa;margin-top:8px}
 .rule-list{margin:0;padding-left:22px}.rule-list li{margin:0 0 8px;line-height:1.5;font-size:13px}.score-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.score-box{border:1px solid #ddd;padding:13px}.score-box h4{margin:0 0 7px;color:var(--red);font:20px Anton}.score-box ul{margin:0;padding-left:18px;font-size:12px;line-height:1.55}
 
 footer{background:#0b0b0d;color:#9f9b91;text-align:center;padding:35px 18px;font:11px 'IBM Plex Mono';border-top:4px solid var(--red)}footer strong{display:block;color:#d7b55d;font:24px Anton;margin-bottom:6px}
@@ -2800,10 +2801,22 @@ Object.entries(DATA.history).forEach(([team,seasons])=>{
 const ch=document.getElementById('champions'); if(ch) DATA.champions.forEach((p,i)=>{const det=document.createElement('details');if(i===0)det.open=true;det.innerHTML=`<summary>${p[0]} — ${p[1].split(' (')[0]}</summary><div class="details-body"><div class="grid grid-2"><div><div class="stat"><span>Winner</span><b>${p[1]}</b></div><div class="stat"><span>Loser</span><b>${p[2]}</b></div><div class="stat"><span>Score</span><b>${p[3]}</b></div><div class="stat"><span>MVP</span><b>${p[4]}</b></div><div class="stat"><span>Bust</span><b>${p[5]}</b></div></div><div><div class="stat"><span>Best Record</span><b>${p[6]}</b></div><div class="stat"><span>Most Points</span><b>${p[7]}</b></div><div class="stat"><span>Worst Record</span><b>${p[8]}</b></div><div class="stat"><span>Least Points</span><b>${p[9]}</b></div><div class="stat"><span>Jersey</span><b>${p[10]}</b></div></div></div></div>`;ch.appendChild(det)});
 
 const drafts=[
-['2026','assets/drafts/2026-draft-board.png'],['2025','assets/drafts/2025-draft-board.png'],['2024','assets/drafts/2024-draft-board.png'],['2023','assets/drafts/2023-draft-board.png'],['2022','assets/drafts/2022-draft-board.png'],['2021','assets/drafts/2021-draft-board.png'],['2020','assets/drafts/2020-draft-board.png'],['2019','assets/drafts/2019-draft-board.png'],['2018','assets/drafts/2018-draft-board.png'],['2017','assets/drafts/2017-draft-board.png']
+['2026','assets/drafts/MFGA X-draft-board 2.pdf'],['2025','assets/drafts/2025-draft-board.png'],['2024','assets/drafts/2024-draft-board.png'],['2023','assets/drafts/2023-draft-board.png'],['2022','assets/drafts/2022-draft-board.png'],['2021','assets/drafts/2021-draft-board.png'],['2020','assets/drafts/2020-draft-board.png'],['2019','assets/drafts/2019-draft-board.png'],['2018','assets/drafts/2018-draft-board.png'],['2017','assets/drafts/2017-draft-board.png']
 ];
 const dlst=document.getElementById('draft-list');
-drafts.forEach((d,i)=>{const box=document.createElement('div');box.className='draft-card';box.innerHTML=d[1]?`<h3>${d[0]} Draft Board</h3><img loading="lazy" src="${d[1]}" alt="${d[0]} MFGA draft board"><div class="draft-note">Original Statbook draft-board image · archived from the official league Statbook.</div>`:`<h3>${d[0]} Draft Board</h3><div style="padding:28px 10px;background:#1b1b1f;border:1px solid #333;text-align:center"><div style="font:34px Anton;color:#e2c067">2026</div><div style="font:11px 'IBM Plex Mono';color:#aaa;margin-top:6px">DRAFT BOARD WILL BE ADDED AFTER THE DRAFT</div></div>`;dlst.appendChild(box)});
+drafts.forEach((d,i)=>{
+  const box=document.createElement('div');
+  box.className='draft-card';
+  if(d[1]){
+    const isPdf=/\.pdf(?:$|[?#])/i.test(d[1]);
+    box.innerHTML=isPdf
+      ? `<h3>${d[0]} Draft Board</h3><iframe src="${d[1]}#toolbar=1&navpanes=0&view=FitH" title="${d[0]} MFGA draft board" style="width:100%;height:min(78vw,900px);min-height:520px;border:0;background:#fff;display:block"></iframe><div class="draft-note">Official MFGA ${d[0]} draft-board file.</div>`
+      : `<h3>${d[0]} Draft Board</h3><img loading="lazy" src="${d[1]}" alt="${d[0]} MFGA draft board"><div class="draft-note">Original Statbook draft-board image · archived from the official league Statbook.</div>`;
+  }else{
+    box.innerHTML=`<h3>${d[0]} Draft Board</h3><div style="padding:28px 10px;background:#1b1b1f;border:1px solid #333;text-align:center"><div style="font:34px Anton;color:#e2c067">2026</div><div style="font:11px 'IBM Plex Mono';color:#aaa;margin-top:6px">DRAFT BOARD WILL BE ADDED AFTER THE DRAFT</div></div>`;
+  }
+  dlst.appendChild(box);
+});
 
 document.querySelectorAll('.tab[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab[data-tab]').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active')}));
 document.querySelectorAll('.tab[data-h2h]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab[data-h2h]').forEach(b=>b.classList.remove('active'));document.querySelectorAll('#h2h-reg,#h2h-po').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.h2h).classList.add('active')}));
@@ -3197,10 +3210,6 @@ document.addEventListener('click', function(e){
   });
 })();
 </script>
-</body>
-</html>
-
-
 <script>
 (function(){
   function fixFilippoKeeperColumn(){
@@ -3255,3 +3264,6 @@ document.addEventListener('click', function(e){
   setTimeout(matchKeeperReference,750);
 })();
 </script>
+
+</body>
+</html>
