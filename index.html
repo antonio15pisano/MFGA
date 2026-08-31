@@ -2801,17 +2801,14 @@ Object.entries(DATA.history).forEach(([team,seasons])=>{
 const ch=document.getElementById('champions'); if(ch) DATA.champions.forEach((p,i)=>{const det=document.createElement('details');if(i===0)det.open=true;det.innerHTML=`<summary>${p[0]} — ${p[1].split(' (')[0]}</summary><div class="details-body"><div class="grid grid-2"><div><div class="stat"><span>Winner</span><b>${p[1]}</b></div><div class="stat"><span>Loser</span><b>${p[2]}</b></div><div class="stat"><span>Score</span><b>${p[3]}</b></div><div class="stat"><span>MVP</span><b>${p[4]}</b></div><div class="stat"><span>Bust</span><b>${p[5]}</b></div></div><div><div class="stat"><span>Best Record</span><b>${p[6]}</b></div><div class="stat"><span>Most Points</span><b>${p[7]}</b></div><div class="stat"><span>Worst Record</span><b>${p[8]}</b></div><div class="stat"><span>Least Points</span><b>${p[9]}</b></div><div class="stat"><span>Jersey</span><b>${p[10]}</b></div></div></div></div>`;ch.appendChild(det)});
 
 const drafts=[
-['2026','drafts/MFGA%20X-draft-board%202.pdf'],['2025','assets/drafts/2025-draft-board.png'],['2024','assets/drafts/2024-draft-board.png'],['2023','assets/drafts/2023-draft-board.png'],['2022','assets/drafts/2022-draft-board.png'],['2021','assets/drafts/2021-draft-board.png'],['2020','assets/drafts/2020-draft-board.png'],['2019','assets/drafts/2019-draft-board.png'],['2018','assets/drafts/2018-draft-board.png'],['2017','assets/drafts/2017-draft-board.png']
+['2026','drafts/mfga-x-2026-draft-board.png'],['2025','assets/drafts/2025-draft-board.png'],['2024','assets/drafts/2024-draft-board.png'],['2023','assets/drafts/2023-draft-board.png'],['2022','assets/drafts/2022-draft-board.png'],['2021','assets/drafts/2021-draft-board.png'],['2020','assets/drafts/2020-draft-board.png'],['2019','assets/drafts/2019-draft-board.png'],['2018','assets/drafts/2018-draft-board.png'],['2017','assets/drafts/2017-draft-board.png']
 ];
 const dlst=document.getElementById('draft-list');
 drafts.forEach((d,i)=>{
   const box=document.createElement('div');
   box.className='draft-card';
   if(d[1]){
-    const isPdf=/\.pdf(?:$|[?#])/i.test(d[1]);
-    box.innerHTML=isPdf
-      ? `<h3>${d[0]} Draft Board</h3><iframe src="${d[1]}#toolbar=1&navpanes=0&view=FitH" title="${d[0]} MFGA draft board" style="width:100%;height:min(78vw,900px);min-height:520px;border:0;background:#fff;display:block"></iframe><div class="draft-note">Official MFGA X draft-board file.</div>`
-      : `<h3>${d[0]} Draft Board</h3><img loading="lazy" src="${d[1]}" alt="${d[0]} MFGA draft board"><div class="draft-note">Original Statbook draft-board image · archived from the official league Statbook.</div>`;
+    box.innerHTML=`<h3>${d[0]} Draft Board</h3><img loading="lazy" src="${d[1]}" alt="${d[0]} MFGA draft board"><div class="draft-note">${d[0]==='2026'?'Official MFGA X draft-board image.':'Original Statbook draft-board image · archived from the official league Statbook.'}</div>`;
   }else{
     box.innerHTML=`<h3>${d[0]} Draft Board</h3><div style="padding:28px 10px;background:#1b1b1f;border:1px solid #333;text-align:center"><div style="font:34px Anton;color:#e2c067">2026</div><div style="font:11px 'IBM Plex Mono';color:#aaa;margin-top:6px">DRAFT BOARD WILL BE ADDED AFTER THE DRAFT</div></div>`;
   }
