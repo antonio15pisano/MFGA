@@ -2310,7 +2310,7 @@ header,.header{border-bottom-color:#c5222d!important}
       </div>
       
 <div class="table-wrap"><table><thead><tr><th>Rk</th><th data-standing-sortable="true">Team</th><th data-standing-sortable="true">W</th><th data-standing-sortable="true">L</th><th data-standing-sortable="true">%</th><th data-standing-sortable="true">PF</th><th data-standing-sortable="true">PA</th><th data-standing-sortable="true">+/-</th><th data-standing-sortable="true">Avg PF</th><th data-standing-sortable="true">Avg PA</th><th data-standing-sortable="true">Proj. Playoff %</th></tr></thead><tbody id="current-standings"></tbody></table></div>
-<div class="playoff-disclaimer" style="margin-top:8px"><b>PROJECTED PLAYOFF ODDS:</b> Early preseason estimates based on post-draft roster strength, 2026 projections, division structure and the full 14-week schedule. Odds are intentionally conservative and centered around a neutral preseason baseline; they will be updated as the season develops. These are projections, not official standings.</div>
+<div class="playoff-disclaimer" style="margin-top:8px"><b>PROJECTED PLAYOFF ODDS:</b> Updated after Week 1 using a 30,000-simulation model. The model blends current scoring with career scoring baseline, current record and point differential, then simulates the remaining 13 weeks using the actual schedule and four-division playoff format. Division leaders take seeds 1–4 and the next two teams earn wild cards. These are projections, not official standings.</div>
     </div>
 
     <div class="card playoff-picture-card">
@@ -2330,9 +2330,9 @@ header,.header{border-bottom-color:#c5222d!important}
         </div>
         <div>
           <div class="eyebrow">Matchups</div>
-          <div class="stat"><span>Seed 3 vs Seed 6</span><b>Skin vs Carmelo</b></div>
-          <div class="stat"><span>Seed 4 vs Seed 5</span><b>Filippo vs Martir</b></div>
-          <p class="playoff-note">Seeds 1 and 2 receive first-round byes</p>
+          <div class="stat"><span> </span><b>Skin vs Carmelo</b></div>
+          <div class="stat"><span> </span><b>Filippo vs Martir</b></div>
+          <p class="playoff-note">Nicky and Mark receive first-round byes</p>
         </div>
       </div>
       <div class="playoff-disclaimer status-disclaimer">
@@ -2434,14 +2434,14 @@ header,.header{border-bottom-color:#c5222d!important}
 </section>
 
 <section class="section page" id="page-record-history">
-  <div class="section-head"><h2 class="display">Record History</h2><small>2017–2025 receipts</small></div>
+  <div class="section-head"><h2 class="display">Record History</h2><small>2017–2026 receipts</small></div>
   <div class="grid grid-3">
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Win %</div><div class="big-number">.614</div><div class="sub" style="color:#aaa">Frankie Saracino</div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Differential</div><div class="big-number">+686</div><div class="sub" style="color:#aaa">Skin</div></div>
+    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Win %</div><div class="big-number">.620</div><div class="sub" style="color:#aaa">Frankie Saracino</div></div>
+    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Differential</div><div class="big-number">+707.0</div><div class="sub" style="color:#aaa">Skin</div></div>
     <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Championships</div><div class="big-number">2</div><div class="sub" style="color:#aaa">Antonio Pisano & Matt Melio</div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Win %</div><div class="big-number">.357</div><div class="sub" style="color:#aaa">Grasso</div></div>
+    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Win %</div><div class="big-number">.333</div><div class="sub" style="color:#aaa">Tone</div></div>
     <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Differential</div><div class="big-number">−871.6</div><div class="sub" style="color:#aaa"><em>Matt</em></div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Playoff App.</div><div class="big-number">6</div><div class="sub" style="color:#aaa">Antonio</div></div>
+    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Playoff App.</div><div class="big-number">6</div><div class="sub" style="color:#aaa">Antonio & Skin</div></div>
   </div>
 
   <div class="section" style="margin-top:25px">
@@ -2589,24 +2589,109 @@ Object.entries(divisionTeams).forEach(([division,teams])=>teams.forEach(team=>te
 
 const currentBody=document.getElementById('current-standings');
 const divisionFilter=document.getElementById('division-filter');
-const projectedPlayoffOdds={
-  Nicky:56,
-  Filippo:57,
-  Mark:51,
-  Melio:47,
-  Grasso:50,
-  Frankie:54,
-  Antonio:50,
-  Skin:51,
-  Martir:39,
-  Tone:48,
-  Carmelo:55,
-  Berger:43
-};
 const week1Stats={
   Nicky:{w:1,l:0,pf:153.4,pa:150.3}, Mark:{w:1,l:0,pf:151.1,pa:144.8}, Martir:{w:1,l:0,pf:147.8,pa:107.8}, Carmelo:{w:1,l:0,pf:146.1,pa:138.4}, Skin:{w:1,l:0,pf:124.0,pa:103.0}, Frankie:{w:1,l:0,pf:101.0,pa:86.3},
   Filippo:{w:0,l:1,pf:150.3,pa:153.4}, Antonio:{w:0,l:1,pf:144.8,pa:151.1}, Melio:{w:0,l:1,pf:138.4,pa:146.1}, Grasso:{w:0,l:1,pf:107.8,pa:147.8}, Tone:{w:0,l:1,pf:103.0,pa:124.0}, Berger:{w:0,l:1,pf:86.3,pa:101.0}
 };
+
+// Post-Week-1 playoff model: a calibrated Monte Carlo projection.
+// Current-season scoring gets meaningful weight, but one game is heavily
+// regressed toward each team's established career scoring baseline.
+// The model simulates every remaining scheduled matchup and awards the four
+// division leaders plus the two best non-leaders (wild cards).
+function computeProjectedPlayoffOdds(){
+  const odds={};
+  currentTeams.forEach(t=>odds[t]=0);
+
+  const careerAvg={};
+  DATA.regszn.forEach(r=>{
+    const name=String(r[0]).replace('*','');
+    if(currentTeams.includes(name)) careerAvg[name]=parseFloat(String(r[8]).replace(/,/g,''));
+  });
+
+  const projectedMean={};
+  currentTeams.forEach(t=>{
+    const st=week1Stats[t];
+    const currentPF=st.pf/(st.w+st.l);
+    const career=careerAvg[t]||currentPF;
+    const recordAdj=st.w>st.l ? 1.0 : -1.0;
+    const diffAdj=(st.pf-st.pa)*0.005;
+    projectedMean[t]=0.15*currentPF+0.85*career+recordAdj+diffAdj;
+  });
+
+  let seed=20260915;
+  const rand=()=>{
+    seed=(seed*1664525+1013904223)>>>0;
+    return seed/4294967296;
+  };
+  const normal=()=>{
+    let u=0,v=0;
+    while(u===0)u=rand();
+    while(v===0)v=rand();
+    return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
+  };
+
+  const sims=50000;
+  for(let sim=0;sim<sims;sim++){
+    const wins={},pf={};
+    currentTeams.forEach(t=>{
+      wins[t]=week1Stats[t].w;
+      pf[t]=week1Stats[t].pf;
+    });
+
+    for(let i=0;i<currentTeams.length;i++){
+      const t=currentTeams[i];
+      for(const opp of DATA.schedule[t].slice(1)){
+        const oi=currentTeams.indexOf(opp);
+        if(oi<0 || i>=oi) continue;
+
+        const a=Math.max(0,projectedMean[t]+32*normal());
+        const b=Math.max(0,projectedMean[opp]+32*normal());
+        pf[t]+=a;
+        pf[opp]+=b;
+        if(a>b) wins[t]++;
+        else if(b>a) wins[opp]++;
+      }
+    }
+
+    const leaders=[];
+    Object.values(divisionTeams).forEach(group=>{
+      leaders.push(group.slice().sort((a,b)=>wins[b]-wins[a] || pf[b]-pf[a])[0]);
+    });
+
+    const wildCards=currentTeams
+      .filter(t=>!leaders.includes(t))
+      .sort((a,b)=>wins[b]-wins[a] || pf[b]-pf[a])
+      .slice(0,2);
+
+    leaders.concat(wildCards).forEach(t=>odds[t]++);
+  }
+
+  // One game is not enough to justify extreme odds.
+  // Blend 70% of the simulation with a neutral 50% baseline.
+  currentTeams.forEach(t=>{
+    const simPct=(odds[t]/sims)*100;
+    odds[t]=0.70*simPct+0.30*50;
+  });
+
+  // Six playoff spots means the displayed probabilities must total 600%.
+  const total=currentTeams.reduce((sum,t)=>sum+odds[t],0);
+  const scale=600/total;
+  currentTeams.forEach(t=>odds[t]=Math.round(odds[t]*scale));
+
+  let diff=600-currentTeams.reduce((sum,t)=>sum+odds[t],0);
+  const order=currentTeams.slice().sort((a,b)=>odds[b]-odds[a]);
+  let k=0;
+  while(diff!==0){
+    const t=order[k%order.length];
+    if(diff>0){ odds[t]++; diff--; }
+    else if(odds[t]>1){ odds[t]--; diff++; }
+    k++;
+  }
+
+  return odds;
+}
+const projectedPlayoffOdds=computeProjectedPlayoffOdds();
 const standingsOrder=["Nicky","Mark","Martir","Carmelo","Skin","Frankie","Filippo","Antonio","Melio","Grasso","Tone","Berger"];
 function renderCurrentStandings(filter="all"){
   currentBody.innerHTML="";
