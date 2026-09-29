@@ -1273,6 +1273,12 @@ header,.header{border-bottom-color:#c5222d!important}
 }
 
 
+/* Record History — current members only; default order is live Win % descending */
+#page-record-history #reg-history tr,
+#page-record-history #po-history tr{
+  transition:none!important;
+}
+
 /* Record History filter/reset buttons — readable on white */
 #page-record-history .tab,
 #page-record-history button,
@@ -2737,10 +2743,52 @@ currentTeams.forEach(team=>{
 });
 
 const rb=document.getElementById('reg-history');
-DATA.regszn.forEach((r,i)=>{const tr=document.createElement('tr');if(r[0].includes('*'))tr.className='inactive';if(i===0)tr.classList.add('rank1');tr.innerHTML=`<td>${i+1}</td><td class="name">${r[0]}</td>`+r.slice(1).map(x=>`<td>${x}</td>`).join('');rb.appendChild(tr)});
+
+// Record History defaults to ALL historical members, with the 12 CURRENT
+// MFGA members always occupying RK 1–12. Current members are automatically
+// sorted by regular-season win percentage (highest to lowest) each time the
+// page loads. Former members remain visible in RK 13–18 in their historical
+// order.
+const currentRegHistory=DATA.regszn
+  .filter(r=>currentTeams.includes(String(r[0]).replace('*','')))
+  .slice()
+  .sort((a,b)=>Number(b[4])-Number(a[4]));
+
+const formerRegHistory=DATA.regszn
+  .filter(r=>!currentTeams.includes(String(r[0]).replace('*')))
+  .slice();
+
+const regHistoryOrder=[...currentRegHistory,...formerRegHistory];
+
+regHistoryOrder.forEach((r,i)=>{
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${i+1}</td><td class="name">${String(r[0]).replace('*','')}</td>`+
+    r.slice(1).map(x=>`<td>${x}</td>`).join('');
+  rb.appendChild(tr);
+});
 
 const pb=document.getElementById('po-history');
-DATA.playoffs.forEach((r,i)=>{const tr=document.createElement('tr');if(r[0].includes('*'))tr.className='inactive';tr.innerHTML=`<td>${i+1}</td><td class="name">${r[0]}</td>`+r.slice(1).map(x=>`<td>${x}</td>`).join('');pb.appendChild(tr)});
+
+// Playoff Record History: current MFGA members always occupy RK 1–12.
+// Former members remain visible in RK 13–18. Current members are sorted
+// by playoff win percentage, highest to lowest.
+const currentPOHistory=DATA.playoffs
+  .filter(r=>currentTeams.includes(String(r[0]).replace('*','')))
+  .slice()
+  .sort((a,b)=>Number(b[3])-Number(a[3]));
+
+const formerPOHistory=DATA.playoffs
+  .filter(r=>!currentTeams.includes(String(r[0]).replace('*')))
+  .slice();
+
+const poHistoryOrder=[...currentPOHistory,...formerPOHistory];
+
+poHistoryOrder.forEach((r,i)=>{
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${i+1}</td><td class="name">${String(r[0]).replace('*','')}</td>`+
+    r.slice(1).map(x=>`<td>${x}</td>`).join('');
+  pb.appendChild(tr);
+});
 
 // ---- Sortable all-time stats ----
 (function(){
