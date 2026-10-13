@@ -2197,6 +2197,56 @@ header,.header{border-bottom-color:#c5222d!important}
 }
 .digital-keeper-table thead th.keeper-round-right{background:#111!important;color:#fff!important}
 .digital-keeper-table tbody td.keeper-round-right{background:#fff!important;color:#111!important}
+
+
+/* MOBILE LAYOUT FIX — based on the latest uploaded index */
+@media (max-width: 600px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .wrap, .page, .section, .card, .grid, .grid-2, .grid-3,
+  .main-grid, .team-history-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .grid-2, .grid-3, .main-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .grid > *, .grid-2 > *, .grid-3 > *, .main-grid > * {
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+  .table-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-wrap table {
+    max-width: none;
+  }
+  #page-record-history .grid.grid-2 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  #page-record-history .card {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  #page-record-history #division-leaders {
+    overflow-wrap: anywhere;
+  }
+  .section-head {
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
 </style></head>
 <body>
 <header class="top">
