@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>MFGA X — Make Football Great Again</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Libre+Franklin:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{--ink:#0b0b0d;--ink2:#151518;--paper:#eee5ce;--paper2:#fffaf0;--red:#9d2435;--red2:#c53a4e;--navy:#26384f;--gold:#c59a38;--line:rgba(238,229,206,.15);--muted:rgba(238,229,206,.62);--green:#4caf7d;--max:1220px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f1f1;color:#151518;font-family:'Libre Franklin',sans-serif}
@@ -2156,9 +2157,8 @@ header,.header{border-bottom-color:#c5222d!important}
 }
 
 </style>
-
 <!-- MFGA Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTHHL4KG6J"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NTHHL4KG6J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -2166,7 +2166,6 @@ header,.header{border-bottom-color:#c5222d!important}
   gtag('config', 'G-NTHHL4KG6J');
 </script>
 <!-- End MFGA Google Analytics -->
-
 <style id="post-draft-week1">
 .week1-matchups{margin:18px 0 24px;padding:18px 0 20px;border-top:3px solid #0b2a4a;border-bottom:1px solid #d8d8d8}
 .week1-matchups .section-kicker{font:700 13px 'IBM Plex Mono',monospace;color:#b51f2b;letter-spacing:.08em;margin-bottom:3px}
@@ -2197,349 +2196,466 @@ header,.header{border-bottom-color:#c5222d!important}
 }
 .digital-keeper-table thead th.keeper-round-right{background:#111!important;color:#fff!important}
 .digital-keeper-table tbody td.keeper-round-right{background:#fff!important;color:#111!important}
-</style></head>
+</style>
+<style id="keeper-tracker-red-background-final-fix">
+/* Match the supplied keeper-board screenshot: keeper cells must have a solid red fill. */
+.digital-keeper-table td.keeper,
+.digital-keeper-table td[style*="background:#ff0000"],
+.digital-keeper-table td[style*="background: #ff0000"] {
+  background-color: #ff0000 !important;
+  background: #ff0000 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+/* Round 1 and Round 2 labels and right-side round numbers are also red. */
+.digital-keeper-table tbody tr:nth-child(-n+2) > th:first-child,
+.digital-keeper-table tbody tr:nth-child(-n+2) > td.keeper-round-right {
+  background-color: #ff0000 !important;
+  background: #ff0000 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+</style>
+<style id="mfga-final-keeper-and-ranking-color-fix">
+/* Final verified keeper highlight treatment: red cells remain red in every table stripe state. */
+#page-home .digital-keeper-table tbody td.keeper,
+#page-home .keeper-table tbody td.keeper {
+  background: #ff0000 !important;
+  background-color: #ff0000 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+#page-home .digital-keeper-table tbody tr:nth-child(1) th,
+#page-home .digital-keeper-table tbody tr:nth-child(2) th,
+#page-home .digital-keeper-table tbody tr:nth-child(1) td.keeper-round-right,
+#page-home .digital-keeper-table tbody tr:nth-child(2) td.keeper-round-right {
+  background: #ff0000 !important;
+  background-color: #ff0000 !important;
+  color: #000000 !important;
+}
+</style>
+<style id="keeper-tracker-exact-red-cells">#page-home .digital-keeper-table tbody td.keeper { background:#ff0000 !important; background-color:#ff0000 !important; color:#000 !important; font-weight:700 !important; }
+#page-home .digital-keeper-table tbody tr:nth-child(-n+2) > th:first-child, #page-home .digital-keeper-table tbody tr:nth-child(-n+2) > td.keeper-round-right { background:#ff0000 !important; background-color:#ff0000 !important; color:#000 !important; font-weight:700 !important; }</style><style id="power-rankings-team-colors-final">#power-rankings-2026 td.team-filippo strong{color:#13a557 !important;}
+#power-rankings-2026 td.team-nicky strong{color:#19a7df !important;}
+#power-rankings-2026 td.team-tone strong{color:#13a557 !important;}
+#power-rankings-2026 td.team-frankie strong{color:#7b2cbf !important;}
+#power-rankings-2026 td.team-carmelo strong{color:#ff0000 !important;}
+#power-rankings-2026 td.team-martir strong{color:#19a7df !important;}
+#power-rankings-2026 td.team-melio strong{color:#7b2cbf !important;}
+#power-rankings-2026 td.team-mark strong{color:#ff0000 !important;}
+#power-rankings-2026 td.team-antonio strong{color:#13a557 !important;}
+#power-rankings-2026 td.team-berger strong{color:#19a7df !important;}
+#power-rankings-2026 td.team-skin strong{color:#7b2cbf !important;}
+#power-rankings-2026 td.team-grasso strong{color:#ff0000 !important;}</style><style id="keeper-exact-reference-and-power-colors">/* Exact Keeper Tracker red-cell map from user's reference screenshot */ 
+.keeper-table td[data-keeper-red="true"], .keeper-table th[data-keeper-red="true"] { background-color:#ff0000 !important; color:#000 !important; }
+#power-rankings-2026 .team-filippo strong, #power-rankings-2026 .team-filippo a, #power-rankings-2026 td.team-filippo { color:#13a557 !important; }
+#power-rankings-2026 .team-tone strong, #power-rankings-2026 .team-tone a, #power-rankings-2026 td.team-tone { color:#13a557 !important; }
+#power-rankings-2026 .team-antonio strong, #power-rankings-2026 .team-antonio a, #power-rankings-2026 td.team-antonio { color:#13a557 !important; }
+#power-rankings-2026 .team-nicky strong, #power-rankings-2026 .team-nicky a, #power-rankings-2026 td.team-nicky { color:#19a7df !important; }
+#power-rankings-2026 .team-martir strong, #power-rankings-2026 .team-martir a, #power-rankings-2026 td.team-martir { color:#19a7df !important; }
+#power-rankings-2026 .team-berger strong, #power-rankings-2026 .team-berger a, #power-rankings-2026 td.team-berger { color:#19a7df !important; }
+#power-rankings-2026 .team-frankie strong, #power-rankings-2026 .team-frankie a, #power-rankings-2026 td.team-frankie { color:#8b36c9 !important; }
+#power-rankings-2026 .team-melio strong, #power-rankings-2026 .team-melio a, #power-rankings-2026 td.team-melio { color:#8b36c9 !important; }
+#power-rankings-2026 .team-skin strong, #power-rankings-2026 .team-skin a, #power-rankings-2026 td.team-skin { color:#8b36c9 !important; }
+#power-rankings-2026 .team-carmelo strong, #power-rankings-2026 .team-carmelo a, #power-rankings-2026 td.team-carmelo { color:#ff0000 !important; }
+#power-rankings-2026 .team-mark strong, #power-rankings-2026 .team-mark a, #power-rankings-2026 td.team-mark { color:#ff0000 !important; }
+#power-rankings-2026 .team-grasso strong, #power-rankings-2026 .team-grasso a, #power-rankings-2026 td.team-grasso { color:#ff0000 !important; }</style><style id="keeper-final-precise-colors">#page-home .digital-keeper-table tbody [data-keeper-red="true"]{background:#ff0000!important;background-color:#ff0000!important;color:#000!important}#page-home .digital-keeper-table tbody td[data-keeper-red="false"]{background:#fff!important;background-color:#fff!important;color:#111!important}#page-home .digital-keeper-table tbody th[data-keeper-red="false"]{background:#10233f!important;background-color:#10233f!important;color:#fff!important}</style><style>/* Keeper Tracker exact reference cell colors */
+.keeper-table.digital-keeper-table tbody td[data-keeper-red="true"],
+.keeper-table.digital-keeper-table tbody th[data-keeper-red="true"] { background: #ff0000 !important; background-color: #ff0000 !important; color: #000 !important; }
+.keeper-table.digital-keeper-table tbody td:not([data-keeper-red="true"]),
+.keeper-table.digital-keeper-table tbody th:not([data-keeper-red="true"]) { background: #fff !important; background-color: #fff !important; color: #000 !important; }
+</style>
+<style id="mfga-layout-polish-fix">
+/* Keep section content within the viewport; prevent cropped Record History headers/cards. */
+html, body { max-width:100%; overflow-x:hidden; }
+.page, .section, .section-head, .grid, .card { min-width:0; box-sizing:border-box; }
+#page-record-history { width:100%; max-width:100%; overflow:hidden; }
+#page-record-history .section-head { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 24px; padding:0; }
+#page-record-history .section-head h2 { min-width:0; margin:0; overflow-wrap:anywhere; }
+#page-record-history .section-head small { max-width:100%; white-space:normal; text-align:right; overflow-wrap:anywhere; }
+#page-record-history .grid.grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; width:100%; }
+#page-record-history .grid.grid-3 > .card { min-width:0; width:100%; margin:0; overflow-wrap:anywhere; }
+#page-record-history .big-number { overflow-wrap:anywhere; }
+@media(max-width:900px) {
+  #page-record-history .grid.grid-3 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:600px) {
+  #page-record-history .grid.grid-3 { grid-template-columns:minmax(0,1fr); }
+  #page-record-history .section-head { align-items:flex-start; }
+  #page-record-history .section-head small { text-align:left; }
+}
+/* Keeper Tracker: consistent columns, readable spacing, exact red keeper fills. */
+.keeper-card { min-width:0; width:100%; overflow:hidden; border-radius:8px; }
+.keeper-card .digital-section-head { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 20px; padding:16px 20px; }
+.keeper-card .digital-section-head h3 { margin:4px 0 0; line-height:1.15; }
+.keeper-card .digital-status { white-space:normal; text-align:right; }
+.keeper-card .keeper-scroll { width:100%; max-width:100%; overflow-x:auto; overflow-y:hidden; }
+.keeper-card .digital-keeper-table { width:100%; min-width:1120px; table-layout:fixed; border-collapse:collapse; }
+.keeper-card .digital-keeper-table th,
+.keeper-card .digital-keeper-table td { box-sizing:border-box; padding:8px 5px; height:40px; text-align:center; vertical-align:middle; white-space:nowrap; line-height:1.15; }
+.keeper-card .digital-keeper-table thead th { height:50px; font-size:10px; letter-spacing:.3px; }
+.keeper-card .digital-keeper-table thead th span { display:block; margin-bottom:4px; font-size:9px; }
+.keeper-card .digital-keeper-table thead th:first-child,
+.keeper-card .digital-keeper-table tbody th { width:92px; text-align:left; padding-left:14px; }
+.keeper-card .digital-keeper-table .keeper,
+.keeper-card .digital-keeper-table [data-keeper-red="true"] { background:#ff0000 !important; background-color:#ff0000 !important; color:#000 !important; font-weight:700 !important; }
+.keeper-card .keeper-footer { display:block; padding:12px 16px; line-height:1.5; overflow-wrap:anywhere; }
+@media(max-width:760px) {
+ .keeper-card .digital-section-head { align-items:flex-start; }
+ .keeper-card .digital-status { text-align:left; }
+ .keeper-card .digital-keeper-table { min-width:1120px; }
+}
+</style>
+
+
+<style id="actual-record-history-and-keeper-fix">
+/* Hard reset the Record History page sizing so its heading/cards cannot be clipped by inherited layout rules. */
+html, body { width:100% !important; max-width:100% !important; margin-left:0 !important; margin-right:0 !important; }
+.wrap { width:100% !important; max-width:1600px !important; margin-left:auto !important; margin-right:auto !important; box-sizing:border-box !important; }
+#page-record-history { display:none; position:relative !important; left:auto !important; right:auto !important; transform:none !important; width:100% !important; max-width:100% !important; box-sizing:border-box !important; overflow:visible !important; margin-left:0 !important; margin-right:0 !important; padding-left:0 !important; padding-right:0 !important; }
+#page-record-history.active { display:block !important; }
+#page-record-history > .section-head { width:100% !important; max-width:100% !important; box-sizing:border-box !important; display:flex !important; flex-wrap:wrap !important; justify-content:space-between !important; align-items:flex-end !important; gap:12px 20px !important; margin-left:0 !important; margin-right:0 !important; }
+#page-record-history > .section-head h2 { flex:1 1 280px !important; min-width:0 !important; font-size:clamp(25px,3vw,42px) !important; line-height:1.1 !important; white-space:normal !important; }
+#page-record-history > .section-head small { flex:0 1 420px !important; min-width:0 !important; text-align:right !important; white-space:normal !important; overflow-wrap:anywhere !important; font-size:clamp(9px,1vw,12px) !important; }
+#page-record-history .grid.grid-3 { width:100% !important; max-width:100% !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; box-sizing:border-box !important; }
+#page-record-history .grid.grid-3 > .card { min-width:0 !important; max-width:100% !important; box-sizing:border-box !important; overflow-wrap:anywhere !important; }
+#page-record-history .big-number { font-size:clamp(34px,4vw,64px) !important; line-height:1 !important; }
+@media(max-width:900px){ #page-record-history .grid.grid-3 { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+@media(max-width:600px){ #page-record-history .grid.grid-3 { grid-template-columns:minmax(0,1fr) !important; } #page-record-history > .section-head { align-items:flex-start !important; } #page-record-history > .section-head small { flex-basis:100% !important; text-align:left !important; } }
+/* Exact red fills must survive striping, old CSS, and script-added classes. */
+#page-home .digital-keeper-table tbody td.keeper,
+#page-home .digital-keeper-table tbody td[data-keeper-red="true"],
+#page-home .digital-keeper-table tbody th[data-keeper-red="true"],
+#page-home .digital-keeper-table tbody td.keeper-round-right[data-keeper-red="true"] { background:#ff0000 !important; background-color:#ff0000 !important; color:#000000 !important; }
+#page-home .digital-keeper-table tbody td[data-keeper-red="false"] { background:#ffffff !important; background-color:#ffffff !important; color:#111111 !important; }
+#page-home .digital-keeper-table tbody th[data-keeper-red="false"] { background:#0b1f3a !important; background-color:#0b1f3a !important; color:#ffffff !important; }
+#page-home .keeper-card { width:100% !important; max-width:100% !important; min-width:0 !important; box-sizing:border-box !important; }
+#page-home .keeper-scroll { width:100% !important; max-width:100% !important; overflow-x:auto !important; }
+#page-home .digital-keeper-table { min-width:1120px !important; width:100% !important; table-layout:fixed !important; border-collapse:collapse !important; }
+#page-home .digital-keeper-table th, #page-home .digital-keeper-table td { padding:7px 4px !important; height:39px !important; line-height:1.15 !important; vertical-align:middle !important; text-align:center !important; white-space:nowrap !important; box-sizing:border-box !important; }
+</style>
+
+
+<style id="record-history-layout-final">
+/* Record History: fit the viewport without changing the existing record values. */
+#page-record-history { width:100% !important; max-width:100% !important; margin:0 !important; padding:clamp(12px,2vw,28px) !important; box-sizing:border-box !important; overflow:visible !important; }
+#page-record-history .section-head { width:100% !important; display:flex !important; flex-wrap:wrap !important; align-items:flex-end !important; justify-content:space-between !important; gap:12px 20px !important; box-sizing:border-box !important; }
+#page-record-history .section-head h2 { flex:1 1 280px !important; min-width:0 !important; margin:0 !important; font-size:clamp(28px,3.6vw,48px) !important; line-height:1.05 !important; overflow-wrap:anywhere !important; }
+#page-record-history .section-head small { flex:1 1 260px !important; max-width:100% !important; min-width:0 !important; white-space:normal !important; text-align:right !important; overflow-wrap:anywhere !important; }
+#page-record-history > .grid.grid-3 { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:16px !important; width:100% !important; max-width:100% !important; margin:16px 0 0 !important; box-sizing:border-box !important; }
+#page-record-history > .grid.grid-3 > .card { width:100% !important; min-width:0 !important; max-width:100% !important; margin:0 !important; padding:clamp(16px,2vw,28px) !important; box-sizing:border-box !important; overflow:hidden !important; }
+#page-record-history .big-number { max-width:100% !important; font-size:clamp(38px,4vw,68px) !important; line-height:1 !important; overflow-wrap:anywhere !important; }
+#page-record-history .sub { overflow-wrap:anywhere !important; }
+@media(max-width:900px){ #page-record-history > .grid.grid-3 { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+@media(max-width:560px){ #page-record-history { padding:12px !important; } #page-record-history > .grid.grid-3 { grid-template-columns:minmax(0,1fr) !important; } #page-record-history .section-head small { flex-basis:100% !important; text-align:left !important; } }
+</style>
+
+</head>
 <body>
 <header class="top">
-  <div class="topbar">
-    <div class="brand"><img src="mfga-logo.png" alt="MFGA Fantasy Football League logo"><span class="x-badge">X</span></div>
-    <nav class="nav">
-    <a href="#home" data-page="home">Home</a><a href="#season" data-page="season">2026 Season</a><a href="#meet" data-page="meet">Meet the League</a><a href="#hall-of-champions" data-page="hall-of-champions">Hall of Champions</a><a href="#record-history" data-page="record-history">Record History</a><a href="#rules" data-page="rules">Rules &amp; Info</a><a href="#drafts" data-page="drafts">Draft Boards</a>
-    </nav>
-  </div>
+<div class="topbar">
+<div class="brand"><img alt="MFGA Fantasy Football League logo" src="mfga-logo.png"/><span class="x-badge">X</span></div>
+<nav class="nav">
+<a data-page="home" href="#home">Home</a><a data-page="season" href="#season">2026 Season</a><a data-page="meet" href="#meet">Meet the League</a><a data-page="hall-of-champions" href="#hall-of-champions">Hall of Champions</a><a data-page="record-history" href="#record-history">Record History</a><a data-page="rules" href="#rules">Rules &amp; Info</a><a data-page="drafts" href="#drafts">Draft Boards</a>
+</nav>
+</div>
 </header>
-
 <section class="hero" id="home">
-  <div class="hero-inner">
-    <div>
-      <div class="kicker">Make Football Great Again · Established 2017</div>
-      <h1 class="display">MFGA <em>X</em></h1>
-      <p>The Official Home Of Make Football Great Again.<br><span>Current Season. League History. Championships. Rivalries. Drafts. Everything MFGA.</span></p>
-      <div class="hero-quote">“Winning Isn’t Everything, It’s The Only Thing”<cite>— Vince Lombardi</cite></div>
-    </div>
-    <div class="hero-logo"><img src="mfga-logo.png" alt="Make Football Great Again logo"></div>
-  </div>
+<div class="hero-inner">
+<div>
+<div class="kicker">Make Football Great Again · Established 2017</div>
+<h1 class="display">MFGA <em>X</em></h1>
+<p>The Official Home Of Make Football Great Again.<br/><span>Current Season. League History. Championships. Rivalries. Drafts. Everything MFGA.</span></p>
+<div class="hero-quote">“Winning Isn’t Everything, It’s The Only Thing”<cite>— Vince Lombardi</cite></div>
+</div>
+<div class="hero-logo"><img alt="Make Football Great Again logo" src="mfga-logo.png"/></div>
+</div>
 </section>
-
 <div class="ticker">
-  <div class="ticker-inner">
-    <div class="ticker-label">League Desk</div>
-    <div class="ticker-items">
-      <span><strong>2026</strong> - Season 10</span><span><strong>12</strong> - Teams</span><span><strong>4</strong> - Divisions</span><span><strong>$150</strong> - Buy-In</span><span><strong>Aug 30</strong> - Draft Day</span><span><strong>Nov 24</strong> - Trade Deadline</span><span><strong>Previous Winner</strong> - Anthony Grasso</span>
-    </div>
-  </div>
-  <div class="ticker-inner ticker-row-2">
-    <div class="ticker-label">2026 Snapshot</div>
-    <div class="ticker-items">
-      <span><strong>Current 1 Seed</strong> - Nicky</span>
-      <span><strong>Current Most Points</strong> - Mark</span>
-      <span><strong>Current 12 Seed</strong> - Melio</span>
-      <span><strong>Current Least Points</strong> - Martir</span>
-      <a class="league-desk-link" href="https://fantasy.espn.com/football/league?leagueId=640928" target="_blank" rel="noopener noreferrer">
-        <strong>ESPN League</strong> ↗
+<div class="ticker-inner">
+<div class="ticker-label">League Desk</div>
+<div class="ticker-items">
+<span><strong>2026</strong> - Season 10</span><span><strong>12</strong> - Teams</span><span><strong>4</strong> - Divisions</span><span><strong>$150</strong> - Buy-In</span><span><strong>Aug 30</strong> - Draft Day</span><span><strong>Nov 24</strong> - Trade Deadline</span><span><strong>Previous Winner</strong> - Anthony Grasso</span>
+</div>
+</div>
+<div class="ticker-inner ticker-row-2">
+<div class="ticker-label">2026 Snapshot</div>
+<div class="ticker-items">
+<span><strong>Current 1 Seed</strong> - Mark</span>
+<span><strong>Current Most Points</strong> - Mark</span>
+<span><strong>Current 12 Seed</strong> - Antonio</span>
+<span><strong>Current Least Points</strong> - Martir</span>
+<a class="league-desk-link" href="https://fantasy.espn.com/football/league?leagueId=640928" rel="noopener noreferrer" target="_blank">
+<strong>ESPN League</strong> ↗
       </a>
-    </div>
-  </div>
 </div>
-
+</div>
+</div>
 <main class="wrap">
-<div id="page-home" class="page active">
-
-  <section class="section" id="home-weekly">
-  
-
+<div class="page active" id="page-home">
+<section class="section" id="home-weekly">
 <div class="card dark key-highlights-card" style="margin-top:15px">
-  <h3>Key Highlights</h3>
-  <div class="headline"><b>Week 6 is in the books.</b><span>There are 8 regular-season games remaining.</span></div>
-  <div class="headline"><b>Week 6 Results.</b><span>Antonio 144.7–122.3 Frankie; Nicky 113.4–143.7 Mark; Berger 96.0–164.7 Carmelo; Melio 78.5–89.9 Tone; Grasso 102.0–147.1 Martir; Skin 99.0–116.2 Filippo.</span></div>
-  <div class="headline"><b>Biggest Upset.</b><span>All underdogs won besides Berger.</span></div>
-  <div class="headline"><b>Closest Game.</b><span>A Diggs TD and a Warren swap-out give Tone the win over Melio.</span></div>
-  <div class="headline"><b>Scoring.</b><span>A lot of good, a lot of bad… still got a long way to go.</span></div>
-  <div class="headline"><b>Key Injuries.</b><span>Mark loses both Terry and Evans during MNF; Terry is out for the year, Evans is out for a few weeks, and Doubs lands on IR. Berger loses Hurts potentially for the year with a blood clot. Skin loses Adams for a good chunk of the season. Twitter Doctor Jesse Morse retires.</span></div>
-  <div class="headline"><b>Key Trades.</b><span>Nicky and Berger made the first trade of the season: Egbuka and Aaron Jones for Michael Wilson and Burden.</span></div>
-  <div class="headline"><b>Trade Committee.</b><span>Antonio, Grasso and Melio.</span></div>
-  <div class="headline"><b>Week 7 Matchups.</b><span>Antonio vs Martir, Frankie vs Mark, Nicky vs Tone, Carmelo vs Melio, Skin vs Grasso, and Berger vs Filippo.</span></div>
+<h3>Key Highlights</h3>
+<div class="headline"><b>Week 7 is in the books.</b><span>There are 7 regular-season games remaining.</span></div>
+<div class="headline"><b>Week 7 Results.</b><span>Antonio 102.0–137.8 Martir; Frankie 157.1–159.6 Mark; Nicky 114.3–133.5 Tone; Carmelo 125.6–148.9 Melio; Skin 110.0–95.7 Grasso; Berger 135.7–130.6 Filippo.</span></div>
+<div class="headline"><b>Biggest Upset.</b><span>Tone beats Nicky.</span></div>
+<div class="headline"><b>Closest Game.</b><span>Mark pulls a SNF miracle against Frankie. Berger fights strong vs Filippo on MNF.</span></div>
+<div class="headline"><b>Scoring.</b><span>A lot of good, a lot of bad… still got a long way to go.</span></div>
+<div class="headline"><b>Key Injuries.</b><span>Antonio has Devonta out. Frankie has Golden missing practice; Charbonnet returns. Nicky should have Hall return. Carmelo waits for CMC news after his bye week. Melio has St. Brown miss practice. Grasso may have Saquon back. Berger loses Emeka; Jones are getting both in a trade. Filippo loses his RB2 in Pierce; maybe Lamar returns.</span></div>
+<div class="headline"><b>Key Trades.</b><span>N/A.</span></div>
+<div class="headline"><b>Trade Committee.</b><span>Antonio, Grasso and Berger.</span></div>
+<div class="headline"><b>Commissioner’s Note.</b><span>FUCK ALL OF YOU.</span></div><div class="headline"><b>Week 8 Matchups.</b><span>Antonio vs Melio, Mark vs Berger, Skin vs Tone, Frankie vs Filippo, Carmelo vs Martir, and Nicky vs Grasso.</span></div>
 </div><div class="card keeper-card" style="margin-top:15px">
-  <div class="digital-section-head">
-    <div><div class="digital-kicker">2026 SEASON</div><h3>Keeper Tracker</h3></div>
-    <div class="digital-status">12 TEAMS · 15 ROUNDS · UPDATED WEEKLY</div>
-  </div>
-  <div class="keeper-scroll">
-    <table class="keeper-table digital-keeper-table">
-      <thead><tr>
-        <th>ROUND</th><th class="filippo-team"><span>01</span>Filippo</th><th><span>02</span>Nicky</th><th><span>03</span>Tone</th><th><span>04</span>Frankie</th><th><span>05</span>Carmelo</th><th><span>06</span>Martir</th><th><span>07</span>Melio</th><th><span>08</span>Mark</th><th><span>09</span>Antonio</th><th><span>10</span>Berger</th><th><span>11</span>Skin</th><th><span>12</span>Grasso</th><th class="keeper-round-right"></th></tr></thead>
-      <tbody><tr><th>Round 1</th><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Gibbs</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Robinson Jr</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Chase</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Nacua</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">McCaffrey</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Taylor</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">St. Brown</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Achane</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Brown</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Lamb</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Jefferson</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Brown</td><td class="keeper-round-right">1</td></tr><tr><th>Round 2</th><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">London</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Collins</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Irving</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Love</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Jeanty</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Nabers</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Williams</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Williams</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Walker III</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Hampton</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Henry</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Barkley</td><td class="keeper-round-right">2</td></tr><tr><th>Round 3</th><td>McBride</td><td>Bowers</td><td>Warren</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Allen</td><td>McConkey</td><td>Jacobs</td><td>Olave</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Smith-Njigba</td><td>Pickens</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Hurts</td><td>Etienne Jr.</td><td>Wilson</td><td class="keeper-round-right">3</td></tr><tr><th>Round 4</th><td>Moore</td><td>Egbuka</td><td>Waddle</td><td>Pollard</td><td>Tuten</td><td>Montgomery</td><td>Price</td><td>Flowers</td><td>Swift</td><td>Judkins</td><td>Adams</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Cook III</td><td class="keeper-round-right">4</td></tr><tr><th>Round 5</th><td>Jackson</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Hall</td><td>Burrow</td><td>Loveland</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">McMillan</td><td>Williams</td><td>Higgins</td><td>McLaurin</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Smith</td><td>Burden III</td><td>Sutton</td><td>Warren</td><td class="keeper-round-right">5</td></tr><tr><th>Round 6</th><td>Brooks</td><td>Harrison Jr.</td><td>Mason</td><td>Metcalf</td><td>Tate</td><td>Monangai</td><td>Doubs</td><td>Evans</td><td>Henderson</td><td>Watson</td><td>Stevenson</td><td>Washington</td><td class="keeper-round-right">6</td></tr><tr><th>Round 7</th><td>Pittman Jr.</td><td>Pierce</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Skattebo</td><td>Maye</td><td>Daniels</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Rice</td><td>Fannin Jr.</td><td>Pitts Sr.</td><td>Johnston</td><td>Wilson</td><td>Hubbard</td><td>Kraft</td><td class="keeper-round-right">7</td></tr><tr><th>Round 8</th><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Odunze</td><td>Jones Sr.</td><td>Diggs</td><td>Corum</td><td>Kelce</td><td>Dart</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Samuel Sr.</td><td>Harvey</td><td>LaPorta</td><td>Lloyd</td><td>Gainwell</td><td>Dobbs</td><td class="keeper-round-right">8</td></tr><tr><th>Round 9</th><td>Croskey-Merritt</td><td>Lemon</td><td>Marks</td><td>Golden</td><td>Spears</td><td>Thomas Jr.</td><td>Prescott</td><td>Williams</td><td>Herbert</td><td>Kittle</td><td>Robinson</td><td>Lawrence</td><td class="keeper-round-right">9</td></tr><tr><th>Round 10</th><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Meyers</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Rodriguez Jr.</td><td>Stribling</td><td>Charbonnet</td><td>Goedert</td><td>Shakir</td><td>White</td><td>Addison</td><td>Godwin Jr.</td><td>Aubrey</td><td>Nix</td><td>Concepcion</td><td class="keeper-round-right">10</td></tr><tr><th>Round 11</th><td>Myers</td><td>Likely</td><td>Kincaid</td><td>Andrews</td><td>Downs</td><td>Hockenson</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Reed</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Sampson</td><td>Worthy</td><td>Washington Jr.</td><td>Stafford</td><td>Dicker</td><td class="keeper-round-right">11</td></tr><tr><th>Round 12</th><td>Coker</td><td>Goff</td><td>Pineiro</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Mevis</td><td>Tyson</td><td>Jeudy</td><td>Pacheco</td><td>Doubs</td><td>Allen</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">McMillan</td><td>Fairbairn</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Allgeier</td><td class="keeper-round-right">12</td></tr><tr><th>Round 13</th><td>Robinson Jr.</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Shaheed</td><td>Mitchell</td><td>Tucker</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Bigsby</td><td>Kamara</td><td>Loop</td><td>Henry</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Boutte</td><td>Douglas</td><td>Johnson</td><td>Washington</td><td class="keeper-round-right">13</td></tr><tr><th>Round 14</th><td>Shough</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Murray</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Nailor</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">James</td><td>Butker</td><td>Ferguson</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Mayfield</td><td>Boswell</td><td>Little</td><td>Purdy</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Ferguson</td><td>Mahomes II</td><td class="keeper-round-right">14</td></tr><tr><th>Round 15</th><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Davis</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Bates</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Wright</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Mitchell</td><td>Black</td><td>Smack</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Ridley</td><td>Love</td><td class="keeper" style="background:#ff0000 !important;color:#000 !important;font-weight:700 !important;">Barner</td><td>Sadiq</td><td>Kupp</td><td>Hill</td><td class="keeper-round-right">15</td></tr></tbody>
-    </table>
-  </div>
-  <div class="keeper-footer"><span><b>KEEPER RULE</b> Can only keep 1 player drafted in round 3 or later. This draft board will be updated throught the season for eligible players. (Player being kept must be on your team all year round, No Trades/Picks Ups)</span></div>
+<div class="digital-section-head">
+<div><div class="digital-kicker">2026 SEASON</div><h3>Keeper Tracker</h3></div>
+<div class="digital-status">12 TEAMS · 15 ROUNDS · UPDATED WEEKLY</div>
 </div>
-
+<div class="keeper-scroll">
+<table class="keeper-table digital-keeper-table">
+<thead><tr>
+<th>ROUND</th><th class="filippo-team"><span>01</span>Filippo</th><th><span>02</span>Nicky</th><th><span>03</span>Tone</th><th><span>04</span>Frankie</th><th><span>05</span>Carmelo</th><th><span>06</span>Martir</th><th><span>07</span>Melio</th><th><span>08</span>Mark</th><th><span>09</span>Antonio</th><th><span>10</span>Berger</th><th><span>11</span>Skin</th><th><span>12</span>Grasso</th><th class="keeper-round-right"></th></tr></thead>
+<tbody><tr><th bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Round 1</th><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Gibbs</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Robinson Jr</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Chase</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Nacua</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">McCaffrey</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Taylor</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">St. Brown</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Achane</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Brown</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Lamb</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Jefferson</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Brown</td><td bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">1</td></tr><tr><th bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Round 2</th><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">London</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Collins</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Irving</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Love</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Jeanty</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Nabers</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Williams</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Williams</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Walker III</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Hampton</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Henry</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Barkley</td><td bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">2</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 3</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">McBride</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Bowers</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Warren</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Allen</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">McConkey</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Jacobs</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Olave</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Smith-Njigba</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Pickens</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Hurts</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Etienne Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Wilson</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">3</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 4</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Moore</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Egbuka</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Waddle</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Pollard</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Tuten</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Montgomery</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Price</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Flowers</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Swift</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Judkins</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Adams</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Cook III</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">4</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 5</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Jackson</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Hall</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Burrow</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Loveland</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">McMillan</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Williams</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Higgins</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">McLaurin</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Smith</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Burden III</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Sutton</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Warren</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">5</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 6</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Brooks</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Harrison Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Mason</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Metcalf</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Tate</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Monangai</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Doubs</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Evans</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Henderson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Watson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Stevenson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Washington</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">6</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 7</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Pittman Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Pierce</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Skattebo</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Maye</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Daniels</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Rice</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Fannin Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Pitts Sr.</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Johnston</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Wilson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Hubbard</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Kraft</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">7</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 8</th><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Odunze</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Jones Sr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Diggs</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Corum</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Kelce</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Dart</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Samuel Sr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Harvey</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">LaPorta</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Lloyd</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Gainwell</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Dobbs</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">8</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 9</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Croskey-Merritt</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Lemon</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Marks</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Golden</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Spears</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Thomas Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Prescott</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Williams</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Herbert</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Kittle</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Robinson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Lawrence</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">9</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 10</th><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Meyers</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Rodriguez Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Stribling</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Charbonnet</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Goedert</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Shakir</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">White</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Addison</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Godwin Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Aubrey</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Nix</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Concepcion</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">10</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 11</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Myers</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Likely</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Kincaid</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Andrews</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Downs</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Hockenson</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Reed</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Sampson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Worthy</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Washington Jr.</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Stafford</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Dicker</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">11</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 12</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Coker</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Goff</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Pineiro</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Mevis</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Tyson</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Jeudy</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Pacheco</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Doubs</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Allen</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">McMillan</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Fairbairn</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Allgeier</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">12</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 13</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Robinson Jr.</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Shaheed</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Mitchell</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Tucker</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Bigsby</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Kamara</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Loop</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Henry</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Boutte</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Douglas</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Johnson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Washington</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">13</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 14</th><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Shough</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Murray</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Nailor</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">James</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Butker</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Ferguson</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Mayfield</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Boswell</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Little</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Purdy</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Ferguson</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Mahomes II</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">14</td></tr><tr><th bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Round 15</th><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Davis</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Bates</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Wright</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Mitchell</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Black</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Smack</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Ridley</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Love</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Barner</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Sadiq</td><td class="keeper" bgcolor="#ff0000" data-keeper-red="true" style="color: #000000 !important; background-color: #ff0000 !important">Kupp</td><td class="" bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">Hill</td><td bgcolor="#ffffff" data-keeper-red="false" style="color: #000000 !important; background-color: #ffffff !important">15</td></tr></tbody>
+</table>
+</div>
+<div class="keeper-footer"><span><b>KEEPER RULE</b> Can only keep 1 player drafted in round 3 or later. This draft board will be updated throught the season for eligible players. (Player being kept must be on your team all year round, No Trades/Picks Ups)</span></div>
+</div>
 </section>
 </div>
 <section class="section page" id="page-season">
 <div class="section-head"><h2 class="display">2026 Season</h2><small>Current league center</small></div>
-
-  <div class="weekly-matchups">
-  <div class="section-head">
-    <h2 id="this-weeks-matchups" class="display">THIS WEEK'S MATCHUPS</h2>
-    <small>WEEK 7 · 2026 SEASON</small>
-  </div>
-  <div class="matchup-grid">
-<div class="matchup-card"><span class="matchup-label">MATCHUP 1</span><strong><span style="color:#00a651">Antonio</span> <em>vs</em> <span style="color:#00a8e8">Martir</span></strong><small>H2H: Antonio 9–8–0 · Martir 8–9–0</small></div>
-<div class="matchup-card"><span class="matchup-label">MATCHUP 2</span><strong><span style="color:#7b2cbf">Frankie</span> <em>vs</em> <span style="color:#ff0000">Mark</span></strong><small>H2H: Frankie 1–0–0 · Mark 0–1–0</small></div>
-<div class="matchup-card"><span class="matchup-label">MATCHUP 3</span><strong><span style="color:#00a8e8">Nicky</span> <em>vs</em> <span style="color:#00a651">Tone</span></strong><small>H2H: Nicky 2–0–0 · Tone 0–2–0</small></div>
-<div class="matchup-card"><span class="matchup-label">MATCHUP 4</span><strong><span style="color:#ff0000">Carmelo</span> <em>vs</em> <span style="color:#7b2cbf">Melio</span></strong><small>H2H: Carmelo 3–4–0 · Melio 4–3–0</small></div>
-<div class="matchup-card"><span class="matchup-label">MATCHUP 5</span><strong><span style="color:#7b2cbf">Skin</span> <em>vs</em> <span style="color:#ff0000">Grasso</span></strong><small>H2H: Skin 2–0–0 · Grasso 0–2–0</small></div>
-<div class="matchup-card"><span class="matchup-label">MATCHUP 6</span><strong><span style="color:#00a8e8">Berger</span> <em>vs</em> <span style="color:#00a651">Filippo</span></strong><small>H2H: Berger 6–3–0 · Filippo 3–6–0</small></div>
-</div></div></div>
-</div></div>
+<div class="weekly-matchups">
+<div class="section-head">
+<h2 class="display" id="this-weeks-matchups">THIS WEEK'S MATCHUPS</h2>
+<small>WEEK 8 · 2026 SEASON</small>
 </div>
-
+<div class="matchup-grid"><div class="matchup-card"><span class="matchup-label">MATCHUP 1</span><strong><span style="color:#13a557">Antonio</span> <em>vs</em> <span style="color:#7b2cbf">Melio</span></strong><small>H2H: Antonio 4–5–0 · Melio 5–4–0</small></div>
+<div class="matchup-card"><span class="matchup-label">MATCHUP 2</span><strong><span style="color:#ff0000">Mark</span> <em>vs</em> <span style="color:#19a7df">Berger</span></strong><small>H2H: Mark 2–4–0 · Berger 4–2–0</small></div>
+<div class="matchup-card"><span class="matchup-label">MATCHUP 3</span><strong><span style="color:#7b2cbf">Skin</span> <em>vs</em> <span style="color:#13a557">Tone</span></strong><small>H2H: Skin 2–0–0 · Tone 0–2–0</small></div>
+<div class="matchup-card"><span class="matchup-label">MATCHUP 4</span><strong><span style="color:#7b2cbf">Frankie</span> <em>vs</em> <span style="color:#19a7df">Filippo</span></strong><small>H2H: Frankie 3–2–0 · Filippo 2–3–0</small></div>
+<div class="matchup-card"><span class="matchup-label">MATCHUP 5</span><strong><span style="color:#ff0000">Carmelo</span> <em>vs</em> <span style="color:#00a8e8">Martir</span></strong><small>H2H: Carmelo 3–3–0 · Martir 3–3–0</small></div>
+<div class="matchup-card"><span class="matchup-label">MATCHUP 6</span><strong><span style="color:#19a7df">Nicky</span> <em>vs</em> <span style="color:#ff0000">Grasso</span></strong><small>H2H: Nicky 0–1–0 · Grasso 1–0–0</small></div></div>
+</div>
 <div class="season-top-grid" style="margin-top:15px">
-    <div class="card standings-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<div class="card standings-card">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
 <h3 style="margin:0">Current Standings</h3>
-        <label class="division-filter"><span>Division</span><select id="division-filter">
-              <option value="all">All Teams</option>
-              <option value="blue">Blue</option>
-              <option value="green">Green</option>
-              <option value="red">Red</option>
-              <option value="purple">Purple</option>
-            </select></label>
-      </div>
-      
+<label class="division-filter"><span>Division</span><select id="division-filter">
+<option value="all">All Teams</option>
+<option value="blue">Blue</option>
+<option value="green">Green</option>
+<option value="red">Red</option>
+<option value="purple">Purple</option>
+</select></label>
+</div>
 <div class="table-wrap"><table><thead><tr><th>Rk</th><th data-standing-sortable="true">Team</th><th data-standing-sortable="true">W</th><th data-standing-sortable="true">L</th><th data-standing-sortable="true">%</th><th data-standing-sortable="true">PF</th><th data-standing-sortable="true">PA</th><th data-standing-sortable="true">+/-</th><th data-standing-sortable="true">Avg PF</th><th data-standing-sortable="true">Avg PA</th><th data-standing-sortable="true">Proj. Playoff %</th></tr></thead><tbody id="current-standings"></tbody></table></div>
 <div class="playoff-disclaimer" style="margin-top:8px"><b>PROJECTED PLAYOFF ODDS:</b> Updated after Week 6 using a 50,000-simulation model. The model blends the first six weeks of scoring with career scoring baseline, current record and point differential, then simulates the remaining 8 games using the actual schedule and four-division playoff format. Division leaders take seeds 1–4 and the next two teams earn wild cards. These are projections, not official standings.</div>
-    </div>
-
-    <div class="card playoff-picture-card">
-      <h3>Projected Playoff Picture</h3>
-      <div class="playoff-grid">
-        <div>
-          <div class="eyebrow">Division Leaders</div>
-          <div class="stat"><span>Seed 1</span><b>Nicky</b></div>
-          <div class="stat"><span>Seed 2</span><b>Carmelo</b></div>
-          <div class="stat"><span>Seed 3</span><b>Skin</b></div>
-          <div class="stat"><span>Seed 4</span><b>Filippo</b></div>
-        </div>
-        <div>
-          <div class="eyebrow">Wild Cards</div>
-          <div class="stat"><span>Seed 5</span><b>Mark</b></div>
-          <div class="stat"><span>Seed 6</span><b>Frankie</b></div>
-        </div>
-        <div>
-          <div class="eyebrow">Matchups</div>
-          <div class="stat"><span> </span><b>Skin vs Frankie</b></div>
-          <div class="stat"><span> </span><b>Filippo vs Mark</b></div>
-          <p class="playoff-note"><span id="bye-seed-1-name">Nicky</span> &amp; <span id="bye-seed-2-name">Carmelo</span> receive first-round byes</p>
-        </div>
-      </div>
-      <div class="playoff-disclaimer status-disclaimer">
-  <div class="status-line"><b>Z:</b> Clinched First Overall <span class="status-sep">|</span> <b>Y:</b> Clinched First Round Bye</div>
-  <div class="status-line"><b>X:</b> Clinched Playoff Spot <span class="status-sep">|</span> <b>E:</b> Eliminated</div>
 </div>
-      <p class="playoff-disclaimer" style="margin-top:7px"><b>Tiebreakers:</b> head-to-head → points scored → points against. Division leaders occupy seeds 1–4.</p>
-    
-        <div class="lottery-block">
-          <div class="section-head lottery-head">
-            <h3 class="display">Draft Lottery Standings</h3>
-            <small>1st Pick - 6th Pick</small>
-          </div>
-          <div class="lottery-columns">
-            <div class="lottery-list">
-              <div class="lottery-row"><span>1st Pick</span><b>Melio</b></div>
-              <div class="lottery-row"><span>2nd Pick</span><b>Antonio</b></div>
-              <div class="lottery-row"><span>3rd Pick</span><b>Tone</b></div>
-            </div>
-            <div class="lottery-list">
-              <div class="lottery-row"><span>4th Pick</span><b>Grasso</b></div>
-              <div class="lottery-row"><span>5th Pick</span><b>Berger</b></div>
-              <div class="lottery-row"><span>6th Pick</span><b>Martir</b></div>
-            </div>
-          </div>
-          <div class="lottery-disclaimer">
-            <strong>Votes will be based on rank and sent into a generator and refreshed after each pick is made.</strong>
+<div class="card playoff-picture-card">
+<h3>Projected Playoff Picture</h3>
+<div class="playoff-grid">
+<div>
+<div class="eyebrow">Division Leaders</div>
+<div class="stat"><span>Seed 1</span><b>Mark</b></div>
+<div class="stat"><span>Seed 2</span><b>Skin</b></div>
+<div class="stat"><span>Seed 3</span><b>Nicky</b></div>
+<div class="stat"><span>Seed 4</span><b>Filippo</b></div>
+</div>
+<div>
+<div class="eyebrow">Wild Cards</div>
+<div class="stat"><span>Seed 5</span><b>Carmelo</b></div>
+<div class="stat"><span>Seed 6</span><b>Martir</b></div>
+</div>
+<div>
+<div class="eyebrow">Matchups</div>
+<div class="stat"><span> </span><b>Nicky vs Martir</b></div>
+<div class="stat"><span> </span><b>Filippo vs Carmelo</b></div>
+<p class="playoff-note"><span id="bye-seed-1-name">Mark</span> &amp; <span id="bye-seed-2-name">Skin</span> receive first-round byes</p>
+</div>
+</div>
+<div class="playoff-disclaimer status-disclaimer">
+<div class="status-line"><b>Z:</b> Clinched First Overall <span class="status-sep">|</span> <b>Y:</b> Clinched First Round Bye</div>
+<div class="status-line"><b>X:</b> Clinched Playoff Spot <span class="status-sep">|</span> <b>E:</b> Eliminated</div>
+</div>
+<p class="playoff-disclaimer" style="margin-top:7px"><b>Tiebreakers:</b> head-to-head → points scored → points against. Division leaders occupy seeds 1–4.</p>
+<div class="lottery-block">
+<div class="section-head lottery-head">
+<h3 class="display">Draft Lottery Standings</h3>
+<small>1st Pick - 6th Pick</small>
+</div>
+<div class="lottery-columns">
+<div class="lottery-list">
+<div class="lottery-row"><span>1st Pick</span><b>Antonio</b></div>
+<div class="lottery-row"><span>2nd Pick</span><b>Grasso</b></div>
+<div class="lottery-row"><span>3rd Pick</span><b>Berger</b></div>
+</div>
+<div class="lottery-list">
+<div class="lottery-row"><span>4th Pick</span><b>Frankie</b></div>
+<div class="lottery-row"><span>5th Pick</span><b>Melio</b></div>
+<div class="lottery-row"><span>6th Pick</span><b>Tone</b></div>
+</div>
+</div>
+<div class="lottery-disclaimer">
+<strong>Votes will be based on rank and sent into a generator and refreshed after each pick is made.</strong>
             For example, if Team A comes in 6th place overall, he will receive 6 votes for #6 Overall, while if Team B comes in last place overall, he will receive 1 vote for #6 Overall.
           </div>
-        </div>
 </div>
-  </div>
-
-  <div class="card season-full-width" id="power-rankings-2026" style="margin-top:15px">
-    <div class="section-head" style="margin-bottom:10px">
-      <h3 style="margin:0">2026 Power Rankings</h3>
-      <small>Week 6 · Re-evaluated after final results</small>
-    </div>
-    <p style="font:10px 'IBM Plex Mono';color:#777;margin-top:8px"><strong>MOVEMENT:</strong> Compared with the previous published Power Rankings. ↑ = moved up · ↓ = moved down · — = no change.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>RANK</th><th>TEAM</th><th>RECORD</th><th>MOVEMENT</th><th>ANALYSIS</th></tr></thead>
-        <tbody><tr><td><strong>1</strong></td><td class="name"><strong style="color:#ff0000">Mark</strong></td><td>4-2</td><td><strong>↑1</strong></td><td>Beats undefeated Nicky 143.7–113.4 and now leads the league with 874.7 PF. Losing Terry for the year and Evans for several weeks is a serious roster hit, but the statement win earns the top spot.</td></tr><tr><td><strong>2</strong></td><td class="name"><strong style="color:#19a7df">Nicky</strong></td><td>5-1</td><td><strong>↓1</strong></td><td>Takes his first loss, but remains 5–1 with 840.1 PF and a strong scoring profile. Mark got the better of him this week; Nicky still looks like a playoff favorite.</td></tr><tr><td><strong>3</strong></td><td class="name"><strong style="color:#ff0000">Carmelo</strong></td><td>4-2</td><td><strong>↑2</strong></td><td>The week’s biggest score: 164.7 in a 68.7-point win over Berger. At 4–2 with 820.5 PF, Carmelo has a strong case as the league’s most dangerous team behind the top two.</td></tr><tr><td><strong>4</strong></td><td class="name"><strong style="color:#7b2cbf">Skin</strong></td><td>4-2</td><td><strong>↓1</strong></td><td>Drops to 4–2 after scoring 99.0 against Filippo. The Davante Adams injury hurts the outlook, but Skin’s record and 775.1 PF keep him in the top tier.</td></tr><tr><td><strong>5</strong></td><td class="name"><strong style="color:#19a7df">Filippo</strong></td><td>3-3</td><td><strong>↑1</strong></td><td>Gets a valuable 116.2–99.0 win over Skin and moves back to .500. With 767.2 PF, Filippo has enough scoring strength to remain in the playoff conversation.</td></tr><tr><td><strong>6</strong></td><td class="name"><strong style="color:#19a7df">Martir</strong></td><td>3-3</td><td><strong>↑4</strong></td><td>Posts 147.1, one of the week’s top scores, and handles Grasso comfortably. Martir is back to .500; the 670.3 PF total still trails most contenders, so consistency is the next test.</td></tr><tr><td><strong>7</strong></td><td class="name"><strong style="color:#7b2cbf">Frankie</strong></td><td>3-3</td><td><strong>↓3</strong></td><td>Scores 122.3 but loses to Antonio. Frankie remains even at 3–3, with 722.7 PF and a positive point differential; this is a setback, not a collapse.</td></tr><tr><td><strong>8</strong></td><td class="name"><strong style="color:#13a557">Antonio</strong></td><td>2-4</td><td><strong>↑4</strong></td><td>A strong 144.7-point outing delivers a much-needed win over Frankie. The 2–4 record and 874.3 PA leave a steep climb, but Week 6 showed the offense can still compete.</td></tr><tr><td><strong>9</strong></td><td class="name"><strong style="color:#19a7df">Berger</strong></td><td>2-4</td><td><strong>↓2</strong></td><td>The 96-point week and 164.7 allowed make this a rough slide, compounded by the serious concern around Jalen Hurts. Berger’s 722.3 PF offers some hope, but the roster outlook is now a major question.</td></tr><tr><td><strong>10</strong></td><td class="name"><strong style="color:#13a557">Tone</strong></td><td>2-4</td><td><strong>↑1</strong></td><td>Gets his second win by edging Melio 89.9–78.5. It was not pretty, but a win matters; 677.6 PF and 788.2 PA show how much work remains.</td></tr><tr><td><strong>11</strong></td><td class="name"><strong style="color:#ff0000">Grasso</strong></td><td>2-4</td><td><strong>↓3</strong></td><td>Falls to 2–4 after managing 102.0 against Martir. The 722.1 PF is respectable for the lower half, but the team needs a better weekly floor to climb back into contention.</td></tr><tr><td><strong>12</strong></td><td class="name"><strong style="color:#7b2cbf">Melio</strong></td><td>2-4</td><td><strong>↓3</strong></td><td>The lowest score of the week at 78.5 turns into a loss to Tone. With 819.2 PA and only 747.1 PF, Melio has the toughest combination of recent form and points against.</td></tr></tbody>
-      </table>
-    </div>
-    <div class="note" style="margin-top:10px"><strong>WEEKLY MODEL:</strong> Rankings incorporate 2026 results, points scored, margin of victory, roster outlook and key developments. Movement compares each team with the previous published power rankings.</div>
-  </div>
-
-  <div class="card season-full-width" style="margin-top:15px">
-    <h3>2026 Regular Season Schedule</h3>
-    <div class="table-wrap"><table><thead><tr><th>Team</th><th>Wk 1</th><th>Wk 2</th><th>Wk 3</th><th>Wk 4</th><th>Wk 5</th><th>Wk 6</th><th>Wk 7</th><th>Wk 8</th><th>Wk 9</th><th>Wk 10</th><th>Wk 11</th><th>Wk 12</th><th>Wk 13</th><th>Wk 14</th></tr></thead><tbody id="schedule-body"></tbody></table></div>
-    <p style="font:10px 'IBM Plex Mono';color:#777;margin-bottom:0">P1/P2 = pick within a division; DL = divisional leader game. Division members play twice, rivals twice, everyone else once.</p>
-  </div>
-
-
-  
-
+</div>
+</div>
+<div class="card season-full-width" id="power-rankings-2026" style="margin-top:15px">
+<div class="section-head" style="margin-bottom:10px">
+<h3 style="margin:0">2026 Power Rankings</h3>
+<small>Week 7 · Re-evaluated after final results</small>
+</div>
+<p style="font:10px 'IBM Plex Mono';color:#777;margin-top:8px"><strong>MOVEMENT:</strong> Compared with the previous published Power Rankings. ↑ = moved up · ↓ = moved down · — = no change.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>RANK</th><th>TEAM</th><th>RECORD</th><th>MOVEMENT</th><th>ANALYSIS</th></tr></thead>
+<tbody><tr><td><strong>1</strong></td><td class="name team-mark"><strong style="color:#ff0000 !important;">Mark</strong></td><td>5-2</td><td><strong>↑1</strong></td><td>Wins a SNF thriller over Frankie, 159.6–157.1, and now leads the league in points scored. The 5–2 record and 1,034.3 PF justify the top spot; the Terry/Evans injury situation remains a concern.</td></tr><tr><td><strong>2</strong></td><td class="name team-nicky"><strong style="color:#19a7df !important;">Nicky</strong></td><td>5-2</td><td><strong>↓1</strong></td><td>Despite the loss to Tone, Nicky remains 5–2 with 954.4 PF. The scoring profile and winning record keep him near the top, but the upset shows the margin for error is thin.</td></tr><tr><td><strong>3</strong></td><td class="name team-carmelo"><strong style="color:#ff0000 !important;">Carmelo</strong></td><td>4-3</td><td><strong>↓1</strong></td><td>Falls to 4–3 after losing to Melio, despite scoring 125.6. The 946.1 PF remains strong, but CMC news and a losing week make this a step back.</td></tr><tr><td><strong>4</strong></td><td class="name team-skin"><strong style="color:#7b2cbf !important;">Skin</strong></td><td>5-2</td><td><strong>↑1</strong></td><td>Beats Grasso 110.0–95.7 and moves to 5–2. Scoring 885.1 points through seven weeks keeps Skin among the contenders, though the points-against total has climbed.</td></tr><tr><td><strong>5</strong></td><td class="name team-melio"><strong style="color:#7b2cbf !important;">Melio</strong></td><td>3-4</td><td><strong>↑2</strong></td><td>Posts 148.9 to beat Carmelo and earns a needed third win. At 3–4, Melio still has work to do, but this was one of the week’s strongest performances.</td></tr><tr><td><strong>6</strong></td><td class="name team-filippo"><strong style="color:#13a557 !important;">Filippo</strong></td><td>3-4</td><td><strong>↓1</strong></td><td>Loses a close Monday night matchup to Berger, 135.7–130.6. The 897.8 PF total is competitive, but falling to 3–4 puts more pressure on the next stretch.</td></tr><tr><td><strong>7</strong></td><td class="name team-martir"><strong style="color:#19a7df !important;">Martir</strong></td><td>4-3</td><td><strong>↑2</strong></td><td>Delivers 137.8 against Antonio and moves above .500. The PF total is still lower than most playoff contenders, but the win helps Martir’s positioning.</td></tr><tr><td><strong>8</strong></td><td class="name team-frankie"><strong style="color:#7b2cbf !important;">Frankie</strong></td><td>3-4</td><td><strong>↓2</strong></td><td>Scores 157.1—one of the best totals of the week—but still loses to Mark by 2.5. The performance is encouraging; the 3–4 record is not.</td></tr><tr><td><strong>9</strong></td><td class="name team-berger"><strong style="color:#19a7df !important;">Berger</strong></td><td>3-4</td><td><strong>↑1</strong></td><td>Gets a 135.7–130.6 win over Filippo in a strong Monday night matchup. Berger’s season is still uneven, but this win matters in a crowded middle tier.</td></tr><tr><td><strong>10</strong></td><td class="name team-tone"><strong style="color:#13a557 !important;">Tone</strong></td><td>3-4</td><td><strong>↑2</strong></td><td>Hands Nicky a 133.5–114.3 loss and claims one of the week’s biggest upsets. The 3–4 record still needs work, but Tone has shown he can beat a top team.</td></tr><tr><td><strong>11</strong></td><td class="name team-grasso"><strong style="color:#ff0000 !important;">Grasso</strong></td><td>2-5</td><td><strong>↓1</strong></td><td>Scores 95.7 and loses to Skin. The 2–5 record leaves little room for error; the team needs a stronger weekly scoring floor.</td></tr><tr><td><strong>12</strong></td><td class="name team-antonio"><strong style="color:#13a557 !important;">Antonio</strong></td><td>2-5</td><td><strong>↓2</strong></td><td>Falls to Martir after managing 102.0. At 2–5, Antonio needs a turnaround quickly; Devonta’s absence adds another challenge.</td></tr></tbody>
+</table>
+</div>
+<div class="note" style="margin-top:10px"><strong>WEEKLY MODEL:</strong> Rankings incorporate results through Week 7, current record, points scored, recent performance, roster outlook and key developments. Movement compares each team with the previous published power rankings.</div>
+</div>
+<div class="card season-full-width" style="margin-top:15px">
+<h3>2026 Regular Season Schedule</h3>
+<div class="table-wrap"><table><thead><tr><th>Team</th><th>Wk 1</th><th>Wk 2</th><th>Wk 3</th><th>Wk 4</th><th>Wk 5</th><th>Wk 6</th><th>Wk 7</th><th>Wk 8</th><th>Wk 9</th><th>Wk 10</th><th>Wk 11</th><th>Wk 12</th><th>Wk 13</th><th>Wk 14</th></tr></thead><tbody id="schedule-body"></tbody></table></div>
+<p style="font:10px 'IBM Plex Mono';color:#777;margin-bottom:0">P1/P2 = pick within a division; DL = divisional leader game. Division members play twice, rivals twice, everyone else once.</p>
+</div>
 </section>
 <section class="section page" id="page-meet">
-  <div class="section-head"><h2 class="display">Meet the League</h2><small>MFGA members · current &amp; historical</small></div>
-  <div class="card" style="margin-bottom:15px"><p style="margin:0;color:#69737b;font-size:12px">Click any member to open their MFGA career homepage — records, championships, division titles, playoff history and season-by-season results. Former members are shown in italics.</p></div>
-  <div class="meet-grid" id="member-directory"></div>
+<div class="section-head"><h2 class="display">Meet the League</h2><small>MFGA members · current &amp; historical</small></div>
+<div class="card" style="margin-bottom:15px"><p style="margin:0;color:#69737b;font-size:12px">Click any member to open their MFGA career homepage — records, championships, division titles, playoff history and season-by-season results. Former members are shown in italics.</p></div>
+<div class="meet-grid" id="member-directory"></div>
 </section>
 <section class="section page" id="page-profile">
-  <div id="profile-content"></div>
+<div id="profile-content"></div>
 </section>
-
 <section class="section page" id="page-hall-of-champions">
-  <div class="section-head"><h2 class="display">Hall of Champions</h2><small>MFGA Championship History</small></div>
-  <div class="hall-banner-grid">
-    <div class="hall-banner-row hall-banner-row-1">
-      <img src="hall-of-fame/1.png" alt="MFGA Season 1 Champion">
-      <img src="hall-of-fame/2.png" alt="MFGA Season 2 Champion">
-      <img src="hall-of-fame/3.png" alt="MFGA Season 3 Champion">
-      <img src="hall-of-fame/4.png" alt="MFGA Season 4 Champion">
-      <img src="hall-of-fame/5.png" alt="MFGA Season 5 Champion">
-      <img src="hall-of-fame/6.png" alt="MFGA Season 6 Champion">
-    </div>
-    <div class="hall-banner-row hall-banner-row-2">
-      <img src="hall-of-fame/7.png" alt="MFGA Season 7 Champion">
-      <img src="hall-of-fame/8.png" alt="MFGA Season 8 Champion">
-      <img src="hall-of-fame/9.png" alt="MFGA Season 9 Champion">
-    </div>
-  </div>
-  <div class="card" style="margin-top:22px"><p style="font-size:12px;color:#666;margin-top:0">Every MFGA champion and championship matchup, from 2017 through the latest completed season.</p><div id="hall-of-champions-list"></div></div>
-</section>
-
-<section class="section page" id="page-record-history">
-  <div class="section-head"><h2 class="display">Record History</h2><small>All-Time Records · Updated Through Week 6, 2026</small></div>
-  <div class="grid grid-3">
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Win %</div><div class="big-number">.618</div><div class="sub" style="color:#aaa">Frankie Saracino</div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Differential</div><div class="big-number">+709.5</div><div class="sub" style="color:#aaa">Skin</div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Championships</div><div class="big-number">2</div><div class="sub" style="color:#aaa">Antonio Pisano & Matt Melio</div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Win %</div><div class="big-number">.350</div><div class="sub" style="color:#aaa">Tone</div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Differential</div><div class="big-number">−871.6</div><div class="sub" style="color:#aaa"><em>Matt</em></div></div>
-    <div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Playoff App.</div><div class="big-number">6</div><div class="sub" style="color:#aaa">Antonio & Skin</div></div>
-  </div>
-
-  <div class="section" style="margin-top:25px">
-    <div class="stats-sort-controls" style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:0 0 10px;">
-  <span style="font:10px 'IBM Plex Mono';color:#777">CLICK A COLUMN TO SORT</span>
-  <button id="reset-stats-sort" class="tab" type="button">↺ Reset Original Order</button>
+<div class="section-head"><h2 class="display">Hall of Champions</h2><small>MFGA Championship History</small></div>
+<div class="hall-banner-grid">
+<div class="hall-banner-row hall-banner-row-1">
+<img alt="MFGA Season 1 Champion" src="hall-of-fame/1.png"/>
+<img alt="MFGA Season 2 Champion" src="hall-of-fame/2.png"/>
+<img alt="MFGA Season 3 Champion" src="hall-of-fame/3.png"/>
+<img alt="MFGA Season 4 Champion" src="hall-of-fame/4.png"/>
+<img alt="MFGA Season 5 Champion" src="hall-of-fame/5.png"/>
+<img alt="MFGA Season 6 Champion" src="hall-of-fame/6.png"/>
 </div>
-    <div class="tabs" id="record-history-tabs"><button type="button" class="tab active" onclick="switchRecordHistoryTab('reg', this)">Regular Season</button><button type="button" class="tab" onclick="switchRecordHistoryTab('po', this)">Playoffs</button></div>
-    <div id="reg" class="panel active"><div class="table-wrap"><table><thead><tr><th>Rk</th><th data-sortable="true">Team</th><th data-sortable="true">W</th><th data-sortable="true">L</th><th data-sortable="true">T</th><th data-sortable="true">%</th><th data-sortable="true">PF</th><th data-sortable="true">PA</th><th data-sortable="true">+/-</th><th data-sortable="true">Avg PF</th><th data-sortable="true">Avg PA</th><th data-sortable="true">Total</th><th data-sortable="true">Seasons</th></tr></thead><tbody id="reg-history"></tbody></table></div></div>
-    <div id="po" class="panel"><div class="table-wrap"><table><thead><tr><th>Rk</th><th data-sortable="true">Team</th><th data-sortable="true">W</th><th data-sortable="true">L</th><th data-sortable="true">Win%</th><th data-sortable="true">Total</th><th data-sortable="true">PF</th><th data-sortable="true">PA</th><th data-sortable="true">+/-</th><th data-sortable="true">Avg PF</th><th data-sortable="true">Avg PA</th><th data-sortable="true">PO Apps</th><th data-sortable="true">Seasons</th><th data-sortable="true">PO App%</th><th data-sortable="true">Champ</th><th data-sortable="true">Final Apps</th><th data-sortable="true">Champ Win%</th><th data-sortable="true">To Champ%</th></tr></thead><tbody id="po-history"></tbody></table></div></div>
-  </div>
-
-  <div class="card" style="margin-top:15px">
-    <h3>Head-to-Head Records</h3>
-    <div class="tabs" id="h2h-tabs"><button type="button" class="tab active" onclick="switchH2HTab('h2h-reg', this)">Regular Season</button><button type="button" class="tab" onclick="switchH2HTab('h2h-po', this)">Playoffs</button></div>
-    <div id="h2h-reg" class="panel active"><div class="table-wrap"><table class="h2h-table"><thead id="h2h-reg-head"></thead><tbody id="h2h-reg-body"></tbody></table></div><p style="font:10px 'IBM Plex Mono';color:#777">Cells show W–L–T from the row team's perspective. Blank cells mean the Statbook records no playoff/regular-season meeting.</p></div>
-    <div id="h2h-po" class="panel"><div class="table-wrap"><table class="h2h-table"><thead id="h2h-po-head"></thead><tbody id="h2h-po-body"></tbody></table></div></div>
-
-  <div class="grid grid-2" style="margin-top:15px">
-    <div class="card"><h3>Division Champions</h3><div class="table-wrap"><table><thead><tr><th>Year</th><th>Div 1</th><th>Div 2</th><th>Div 3</th><th>Div 4</th></tr></thead><tbody id="divisions-body"></tbody></table></div></div>
-    <div class="card"><h3>Division Titles</h3><div id="division-leaders"></div></div>
-  </div>
-
-  <div class="card" style="margin-top:15px">
-    <h3>End-of-Season Placement Distribution</h3>
-    <p style="font-size:12px;color:#666">Counts are the league's historical finish distribution by final placement. An asterisk denotes a former team.</p>
-    <div class="table-wrap"><table><thead><tr><th>Team</th><th>1th</th><th>2th</th><th>3th</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th><th>9th</th><th>10th</th><th>11th</th><th>12th</th></tr></thead><tbody id="placements-body"></tbody></table></div>
-  </div>
-
-  <div class="card" style="margin-top:15px">
-    <h3>Regular Season History by Team</h3>
-    <div id="team-history"></div>
-  </div>
+<div class="hall-banner-row hall-banner-row-2">
+<img alt="MFGA Season 7 Champion" src="hall-of-fame/7.png"/>
+<img alt="MFGA Season 8 Champion" src="hall-of-fame/8.png"/>
+<img alt="MFGA Season 9 Champion" src="hall-of-fame/9.png"/>
+</div>
+</div>
+<div class="card" style="margin-top:22px"><p style="font-size:12px;color:#666;margin-top:0">Every MFGA champion and championship matchup, from 2017 through the latest completed season.</p><div id="hall-of-champions-list"></div></div>
 </section>
-
+<section class="section page" id="page-record-history">
+<div class="section-head"><h2 class="display">Record History</h2><small>All-Time Records · All-Time League Records</small></div>
+<div class="grid grid-3">
+<div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Win %</div><div class="big-number">.610</div><div class="sub" style="color:#aaa">Frankie Saracino</div></div>
+<div class="card dark"><div class="eyebrow" style="color:#d7b55d">Best Differential</div><div class="big-number">+741.0</div><div class="sub" style="color:#aaa">Skin</div></div>
+<div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Championships</div><div class="big-number">2</div><div class="sub" style="color:#aaa">Antonio Pisano &amp; Matt Melio</div></div>
+<div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Win %</div><div class="big-number">.343</div><div class="sub" style="color:#aaa">Grasso</div></div>
+<div class="card dark"><div class="eyebrow" style="color:#d7b55d">Worst Differential</div><div class="big-number">−597.6</div><div class="sub" style="color:#aaa">Berger</div></div>
+<div class="card dark"><div class="eyebrow" style="color:#d7b55d">Most Playoff App.</div><div class="big-number">6</div><div class="sub" style="color:#aaa">Antonio &amp; Skin</div></div>
+</div>
+<div class="section" style="margin-top:25px">
+<div class="stats-sort-controls" style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:0 0 10px;">
+<span style="font:10px 'IBM Plex Mono';color:#777">CLICK A COLUMN TO SORT</span>
+<button class="tab" id="reset-stats-sort" type="button">↺ Reset Original Order</button>
+</div>
+<div class="tabs" id="record-history-tabs"><button class="tab active" onclick="switchRecordHistoryTab('reg', this)" type="button">Regular Season</button><button class="tab" onclick="switchRecordHistoryTab('po', this)" type="button">Playoffs</button></div>
+<div class="panel active" id="reg"><div class="table-wrap"><table><thead><tr><th>Rk</th><th data-sortable="true">Team</th><th data-sortable="true">W</th><th data-sortable="true">L</th><th data-sortable="true">T</th><th data-sortable="true">%</th><th data-sortable="true">PF</th><th data-sortable="true">PA</th><th data-sortable="true">+/-</th><th data-sortable="true">Avg PF</th><th data-sortable="true">Avg PA</th><th data-sortable="true">Total</th><th data-sortable="true">Seasons</th></tr></thead><tbody id="reg-history"></tbody></table></div></div>
+<div class="panel" id="po"><div class="table-wrap"><table><thead><tr><th>Rk</th><th data-sortable="true">Team</th><th data-sortable="true">W</th><th data-sortable="true">L</th><th data-sortable="true">Win%</th><th data-sortable="true">Total</th><th data-sortable="true">PF</th><th data-sortable="true">PA</th><th data-sortable="true">+/-</th><th data-sortable="true">Avg PF</th><th data-sortable="true">Avg PA</th><th data-sortable="true">PO Apps</th><th data-sortable="true">Seasons</th><th data-sortable="true">PO App%</th><th data-sortable="true">Champ</th><th data-sortable="true">Final Apps</th><th data-sortable="true">Champ Win%</th><th data-sortable="true">To Champ%</th></tr></thead><tbody id="po-history"></tbody></table></div></div>
+</div>
+<div class="card" style="margin-top:15px">
+<h3>Head-to-Head Records</h3>
+<div class="tabs" id="h2h-tabs"><button class="tab active" onclick="switchH2HTab('h2h-reg', this)" type="button">Regular Season</button><button class="tab" onclick="switchH2HTab('h2h-po', this)" type="button">Playoffs</button></div>
+<div class="panel active" id="h2h-reg"><div class="table-wrap"><table class="h2h-table"><thead id="h2h-reg-head"></thead><tbody id="h2h-reg-body"></tbody></table></div><p style="font:10px 'IBM Plex Mono';color:#777">Cells show W–L–T from the row team's perspective. Blank cells mean the Statbook records no playoff/regular-season meeting.</p></div>
+<div class="panel" id="h2h-po"><div class="table-wrap"><table class="h2h-table"><thead id="h2h-po-head"></thead><tbody id="h2h-po-body"></tbody></table></div></div>
+<div class="grid grid-2" style="margin-top:15px">
+<div class="card"><h3>Division Champions</h3><div class="table-wrap"><table><thead><tr><th>Year</th><th>Div 1</th><th>Div 2</th><th>Div 3</th><th>Div 4</th></tr></thead><tbody id="divisions-body"></tbody></table></div></div>
+<div class="card"><h3>Division Titles</h3><div id="division-leaders"></div></div>
+</div>
+<div class="card" style="margin-top:15px">
+<h3>End-of-Season Placement Distribution</h3>
+<p style="font-size:12px;color:#666">Counts are the league's historical finish distribution by final placement. An asterisk denotes a former team.</p>
+<div class="table-wrap"><table><thead><tr><th>Team</th><th>1th</th><th>2th</th><th>3th</th><th>4th</th><th>5th</th><th>6th</th><th>7th</th><th>8th</th><th>9th</th><th>10th</th><th>11th</th><th>12th</th></tr></thead><tbody id="placements-body"></tbody></table></div>
+</div>
+<div class="card" style="margin-top:15px">
+<h3>Regular Season History by Team</h3>
+<div id="team-history"></div>
+</div>
+</div></section>
 <section class="section page" id="page-rules">
-  <div class="section-head"><h2 class="display">League Info & Rules</h2><small>Official format</small></div>
-  <div class="grid grid-2">
-    <div class="card"><h3>The Rules</h3><ol class="rule-list">
-      <li>League fee is due by draft day; failure to pay costs a 1st-round pick.</li>
-      <li>One keeper is due one week before draft day; failure to submit means no keeper.</li>
-      <li>Keeper costs the round in which they were drafted the prior year and must remain on the team all year.</li>
-      <li>Trophy is handed out at draft day and returned 2–3 weeks before the next draft for engraving; damage is paid by whoever causes it.</li>
-      <li>All lineup spots must be filled before the last game of the week. A roster slot with under a 0.1 projection scores −10 for that slot.</li>
-      <li>Trading will be decided by a committee of Antonio, Grasso, and Melio. If any party involved in the trade is a committee member, we will work up from the bottom of the standings to the next eligible team.</li>
-      <li>After the regular season, eliminated teams may not add/drop players; doing so costs a keeper.</li>
-      <li>During the draft, every drafted player must be written on the draft sheet or they will not be added.</li>
-      <li>League tiebreakers follow the official Tiebreaker Format below.</li>
-      <li>Direct sabotage can result in loss of a keeper or banishment.</li>
-      <li>Let's Make Football Great Again.</li>
-    </ol></div>
-    <div class="card"><h3>Draft Pick Format</h3><ul class="rule-list">
-      <li>Picks 1–6 are a draft lottery: worst record gets 1 vote, best non-playoff team gets 6.</li>
-      <li>Picks 7–8 go to Round 1 playoff losers; higher seed gets pick 8.</li>
-      <li>Picks 9–10 go to Round 2 playoff losers; higher seed gets pick 10.</li>
-      <li>Pick 12 goes to the champion; pick 11 goes to the runner-up.</li>
-    </ul><h3 style="margin-top:22px">Schedule Format</h3><ul class="rule-list">
-      <li>After keepers, last year's division leaders draft their divisions snake-style, best team first.</li>
-      <li>Four divisions, three teams each.</li><li>Week 1 is Rivalry Week.</li><li>Weeks 3, 8 and 13 are Divisional Champions Weeks, subject to NFL bye weeks.</li><li>Weeks 1–14 regular season; Weeks 15–17 playoffs.</li>
-    </ul></div>
-  </div>
-
-  <div class="card" style="margin-top:15px">
-    <h3>Tiebreaker Format</h3>
-    <ol class="rule-list">
-      <li>Head-to-head record(s).</li>
-      <li>Highest points scored.</li>
-      <li>Highest points against.</li>
-      <li>Points scored in direct matchup(s).</li>
-      <li>Points against in direct matchup(s).</li>
-      <li>Overall division record.</li>
-      <li>Points scored in overall division matchups.</li>
-      <li>Points against in overall division matchups.</li>
-      <li>Wheel spin: every tied team gets 50 entries, then the wheel is spun.</li>
-    </ol>
-    <p style="font-size:12px;line-height:1.55;color:#666"><strong>Three or more tied teams:</strong> Apply the listed criteria using pooled results across all teams involved. If the tie remains, use a wheel spin. Remove the winning team from the tied group, then restart the tiebreaker sequence from the beginning for the remaining teams.</p>
-    <p style="font-size:12px;line-height:1.55;color:#666"><strong>Seeding priority:</strong> Division tiebreakers take priority, followed by the No. 1 seed, the remaining playoff seeds, and finally non-playoff seeding.</p>
-  </div>
-
-  <div class="grid grid-2" style="margin-top:15px">
-    <div class="card"><h3>League Fee & Payouts</h3><div class="stat"><span>Entry fee</span><b>$150</b></div><div class="stat"><span>Champion</span><b>$1,000</b></div><div class="stat"><span>Runner-up</span><b>$300</b></div><div class="stat"><span>Most Points Overall</span><b>$150</b></div><div class="stat"><span>Most Points Against</span><b>$50</b></div><div class="stat"><span>Weekly High Scorer</span><b>$15 / week</b></div><div class="stat"><span>1st Overall</span><b>Jersey from his team</b></div><div class="stat"><span>Least Points</span><b>Pays for jersey</b></div><div class="stat"><span>Last Place</span><b>Applebee&#39;s Dollaritas — drink the same number as team losses</b></div><p style="font-size:11px;color:#777">$75 is taken out for draft board, engraving and ring; Antonio covers additional cost.</p></div>
-    <div class="card"><h3>Roster Limits</h3><div class="stat"><span>QB</span><b>1 starter / 3 limit</b></div><div class="stat"><span>RB</span><b>2 starters / 6 limit</b></div><div class="stat"><span>WR</span><b>2 starters / 6 limit</b></div><div class="stat"><span>TE</span><b>1 starter / 3 limit</b></div><div class="stat"><span>FLEX</span><b>2 starters (RB/WR/TE)</b></div><div class="stat"><span>K</span><b>1 starter / 3 limit</b></div><div class="stat"><span>IR</span><b>2 slots</b></div><div class="stat"><span>Bench</span><b>6 spots</b></div></div>
-  </div>
-
-  <div class="card" style="margin-top:15px"><h3>Scoring System</h3><div class="score-grid">
-    <div class="score-box"><h4>Passing</h4><ul><li>Every 10 passing yards = 0.5</li><li>TD pass = 4</li><li>Interception thrown = −2</li><li>2pt conversion = 2</li><li>300–399 pass yards = 2.5</li><li>400+ pass yards = 5</li><li>Interception returned for TD = −2</li></ul></div>
-    <div class="score-box"><h4>Receiving</h4><ul><li>Per receiving yard = 0.1</li><li>Reception = 1</li><li>TD reception = 6</li><li>2pt receiving conversion = 2</li><li>100–199 receiving yards = 2.5</li><li>200+ receiving yards = 5</li></ul></div>
-    <div class="score-box"><h4>Rushing</h4><ul><li>Per rushing yard = 0.1</li><li>TD rush = 6</li><li>2pt rushing conversion = 2</li><li>100–199 rushing yards = 2.5</li><li>200+ rushing yards = 5</li></ul></div>
-    <div class="score-box"><h4>Kicking</h4><ul><li>PAT made = 1</li><li>PAT missed = −1</li><li>FG missed = −1</li><li>30–39 yd FG = 3</li><li>40–49 yd FG = 4</li><li>50–59 yd FG = 5</li><li>60+ yd FG = 6</li></ul></div>
-    <div class="score-box"><h4>Miscellaneous</h4><ul><li>Kickoff return TD = 6</li><li>Punt return TD = 6</li><li>Fumble recovered for TD = 6</li><li>Fumble lost = −2</li><li>Interception return TD = 6</li><li>Fumble return TD = 6</li><li>Blocked punt/FG return TD = 6</li><li>2pt return = 2</li><li>Safety = 1</li></ul></div>
-  </div></div>
-  <div class="card" style="margin-top:15px">
-    <h3>Weekly Format</h3>
-    <div class="stat"><span>Week 1</span><b>Rivalry Week</b></div>
-    <div class="stat"><span>Weeks 3, 8, 13</span><b>Division Leaders</b></div>
-    <div class="stat"><span>Weeks 1–14</span><b>Regular Season</b></div>
-    <div class="stat"><span>Weeks 15–17</span><b>Playoffs</b></div>
-  </div>
-
+<div class="section-head"><h2 class="display">League Info &amp; Rules</h2><small>Official format</small></div>
+<div class="grid grid-2">
+<div class="card"><h3>The Rules</h3><ol class="rule-list">
+<li>League fee is due by draft day; failure to pay costs a 1st-round pick.</li>
+<li>One keeper is due one week before draft day; failure to submit means no keeper.</li>
+<li>Keeper costs the round in which they were drafted the prior year and must remain on the team all year.</li>
+<li>Trophy is handed out at draft day and returned 2–3 weeks before the next draft for engraving; damage is paid by whoever causes it.</li>
+<li>All lineup spots must be filled before the last game of the week. A roster slot with under a 0.1 projection scores −10 for that slot.</li>
+<li>Trading will be decided by a committee of Antonio, Grasso, and Melio. If any party involved in the trade is a committee member, we will work up from the bottom of the standings to the next eligible team.</li>
+<li>After the regular season, eliminated teams may not add/drop players; doing so costs a keeper.</li>
+<li>During the draft, every drafted player must be written on the draft sheet or they will not be added.</li>
+<li>League tiebreakers follow the official Tiebreaker Format below.</li>
+<li>Direct sabotage can result in loss of a keeper or banishment.</li>
+<li>Let's Make Football Great Again.</li>
+</ol></div>
+<div class="card"><h3>Draft Pick Format</h3><ul class="rule-list">
+<li>Picks 1–6 are a draft lottery: worst record gets 1 vote, best non-playoff team gets 6.</li>
+<li>Picks 7–8 go to Round 1 playoff losers; higher seed gets pick 8.</li>
+<li>Picks 9–10 go to Round 2 playoff losers; higher seed gets pick 10.</li>
+<li>Pick 12 goes to the champion; pick 11 goes to the runner-up.</li>
+</ul><h3 style="margin-top:22px">Schedule Format</h3><ul class="rule-list">
+<li>After keepers, last year's division leaders draft their divisions snake-style, best team first.</li>
+<li>Four divisions, three teams each.</li><li>Week 1 is Rivalry Week.</li><li>Weeks 3, 8 and 13 are Divisional Champions Weeks, subject to NFL bye weeks.</li><li>Weeks 1–14 regular season; Weeks 15–17 playoffs.</li>
+</ul></div>
+</div>
+<div class="card" style="margin-top:15px">
+<h3>Tiebreaker Format</h3>
+<ol class="rule-list">
+<li>Head-to-head record(s).</li>
+<li>Highest points scored.</li>
+<li>Highest points against.</li>
+<li>Points scored in direct matchup(s).</li>
+<li>Points against in direct matchup(s).</li>
+<li>Overall division record.</li>
+<li>Points scored in overall division matchups.</li>
+<li>Points against in overall division matchups.</li>
+<li>Wheel spin: every tied team gets 50 entries, then the wheel is spun.</li>
+</ol>
+<p style="font-size:12px;line-height:1.55;color:#666"><strong>Three or more tied teams:</strong> Apply the listed criteria using pooled results across all teams involved. If the tie remains, use a wheel spin. Remove the winning team from the tied group, then restart the tiebreaker sequence from the beginning for the remaining teams.</p>
+<p style="font-size:12px;line-height:1.55;color:#666"><strong>Seeding priority:</strong> Division tiebreakers take priority, followed by the No. 1 seed, the remaining playoff seeds, and finally non-playoff seeding.</p>
+</div>
+<div class="grid grid-2" style="margin-top:15px">
+<div class="card"><h3>League Fee &amp; Payouts</h3><div class="stat"><span>Entry fee</span><b>$150</b></div><div class="stat"><span>Champion</span><b>$1,000</b></div><div class="stat"><span>Runner-up</span><b>$300</b></div><div class="stat"><span>Most Points Overall</span><b>$150</b></div><div class="stat"><span>Most Points Against</span><b>$50</b></div><div class="stat"><span>Weekly High Scorer</span><b>$15 / week</b></div><div class="stat"><span>1st Overall</span><b>Jersey from his team</b></div><div class="stat"><span>Least Points</span><b>Pays for jersey</b></div><div class="stat"><span>Last Place</span><b>Applebee's Dollaritas — drink the same number as team losses</b></div><p style="font-size:11px;color:#777">$75 is taken out for draft board, engraving and ring; Antonio covers additional cost.</p></div>
+<div class="card"><h3>Roster Limits</h3><div class="stat"><span>QB</span><b>1 starter / 3 limit</b></div><div class="stat"><span>RB</span><b>2 starters / 6 limit</b></div><div class="stat"><span>WR</span><b>2 starters / 6 limit</b></div><div class="stat"><span>TE</span><b>1 starter / 3 limit</b></div><div class="stat"><span>FLEX</span><b>2 starters (RB/WR/TE)</b></div><div class="stat"><span>K</span><b>1 starter / 3 limit</b></div><div class="stat"><span>IR</span><b>2 slots</b></div><div class="stat"><span>Bench</span><b>6 spots</b></div></div>
+</div>
+<div class="card" style="margin-top:15px"><h3>Scoring System</h3><div class="score-grid">
+<div class="score-box"><h4>Passing</h4><ul><li>Every 10 passing yards = 0.5</li><li>TD pass = 4</li><li>Interception thrown = −2</li><li>2pt conversion = 2</li><li>300–399 pass yards = 2.5</li><li>400+ pass yards = 5</li><li>Interception returned for TD = −2</li></ul></div>
+<div class="score-box"><h4>Receiving</h4><ul><li>Per receiving yard = 0.1</li><li>Reception = 1</li><li>TD reception = 6</li><li>2pt receiving conversion = 2</li><li>100–199 receiving yards = 2.5</li><li>200+ receiving yards = 5</li></ul></div>
+<div class="score-box"><h4>Rushing</h4><ul><li>Per rushing yard = 0.1</li><li>TD rush = 6</li><li>2pt rushing conversion = 2</li><li>100–199 rushing yards = 2.5</li><li>200+ rushing yards = 5</li></ul></div>
+<div class="score-box"><h4>Kicking</h4><ul><li>PAT made = 1</li><li>PAT missed = −1</li><li>FG missed = −1</li><li>30–39 yd FG = 3</li><li>40–49 yd FG = 4</li><li>50–59 yd FG = 5</li><li>60+ yd FG = 6</li></ul></div>
+<div class="score-box"><h4>Miscellaneous</h4><ul><li>Kickoff return TD = 6</li><li>Punt return TD = 6</li><li>Fumble recovered for TD = 6</li><li>Fumble lost = −2</li><li>Interception return TD = 6</li><li>Fumble return TD = 6</li><li>Blocked punt/FG return TD = 6</li><li>2pt return = 2</li><li>Safety = 1</li></ul></div>
+</div></div>
+<div class="card" style="margin-top:15px">
+<h3>Weekly Format</h3>
+<div class="stat"><span>Week 1</span><b>Rivalry Week</b></div>
+<div class="stat"><span>Weeks 3, 8, 13</span><b>Division Leaders</b></div>
+<div class="stat"><span>Weeks 1–14</span><b>Regular Season</b></div>
+<div class="stat"><span>Weeks 15–17</span><b>Playoffs</b></div>
+</div>
 </section>
-
 <section class="section page" id="page-drafts">
-  <div class="section-head"><h2 class="display">Draft Boards</h2><small>Only Statbook pages shown as photos</small></div>
-  <div class="card dark"><p style="margin:0;color:#c9c3b8;font-size:12px;line-height:1.6">The draft boards below are the only original Statbook pages kept as images. Everything else in the Statbook has been converted into digital tables, cards and searchable sections.</p></div>
-  <div id="draft-list" style="margin-top:15px"></div>
+<div class="section-head"><h2 class="display">Draft Boards</h2><small>Only Statbook pages shown as photos</small></div>
+<div class="card dark"><p style="margin:0;color:#c9c3b8;font-size:12px;line-height:1.6">The draft boards below are the only original Statbook pages kept as images. Everything else in the Statbook has been converted into digital tables, cards and searchable sections.</p></div>
+<div id="draft-list" style="margin-top:15px"></div>
 </section>
-
 </main>
-
 <footer><strong>Let's Make Football Great Again</strong>MFGA X · Est. 2017 · Official League Headquarters</footer>
-
 <script>
-const DATA={"regszn":[["Frankie","47","29","0","0.618","9,442.4","8,758.9","+683.5","124.2","115.2","76","6"],["Skin","72","53","3","0.576","15,911.9","15,185.2","+726.7","124.3","118.6","128","10"],["Antonio","70","58","0","0.547","15,851.7","15,298.4","+553.3","123.8","119.5","128","10"],["Melio","45","45","0","0.500","11,089.9","11,305.9","-216.0","123.2","125.6","90","7"],["Filippo","66","62","0","0.516","15,435.5","14,864.3","+571.2","120.6","116.1","128","10"],["Martir","65","63","0","0.508","15,012.1","15,347.9","-335.8","117.3","119.9","128","10"],["Carmelo","64","63","1","0.504","14,786.9","15,128.3","-341.4","115.5","118.2","128","10"],["Berger","56","60","0","0.483","13,349.1","13,951.8","-602.7","115.1","120.3","116","9"],["Mark","36","36","0","0.500","8,521.8","8,351.0","+170.8","118.4","116.0","72","6"],["Nicky","11","9","0","0.550","2,453.8","2,374.4","+79.4","122.7","118.7","20","2"],["Grasso","12","22","0","0.353","3,874.4","4,146.5","-272.1","114.0","122.0","34","3"],["Tone","7","13","0","0.350","2,277.4","2,543.5","-266.1","113.9","127.2","20","2"],["Lorenzo*","8","5","0","0.615","1,484.0","1,329.0","+155.0","114.2","102.2","13","1"],["Coupe*","54","54","0","0.500","12,786.9","12,565.1","+221.8","118.4","116.3","108","8"],["Pete*","13","13","0","0.500","2,934.5","2,831.5","+103.0","112.9","108.9","26","2"],["Gallo*","49","57","2","0.462","12,840.0","12,759.2","+80.8","118.9","118.1","108","8"],["Matt*","38","57","0","0.400","10,452.5","11,324.1","-871.6","110.0","119.2","95","7"],["Rinaldi*","40","54","0","0.426","10,990.5","11,395.2","-404.7","116.9","121.2","94","7"]],"playoffs":[["Grasso","3","0","1.000","3","521.7","341","180.7","173.9","113.7","1","3","0.500","1","1","1.000","1.000"],["Melio","5","2",".714","7","976.1","886.5","89.6","139.4","126.6","4","7",".667","2","2","1.000",".500"],["Antonio","8","4",".667","12","1647.3","1507.1","140.2","137.3","125.6","6","10",".667","2","3",".667",".333"],["Skin","6","5",".545","11","1388","1334.8","53.2","126.2","121.3","6","10",".667","1","2",".500",".167"],["Filippo","5","5",".500","10","1329.8","1333.1","−1.2","133.0","133.1","5","10",".556","0","2","0.000","0.000"],["Frankie","2","4",".333","6","644.1","769.2","−125.1","107.4","128.2","4","6",".800","0","1","0.000","0.000"],["Martir","2","5",".286","7","834.6","866.7","−32.1","119.2","123.8","5","10",".556","0","1","0.000","0.000"],["Carmelo","0","4",".000","4","472.1","618.9","−146.8","118.0","154.7","4","10",".444","0","0","#DIV/0!","0.000"],["Berger","0","3",".000","3","304.9","453.7","−148.8","101.6","151.2","3","9",".375","0","0","#DIV/0!","0.000"],["Mark","0","2",".000","2","205","310.7","−29","83","112","2","6",".400","0","0","#DIV/0!","0.000"],["Nicky","0","0","—","0","0","0","0","—","—","0","2","0.000","0","0","#DIV/0!","#DIV/0!"],["Tone","0","0","—","0","0","0","0","—","—","0","2","0.000","0","0","#DIV/0!","#DIV/0!"],["Matt*","3","0","1.000","3","394.5","325.5","69","131.5","108.5","1","7",".143","1","1","1.000","1.000"],["Rinaldi*","4","1",".800","5","754.2","659","95","150.8","131.8","2","7",".286","1","1","1.000",".500"],["Coupe*","4","3",".571","7","868.1","912.9","−44.8","124.0","130.4","4","8",".500","1","3",".333",".250"],["Gallo*","3","5",".375","8","967.7","965.1","2.6","121.0","120.6","5","8",".625","0","1","0.000","0.000"],["Pete*","0","1","0.000","1","118","128","−10","118","128","1","2",".500","0","0","#DIV/0!","0.000"],["Lorenzo*","0","1","0.000","1","112","128","−16","112","128","1","1","1.000","0","0","#DIV/0!","0.000"]],"champions":[[2025,"Anthony Grasso (I Chase Brown Ladds Lol)","Skin (Brooklyn $kin)","147 – 114.4","Chase Brown (31.6)","Jaylen Waddle (0.7)","Michael Berger (Thomas The Tank Engine) 10–4","Mark Farrell (JJ and Farrell, LLP) 1841.6","Filippo Gallo (Eat My Josh) 4–10","Carmelo Mazzaferro (Don Nabers) 1483","Jonathan Taylor (Colts)"],[2024,"Matt Melio (Just Gibb Me My Money)","Filippo Gallo (April LaPorta)","203.4 – 87.1","Joe Burrow (46)","Colts D/ST (−4)","Skin (Brooklyn $kin) 13–1","Skin (Brooklyn $kin) 1971","Joe Coupe (Walking Demon) 2–12","Anthony Grasso (See Me Next Year) 1322","Ja'Marr Chase (Bengals)"],[2023,"Antonio Pisano (AMON Another Level)","Joe Coupe (Hamlin's Cardio Club)","178.4 – 108.7","Kyren Williams (30.1)","Cole Kmet (0)","Joe Coupe (Hamlin's Cardio Club) 11–3","Skin (Brooklyn $kin) 1937.1","Carmelo Mazzaferro (Just Joshin) 3–11","Matt Coupe (Baby Coupes) 1359","Damar Hamlin (Bills)"],[2022,"Skin (Brooklyn $kin)","Frankie Saracino (Josh Me Off)","161.3 – 121.6*","Tom Brady (46.9)","Bills vs Bengals game suspended","Anthony Gallo (I'm The Chico) 11–3","Anthony Gallo (I'm The Chico) 1940.5","Joe Martir (Make A Wish) 3–11","Matt Coupe (Baby Coupes) 1413.9","Justin Jefferson (Vikings)"],[2021,"Matt Melio (CeeDeez Nuts)","Anthony Gallo (I'm A Dog Woof)","129.6 – 111.4","Russell Wilson (29.9)","Ezekiel Elliott (4 Points)","Matt Melio (CeeDeez Nuts) 13–1","Matt Melio (CeeDeez Nuts) 2102.2","Joe Coupe (Walking Demon) 3–11","Joe Coupe (Walking Demon) 1420.2","Jonathan Taylor (Colts)"],[2020,"Matt Coupe (Kansas City Coupes)","Filippo Gallo (Brooklyn Shem)","115.5 – 102","Stefon Diggs (43.5)","Derrick Henry (9 Points)","Joe Coupe (Walking Demons) 10–3","Carmelo Mazzaferro (The Cinderella Story) 1690","Matt Melio (Team Grapee) 1–12","Mark Farrell (The Magic Pen Factory) 1238","Antonio Brown (Buccaneers)"],[2019,"Joe Rinaldi (Coopers Troopers)","Joe Martir (Make A Wish)","140.5 – 135.5","Michael Thomas (33.5)","Emmanuel Sanders (9 Points)","Filippo Gallo (Brooklyn Shem) 10–3","Filippo Gallo (Brooklyn Shem) 1770.5","Pete Caleca (Cosby's Dealer) 3–10","Pete Caleca (Cosby's Dealer) 1226","Dalvin Cook (Vikings)"],[2018,"Joe Coupe (Aaron Hernandez Pinata Co.)","Antonio Pisano (The McCaffinator)","171 – 169","Antonio Brown (43.5)","Stefon Diggs (9 Points)","Joe Coupe (Aaron Hernandez Pinata Co.) 10–3","Antonio Pisano (The McCaffinator) 1878","Joe Rinaldi (2Gurleys 1 Cup) 2–11","Anthony Gallo (Thailand Cave Wonderers) 1339","James Conner (Steelers)"],[2017,"Antonio Pisano (Show Me The Money)","Joe Coupe (James White Power)","115 – 102","CJ Anderson (25)","Antonio Brown (0 · Hurt)","Joe Coupe (James White Power) 9–4","Filippo Gallo (Brooklyn BBC) 1547","Joe Rinaldi (2Gurleys 1 Cup) 3–10","Joe Rinaldi (2Gurleys 1 Cup) 1268","Alvin Kamara (Saints)"]],"divisions":[["2017","Coupe","Lorenzo","—","—"],["2018","Coupe","Pete","Martir","Filippo"],["2019","Filippo","Antonio","—","—"],["2020","Coupe","Berger","—","—"],["2021","Melio","Gallo","Skin","—"],["2022","Gallo","Frankie","Filippo","—"],["2023","Coupe","Skin","Antonio","—"],["2024","Skin","Martir","Filippo","Melio"],["2025","Berger","Antonio","Mark","Melio"]],"placement_counts":{"Antonio":{"1":2,"2":1,"4":2,"6":1,"7":1,"8":1,"11":1},"Martir":{"2":1,"3":1,"4":1,"6":2,"8":2,"11":1,"12":1},"Filippo":{"2":2,"3":1,"4":1,"6":1,"9":1,"10":2,"12":1},"Berger":{"3":1,"4":1,"5":1,"8":1,"9":3,"11":1},"Skin":{"1":1,"2":1,"3":1,"6":1,"7":2,"8":1},"Carmelo":{"5":4,"7":2,"8":1,"11":1,"12":1},"Melio":{"1":2,"5":1,"6":1,"9":1,"12":1},"Frankie":{"2":1,"4":1,"5":1,"6":1,"7":1},"Grasso":{"1":1,"10":1},"Mark":{"5":1,"6":1,"7":2,"10":1},"Nicky":{"9":1},"Tone":{"10":1},"Gallo*":{"2":1,"3":1,"4":2,"6":1,"9":1,"10":1,"12":1},"Coupe*":{"1":1,"2":2,"3":1,"9":1,"10":1,"11":1,"12":1},"Matt*":{"1":1,"8":2,"10":1,"11":3},"Rinaldi*":{"1":1,"4":1,"7":1,"8":1,"9":1,"10":1,"12":1},"Lorenzo*":{"3":1},"Pete*":{"5":1,"12":1}},"history":{"Antonio":[[2017,8,5,0],[2018,8,5,0],[2019,10,3,0],[2020,3,10,0],[2021,6,8,0],[2022,7,7,0],[2023,9,5,0],[2024,8,6,0],[2025,9,5,0],[2026,2,4,0]],"Martir":[[2017,6,7,0],[2018,10,3,0],[2019,8,5,0],[2020,8,5,0],[2021,7,7,0],[2022,3,11,0],[2023,6,8,0],[2024,9,5,0],[2025,5,9,0],[2026,3,3,0]],"Filippo":[[2017,6,7,0],[2018,6,7,0],[2019,10,3,0],[2020,9,4,0],[2021,5,9,0],[2022,10,4,0],[2023,4,10,0],[2024,9,5,0],[2025,4,10,0],[2026,3,3,0]],"Berger":[[2018,6,7,0],[2019,5,8,0],[2020,10,3,0],[2021,6,8,0],[2022,4,10,0],[2023,9,5,0],[2024,4,10,0],[2025,10,4,0],[2026,2,4,0]],"Skin":[[2017,6,6,1],[2018,5,7,1],[2019,7,6,0],[2020,5,7,1],[2021,7,7,0],[2022,7,7,0],[2023,9,5,0],[2024,13,1,0],[2025,9,5,0],[2026,4,2,0]],"Carmelo":[[2017,7,6,0],[2018,2,11,0],[2019,9,4,0],[2020,9,3,1],[2021,7,7,0],[2022,7,7,0],[2023,3,11,0],[2024,10,4,0],[2025,6,8,0],[2026,4,2,0]],"Melio":[[2020,1,12,0],[2021,13,1,0],[2022,7,7,0],[2023,5,9,0],[2024,9,5,0],[2025,8,6,0],[2026,2,4,0]],"Frankie":[[2021,8,6,0],[2022,11,3,0],[2023,9,5,0],[2024,9,5,0],[2025,6,8,0],[2026,3,3,0]],"Grasso":[[2024,3,11,0],[2025,7,7,0],[2026,2,4,0]],"Mark":[[2017,5,8,0],[2018,7,6,0],[2019,7,6,0],[2020,4,9,0],[2025,9,5,0],[2026,4,2,0]],"Nicky":[[2025,6,8,0],[2026,5,1,0]],"Tone":[[2025,5,9,0],[2026,2,4,0]],"Gallo":[[2017,6,6,1],[2018,6,6,1],[2019,3,10,0],[2020,4,9,0],[2021,9,5,0],[2022,11,3,0],[2023,8,6,0],[2024,2,12,0]],"Coupe":[[2017,9,4,0],[2018,10,3,0],[2019,4,9,0],[2020,10,3,0],[2021,3,11,0],[2022,5,9,0],[2023,11,3,0],[2024,2,12,0]],"Matt":[[2018,5,8,0],[2019,3,10,0],[2020,9,4,0],[2021,5,9,0],[2022,6,8,0],[2023,4,10,0],[2024,6,8,0]],"Rinaldi":[[2017,3,10,0],[2018,2,11,0],[2019,9,4,0],[2020,5,8,0],[2021,8,6,0],[2022,6,8,0],[2023,7,7,0]],"Lorenzo":[[2017,8,5,0]],"Pete":[[2018,10,3,0],[2019,3,10,0]]},"schedule":{"Berger":["Frankie","Martir","Antonio","Nicky","Skin","Carmelo","Filippo","Mark","Tone","Grasso","Frankie","Nicky","Melio","Martir"],"Martir":["Grasso","Berger","Nicky","Tone","Frankie","Grasso","Antonio","Carmelo","Filippo","Mark","Melio","Skin","Nicky","Berger"],"Nicky":["Filippo","Filippo","Martir","Berger","Melio","Mark","Tone","Grasso","Antonio","Carmelo","Skin","Berger","Martir","Frankie"],"Antonio":["Mark","Tone","Berger","Filippo","Grasso","Frankie","Martir","Melio","Nicky","Skin","Carmelo","Filippo","Mark","Tone"],"Tone":["Skin","Antonio","Filippo","Martir","Mark","Melio","Nicky","Skin","Berger","Frankie","Grasso","Carmelo","Filippo","Antonio"],"Filippo":["Nicky","Nicky","Tone","Antonio","Carmelo","Skin","Berger","Frankie","Martir","Melio","Mark","Antonio","Tone","Grasso"],"Mark":["Antonio","Carmelo","Melio","Grasso","Tone","Nicky","Frankie","Berger","Skin","Martir","Filippo","Grasso","Antonio","Carmelo"],"Carmelo":["Melio","Mark","Grasso","Skin","Filippo","Berger","Melio","Martir","Frankie","Nicky","Antonio","Tone","Grasso","Mark"],"Grasso":["Martir","Frankie","Carmelo","Mark","Antonio","Martir","Skin","Nicky","Melio","Berger","Tone","Mark","Carmelo","Filippo"],"Melio":["Carmelo","Skin","Mark","Frankie","Nicky","Tone","Carmelo","Antonio","Grasso","Filippo","Martir","Frankie","Berger","Skin"],"Skin":["Tone","Melio","Frankie","Carmelo","Berger","Filippo","Grasso","Tone","Mark","Antonio","Nicky","Martir","Frankie","Melio"],"Frankie":["Berger","Grasso","Skin","Melio","Martir","Antonio","Mark","Filippo","Carmelo","Tone","Berger","Melio","Skin","Nicky"]},"h2h_reg":{"Antonio|Martir":[9,8,0],"Martir|Antonio":[8,9,0],"Antonio|Filippo":[6,5,0],"Filippo|Antonio":[5,6,0],"Antonio|Berger":[6,6,0],"Berger|Antonio":[6,6,0],"Antonio|Skin":[3,7,0],"Skin|Antonio":[7,3,0],"Antonio|Carmelo":[7,1,0],"Carmelo|Antonio":[1,7,0],"Antonio|Melio":[4,5,0],"Melio|Antonio":[5,4,0],"Antonio|Frankie":[4,2,0],"Frankie|Antonio":[2,4,0],"Antonio|Grasso":[2,3,0],"Grasso|Antonio":[3,2,0],"Antonio|Mark":[5,4,0],"Mark|Antonio":[4,5,0],"Antonio|Nicky":[1,0,0],"Nicky|Antonio":[0,1,0],"Antonio|Tone":[0,2,0],"Tone|Antonio":[2,0,0],"Martir|Filippo":[4,3,0],"Filippo|Martir":[3,4,0],"Martir|Berger":[3,9,0],"Berger|Martir":[9,3,0],"Martir|Skin":[5,4,0],"Skin|Martir":[4,5,0],"Martir|Carmelo":[3,3,0],"Carmelo|Martir":[3,3,0],"Martir|Melio":[5,4,0],"Melio|Martir":[4,5,0],"Martir|Frankie":[3,4,0],"Frankie|Martir":[4,3,0],"Martir|Grasso":[4,1,0],"Grasso|Martir":[1,4,0],"Martir|Mark":[3,4,0],"Mark|Martir":[4,3,0],"Martir|Nicky":[0,2,0],"Nicky|Martir":[2,0,0],"Martir|Tone":[1,1,0],"Tone|Martir":[1,1,0],"Filippo|Berger":[3,6,0],"Berger|Filippo":[6,3,0],"Filippo|Skin":[8,8,0],"Skin|Filippo":[8,8,0],"Filippo|Carmelo":[7,10,0],"Carmelo|Filippo":[10,7,0],"Filippo|Melio":[5,1,0],"Melio|Filippo":[1,5,0],"Filippo|Frankie":[2,3,0],"Frankie|Filippo":[3,2,0],"Filippo|Grasso":[3,0,0],"Grasso|Filippo":[0,3,0],"Filippo|Mark":[1,4,0],"Mark|Filippo":[4,1,0],"Filippo|Nicky":[0,3,0],"Nicky|Filippo":[3,0,0],"Filippo|Tone":[1,2,0],"Tone|Filippo":[2,1,0],"Berger|Skin":[4,9,0],"Skin|Berger":[9,4,0],"Berger|Carmelo":[6,7,0],"Carmelo|Berger":[7,6,0],"Berger|Melio":[3,4,0],"Melio|Berger":[4,3,0],"Berger|Frankie":[4,4,0],"Frankie|Berger":[4,4,0],"Berger|Grasso":[1,1,0],"Grasso|Berger":[1,1,0],"Berger|Mark":[4,2,0],"Mark|Berger":[2,4,0],"Berger|Nicky":[1,1,0],"Nicky|Berger":[1,1,0],"Berger|Tone":[1,0,0],"Tone|Berger":[0,1,0],"Skin|Carmelo":[8,9,1],"Carmelo|Skin":[9,8,1],"Skin|Melio":[5,1,0],"Melio|Skin":[1,5,0],"Skin|Frankie":[4,3,0],"Frankie|Skin":[3,4,0],"Skin|Grasso":[2,0,0],"Grasso|Skin":[0,2,0],"Skin|Mark":[3,3,0],"Mark|Skin":[3,3,0],"Skin|Nicky":[0,1,0],"Nicky|Skin":[1,0,0],"Skin|Tone":[2,0,0],"Tone|Skin":[0,2,0],"Carmelo|Melio":[3,4,0],"Melio|Carmelo":[4,3,0],"Carmelo|Frankie":[1,4,0],"Frankie|Carmelo":[4,1,0],"Carmelo|Grasso":[2,2,0],"Grasso|Carmelo":[2,2,0],"Carmelo|Mark":[5,2,0],"Mark|Carmelo":[2,5,0],"Carmelo|Nicky":[1,0,0],"Nicky|Carmelo":[0,1,0],"Carmelo|Tone":[1,0,0],"Tone|Carmelo":[0,1,0],"Melio|Frankie":[5,4,0],"Frankie|Melio":[4,5,0],"Melio|Grasso":[2,0,0],"Grasso|Melio":[0,2,0],"Melio|Mark":[2,2,0],"Mark|Melio":[2,2,0],"Melio|Nicky":[1,2,0],"Nicky|Melio":[2,1,0],"Melio|Tone":[1,2,0],"Tone|Melio":[2,1,0],"Frankie|Grasso":[2,1,0],"Grasso|Frankie":[1,2,0],"Frankie|Mark":[1,0,0],"Mark|Frankie":[0,1,0],"Frankie|Nicky":[2,0,0],"Nicky|Frankie":[0,2,0],"Frankie|Tone":[1,0,0],"Tone|Frankie":[0,1,0],"Grasso|Mark":[1,1,0],"Mark|Grasso":[1,1,0],"Grasso|Nicky":[1,0,0],"Nicky|Grasso":[0,1,0],"Grasso|Tone":[1,0,0],"Tone|Grasso":[0,1,0],"Mark|Nicky":[2,0,0],"Nicky|Mark":[0,2,0],"Mark|Tone":[2,0,0],"Tone|Mark":[0,2,0],"Nicky|Tone":[2,0,0],"Tone|Nicky":[0,2,0],"Mark|Gallo":[1,3,0],"Gallo|Mark":[3,1,0],"Mark|Coupe":[0,3,0],"Coupe|Mark":[3,0,0],"Mark|Matt":[3,2,0],"Matt|Mark":[2,3,0],"Mark|Lorenzo":[1,1,0],"Lorenzo|Mark":[1,1,0],"Mark|Pete":[2,2,0],"Pete|Mark":[2,2,0],"Mark|Rinaldi":[3,0,0],"Rinaldi|Mark":[0,3,0],"Nicky|Gallo":[0,0,0],"Gallo|Nicky":[0,0,0],"Tone|Gallo":[0,0,0],"Gallo|Tone":[0,0,0],"Gallo|Coupe":[4,7,0],"Coupe|Gallo":[7,4,0],"Gallo|Matt":[3,2,0],"Matt|Gallo":[2,3,0],"Gallo|Lorenzo":[0,1,0],"Lorenzo|Gallo":[1,0,0],"Gallo|Pete":[0,1,0],"Pete|Gallo":[1,0,0],"Gallo|Rinaldi":[8,5,0],"Rinaldi|Gallo":[5,8,0],"Coupe|Matt":[6,5,0],"Matt|Coupe":[5,6,0],"Coupe|Lorenzo":[0,1,0],"Lorenzo|Coupe":[1,0,0],"Coupe|Pete":[0,1,0],"Pete|Coupe":[1,0,0],"Coupe|Rinaldi":[6,4,0],"Rinaldi|Coupe":[4,6,0],"Matt|Pete":[1,3,0],"Pete|Matt":[3,1,0],"Matt|Rinaldi":[3,3,0],"Rinaldi|Matt":[3,3,0],"Lorenzo|Rinaldi":[1,0,0],"Rinaldi|Lorenzo":[0,1,0],"Pete|Rinaldi":[1,2,0],"Rinaldi|Pete":[2,1,0],"Gallo|Antonio":[5,6,0],"Antonio|Gallo":[6,5,0],"Gallo|Martir":[5,5,0],"Martir|Gallo":[5,5,0],"Gallo|Filippo":[5,6,0],"Filippo|Gallo":[6,5,0],"Gallo|Berger":[4,2,0],"Berger|Gallo":[2,4,0],"Gallo|Skin":[3,7,2],"Skin|Gallo":[7,3,2],"Gallo|Carmelo":[4,7,0],"Carmelo|Gallo":[7,4,0],"Gallo|Melio":[1,5,0],"Melio|Gallo":[5,1,0],"Gallo|Frankie":[2,2,0],"Frankie|Gallo":[2,2,0],"Gallo|Grasso":[0,1,0],"Grasso|Gallo":[1,0,0],"Coupe|Antonio":[4,2,0],"Antonio|Coupe":[2,4,0],"Coupe|Martir":[4,5,0],"Martir|Coupe":[5,4,0],"Coupe|Filippo":[5,7,0],"Filippo|Coupe":[7,5,0],"Coupe|Berger":[4,2,0],"Berger|Coupe":[2,4,0],"Coupe|Skin":[4,6,0],"Skin|Coupe":[6,4,0],"Coupe|Carmelo":[6,6,0],"Carmelo|Coupe":[6,6,0],"Coupe|Melio":[3,4,0],"Melio|Coupe":[4,3,0],"Coupe|Frankie":[0,7,0],"Frankie|Coupe":[7,0,0],"Coupe|Grasso":[2,0,0],"Grasso|Coupe":[0,2,0],"Matt|Antonio":[2,7,0],"Antonio|Matt":[7,2,0],"Matt|Martir":[4,6,0],"Martir|Matt":[6,4,0],"Matt|Filippo":[0,7,0],"Filippo|Matt":[7,0,0],"Matt|Berger":[5,6,0],"Berger|Matt":[6,5,0],"Matt|Skin":[3,1,0],"Skin|Matt":[1,3,0],"Matt|Carmelo":[3,2,0],"Carmelo|Matt":[2,3,0],"Matt|Melio":[4,5,0],"Melio|Matt":[5,4,0],"Matt|Frankie":[3,5,0],"Frankie|Matt":[5,3,0],"Matt|Grasso":[1,0,0],"Grasso|Matt":[0,1,0],"Lorenzo|Antonio":[1,1,0],"Antonio|Lorenzo":[1,1,0],"Lorenzo|Martir":[2,0,0],"Martir|Lorenzo":[0,2,0],"Lorenzo|Filippo":[1,0,0],"Filippo|Lorenzo":[0,1,0],"Lorenzo|Skin":[1,1,0],"Skin|Lorenzo":[1,1,0],"Lorenzo|Carmelo":[0,1,0],"Carmelo|Lorenzo":[1,0,0],"Pete|Antonio":[0,3,0],"Antonio|Pete":[3,0,0],"Pete|Martir":[0,3,0],"Martir|Pete":[3,0,0],"Pete|Filippo":[1,0,0],"Filippo|Pete":[0,1,0],"Pete|Berger":[2,0,0],"Berger|Pete":[0,2,0],"Pete|Skin":[1,0,0],"Skin|Pete":[0,1,0],"Pete|Carmelo":[1,1,0],"Carmelo|Pete":[1,1,0],"Rinaldi|Antonio":[3,4,0],"Antonio|Rinaldi":[4,3,0],"Rinaldi|Martir":[4,7,0],"Martir|Rinaldi":[7,4,0],"Rinaldi|Filippo":[3,8,0],"Filippo|Rinaldi":[8,3,0],"Rinaldi|Berger":[4,1,0],"Berger|Rinaldi":[1,4,0],"Rinaldi|Skin":[4,5,0],"Skin|Rinaldi":[5,4,0],"Rinaldi|Carmelo":[6,4,0],"Carmelo|Rinaldi":[4,6,0],"Rinaldi|Melio":[1,1,0],"Melio|Rinaldi":[1,1,0],"Rinaldi|Frankie":[1,2,0],"Frankie|Rinaldi":[2,1,0]},"h2h_play":{"Antonio|Martir":[1,1],"Martir|Antonio":[1,1],"Antonio|Filippo":[0,1],"Filippo|Antonio":[1,0],"Antonio|Skin":[2,1],"Skin|Antonio":[1,2],"Antonio|Gallo":[1,0],"Gallo|Antonio":[0,1],"Antonio|Coupe":[2,1],"Coupe|Antonio":[1,2],"Antonio|Lorenzo":[1,0],"Lorenzo|Antonio":[0,1],"Antonio|Pete":[1,0],"Pete|Antonio":[0,1],"Martir|Filippo":[0,1],"Filippo|Martir":[1,0],"Martir|Skin":[0,1],"Skin|Martir":[1,0],"Martir|Mark":[1,0],"Mark|Martir":[0,1],"Martir|Matt":[0,1],"Matt|Martir":[1,0],"Martir|Pete":[0,1],"Pete|Martir":[1,0],"Filippo|Carmelo":[1,0],"Carmelo|Filippo":[0,1],"Filippo|Melio":[0,1],"Melio|Filippo":[1,0],"Filippo|Frankie":[1,1],"Frankie|Filippo":[1,1],"Filippo|Gallo":[0,1],"Gallo|Filippo":[1,0],"Filippo|Coupe":[1,0],"Coupe|Filippo":[0,1],"Filippo|Matt":[0,1],"Matt|Filippo":[1,0],"Filippo|Rinaldi":[0,1],"Rinaldi|Filippo":[1,0],"Berger|Frankie":[0,1],"Frankie|Berger":[1,0],"Berger|Grasso":[0,1],"Grasso|Berger":[1,0],"Berger|Matt":[0,1],"Matt|Berger":[1,0],"Skin|Melio":[2,1],"Melio|Skin":[1,2],"Skin|Frankie":[1,0],"Frankie|Skin":[0,1],"Skin|Grasso":[0,1],"Grasso|Skin":[1,0],"Skin|Gallo":[1,1],"Gallo|Skin":[1,1],"Carmelo|Melio":[0,1],"Melio|Carmelo":[1,0],"Carmelo|Gallo":[0,1],"Gallo|Carmelo":[1,0],"Carmelo|Rinaldi":[0,1],"Rinaldi|Carmelo":[1,0],"Melio|Gallo":[1,0],"Gallo|Melio":[0,1],"Melio|Matt":[1,0],"Matt|Melio":[0,1],"Melio|Rinaldi":[1,0],"Rinaldi|Melio":[0,1],"Frankie|Gallo":[0,1],"Gallo|Frankie":[1,0],"Frankie|Coupe":[0,1],"Coupe|Frankie":[1,0],"Frankie|Rinaldi":[0,1],"Rinaldi|Frankie":[1,0],"Grasso|Mark":[1,0],"Mark|Grasso":[0,1],"Gallo|Coupe":[0,2],"Coupe|Gallo":[2,0],"Coupe|Mark":[0,2],"Mark|Coupe":[2,0]}};
+const DATA={"regszn":[["Frankie","47","30","0","0.610","9,599.5","8,918.5","+681.0","124.7","115.8","77","6"],["Skin","73","53","3","0.578","16,021.9","15,280.9","+741.0","124.2","118.5","129","10"],["Antonio","70","59","0","0.543","15,953.7","15,436.2","+517.5","123.7","119.7","129","10"],["Melio","46","45","0","0.505","11,238.8","11,431.5","-192.7","123.5","125.6","91","7"],["Filippo","66","63","0","0.512","15,566.1","15,000.0","+566.1","120.7","116.3","129","10"],["Martir","66","63","0","0.512","15,149.9","15,449.9","-300.0","117.4","119.8","129","10"],["Carmelo","64","64","1","0.500","14,912.5","15,277.2","-364.7","115.6","118.4","129","10"],["Berger","57","60","0","0.487","13,484.8","14,082.4","-597.6","115.3","120.4","117","9"],["Mark","37","36","0","0.507","8,681.4","8,508.1","+173.3","118.9","116.5","73","6"],["Nicky","11","10","0","0.524","2,568.1","2,507.9","+60.2","122.3","119.4","21","2"],["Grasso","12","23","0","0.343","3,970.1","4,256.5","-286.4","113.4","121.6","35","3"],["Tone","8","13","0","0.381","2,410.9","2,657.8","-246.9","114.8","126.6","21","2"],["Lorenzo*","8","5","0","0.615","1,484.0","1,329.0","+155.0","114.2","102.2","13","1"],["Coupe*","54","54","0","0.500","12,786.9","12,565.1","+221.8","118.4","116.3","108","8"],["Pete*","13","13","0","0.500","2,934.5","2,831.5","+103.0","112.9","108.9","26","2"],["Gallo*","49","57","2","0.463","12,840.0","12,759.2","+80.8","118.9","118.1","108","8"],["Matt*","38","57","0","0.400","10,452.5","11,324.1","-871.6","110.0","119.2","95","7"],["Rinaldi*","40","54","0","0.426","10,990.5","11,395.2","-404.7","116.9","121.2","94","7"]],"playoffs":[["Grasso","3","0","1.000","3","521.7","341","180.7","173.9","113.7","1","3","0.500","1","1","1.000","1.000"],["Melio","5","2",".714","7","976.1","886.5","89.6","139.4","126.6","4","7",".667","2","2","1.000",".500"],["Antonio","8","4",".667","12","1647.3","1507.1","140.2","137.3","125.6","6","10",".667","2","3",".667",".333"],["Skin","6","5",".545","11","1388","1334.8","53.2","126.2","121.3","6","10",".667","1","2",".500",".167"],["Filippo","5","5",".500","10","1329.8","1333.1","−1.2","133.0","133.1","5","10",".556","0","2","0.000","0.000"],["Frankie","2","4",".333","6","644.1","769.2","−125.1","107.4","128.2","4","6",".800","0","1","0.000","0.000"],["Martir","2","5",".286","7","834.6","866.7","−32.1","119.2","123.8","5","10",".556","0","1","0.000","0.000"],["Carmelo","0","4",".000","4","472.1","618.9","−146.8","118.0","154.7","4","10",".444","0","0","#DIV/0!","0.000"],["Berger","0","3",".000","3","304.9","453.7","−148.8","101.6","151.2","3","9",".375","0","0","#DIV/0!","0.000"],["Mark","0","2",".000","2","205","310.7","−29","83","112","2","6",".400","0","0","#DIV/0!","0.000"],["Nicky","0","0","—","0","0","0","0","—","—","0","2","0.000","0","0","#DIV/0!","#DIV/0!"],["Tone","0","0","—","0","0","0","0","—","—","0","2","0.000","0","0","#DIV/0!","#DIV/0!"],["Matt*","3","0","1.000","3","394.5","325.5","69","131.5","108.5","1","7",".143","1","1","1.000","1.000"],["Rinaldi*","4","1",".800","5","754.2","659","95","150.8","131.8","2","7",".286","1","1","1.000",".500"],["Coupe*","4","3",".571","7","868.1","912.9","−44.8","124.0","130.4","4","8",".500","1","3",".333",".250"],["Gallo*","3","5",".375","8","967.7","965.1","2.6","121.0","120.6","5","8",".625","0","1","0.000","0.000"],["Pete*","0","1","0.000","1","118","128","−10","118","128","1","2",".500","0","0","#DIV/0!","0.000"],["Lorenzo*","0","1","0.000","1","112","128","−16","112","128","1","1","1.000","0","0","#DIV/0!","0.000"]],"champions":[[2025,"Anthony Grasso (I Chase Brown Ladds Lol)","Skin (Brooklyn $kin)","147 – 114.4","Chase Brown (31.6)","Jaylen Waddle (0.7)","Michael Berger (Thomas The Tank Engine) 10–4","Mark Farrell (JJ and Farrell, LLP) 1841.6","Filippo Gallo (Eat My Josh) 4–10","Carmelo Mazzaferro (Don Nabers) 1483","Jonathan Taylor (Colts)"],[2024,"Matt Melio (Just Gibb Me My Money)","Filippo Gallo (April LaPorta)","203.4 – 87.1","Joe Burrow (46)","Colts D/ST (−4)","Skin (Brooklyn $kin) 13–1","Skin (Brooklyn $kin) 1971","Joe Coupe (Walking Demon) 2–12","Anthony Grasso (See Me Next Year) 1322","Ja'Marr Chase (Bengals)"],[2023,"Antonio Pisano (AMON Another Level)","Joe Coupe (Hamlin's Cardio Club)","178.4 – 108.7","Kyren Williams (30.1)","Cole Kmet (0)","Joe Coupe (Hamlin's Cardio Club) 11–3","Skin (Brooklyn $kin) 1937.1","Carmelo Mazzaferro (Just Joshin) 3–11","Matt Coupe (Baby Coupes) 1359","Damar Hamlin (Bills)"],[2022,"Skin (Brooklyn $kin)","Frankie Saracino (Josh Me Off)","161.3 – 121.6*","Tom Brady (46.9)","Bills vs Bengals game suspended","Anthony Gallo (I'm The Chico) 11–3","Anthony Gallo (I'm The Chico) 1940.5","Joe Martir (Make A Wish) 3–11","Matt Coupe (Baby Coupes) 1413.9","Justin Jefferson (Vikings)"],[2021,"Matt Melio (CeeDeez Nuts)","Anthony Gallo (I'm A Dog Woof)","129.6 – 111.4","Russell Wilson (29.9)","Ezekiel Elliott (4 Points)","Matt Melio (CeeDeez Nuts) 13–1","Matt Melio (CeeDeez Nuts) 2102.2","Joe Coupe (Walking Demon) 3–11","Joe Coupe (Walking Demon) 1420.2","Jonathan Taylor (Colts)"],[2020,"Matt Coupe (Kansas City Coupes)","Filippo Gallo (Brooklyn Shem)","115.5 – 102","Stefon Diggs (43.5)","Derrick Henry (9 Points)","Joe Coupe (Walking Demons) 10–3","Carmelo Mazzaferro (The Cinderella Story) 1690","Matt Melio (Team Grapee) 1–12","Mark Farrell (The Magic Pen Factory) 1238","Antonio Brown (Buccaneers)"],[2019,"Joe Rinaldi (Coopers Troopers)","Joe Martir (Make A Wish)","140.5 – 135.5","Michael Thomas (33.5)","Emmanuel Sanders (9 Points)","Filippo Gallo (Brooklyn Shem) 10–3","Filippo Gallo (Brooklyn Shem) 1770.5","Pete Caleca (Cosby's Dealer) 3–10","Pete Caleca (Cosby's Dealer) 1226","Dalvin Cook (Vikings)"],[2018,"Joe Coupe (Aaron Hernandez Pinata Co.)","Antonio Pisano (The McCaffinator)","171 – 169","Antonio Brown (43.5)","Stefon Diggs (9 Points)","Joe Coupe (Aaron Hernandez Pinata Co.) 10–3","Antonio Pisano (The McCaffinator) 1878","Joe Rinaldi (2Gurleys 1 Cup) 2–11","Anthony Gallo (Thailand Cave Wonderers) 1339","James Conner (Steelers)"],[2017,"Antonio Pisano (Show Me The Money)","Joe Coupe (James White Power)","115 – 102","CJ Anderson (25)","Antonio Brown (0 · Hurt)","Joe Coupe (James White Power) 9–4","Filippo Gallo (Brooklyn BBC) 1547","Joe Rinaldi (2Gurleys 1 Cup) 3–10","Joe Rinaldi (2Gurleys 1 Cup) 1268","Alvin Kamara (Saints)"]],"divisions":[["2017","Coupe","Lorenzo","—","—"],["2018","Coupe","Pete","Martir","Filippo"],["2019","Filippo","Antonio","—","—"],["2020","Coupe","Berger","—","—"],["2021","Melio","Gallo","Skin","—"],["2022","Gallo","Frankie","Filippo","—"],["2023","Coupe","Skin","Antonio","—"],["2024","Skin","Martir","Filippo","Melio"],["2025","Berger","Antonio","Mark","Melio"]],"placement_counts":{"Antonio":{"1":2,"2":1,"4":2,"6":1,"7":1,"8":1,"11":1},"Martir":{"2":1,"3":1,"4":1,"6":2,"8":2,"11":1,"12":1},"Filippo":{"2":2,"3":1,"4":1,"6":1,"9":1,"10":2,"12":1},"Berger":{"3":1,"4":1,"5":1,"8":1,"9":3,"11":1},"Skin":{"1":1,"2":1,"3":1,"6":1,"7":2,"8":1},"Carmelo":{"5":4,"7":2,"8":1,"11":1,"12":1},"Melio":{"1":2,"5":1,"6":1,"9":1,"12":1},"Frankie":{"2":1,"4":1,"5":1,"6":1,"7":1},"Grasso":{"1":1,"10":1},"Mark":{"5":1,"6":1,"7":2,"10":1},"Nicky":{"9":1},"Tone":{"10":1},"Gallo*":{"2":1,"3":1,"4":2,"6":1,"9":1,"10":1,"12":1},"Coupe*":{"1":1,"2":2,"3":1,"9":1,"10":1,"11":1,"12":1},"Matt*":{"1":1,"8":2,"10":1,"11":3},"Rinaldi*":{"1":1,"4":1,"7":1,"8":1,"9":1,"10":1,"12":1},"Lorenzo*":{"3":1},"Pete*":{"5":1,"12":1}},"history":{"Antonio":[[2017,8,5,0],[2018,8,5,0],[2019,10,3,0],[2020,3,10,0],[2021,6,8,0],[2022,7,7,0],[2023,9,5,0],[2024,8,6,0],[2025,9,5,0],[2026,2,5,0]],"Martir":[[2017,6,7,0],[2018,10,3,0],[2019,8,5,0],[2020,8,5,0],[2021,7,7,0],[2022,3,11,0],[2023,6,8,0],[2024,9,5,0],[2025,5,9,0],[2026,4,3,0]],"Filippo":[[2017,6,7,0],[2018,6,7,0],[2019,10,3,0],[2020,9,4,0],[2021,5,9,0],[2022,10,4,0],[2023,4,10,0],[2024,9,5,0],[2025,4,10,0],[2026,3,4,0]],"Berger":[[2018,6,7,0],[2019,5,8,0],[2020,10,3,0],[2021,6,8,0],[2022,4,10,0],[2023,9,5,0],[2024,4,10,0],[2025,10,4,0],[2026,3,4,0]],"Skin":[[2017,6,6,1],[2018,5,7,1],[2019,7,6,0],[2020,5,7,1],[2021,7,7,0],[2022,7,7,0],[2023,9,5,0],[2024,13,1,0],[2025,9,5,0],[2026,5,2,0]],"Carmelo":[[2017,7,6,0],[2018,2,11,0],[2019,9,4,0],[2020,9,3,1],[2021,7,7,0],[2022,7,7,0],[2023,3,11,0],[2024,10,4,0],[2025,6,8,0],[2026,4,3,0]],"Melio":[[2020,1,12,0],[2021,13,1,0],[2022,7,7,0],[2023,5,9,0],[2024,9,5,0],[2025,8,6,0],[2026,3,4,0]],"Frankie":[[2021,8,6,0],[2022,11,3,0],[2023,9,5,0],[2024,9,5,0],[2025,6,8,0],[2026,3,4,0]],"Grasso":[[2024,3,11,0],[2025,7,7,0],[2026,2,5,0]],"Mark":[[2017,5,8,0],[2018,7,6,0],[2019,7,6,0],[2020,4,9,0],[2025,9,5,0],[2026,5,2,0]],"Nicky":[[2025,6,8,0],[2026,5,2,0]],"Tone":[[2025,5,9,0],[2026,3,4,0]],"Gallo":[[2017,6,6,1],[2018,6,6,1],[2019,3,10,0],[2020,4,9,0],[2021,9,5,0],[2022,11,3,0],[2023,8,6,0],[2024,2,12,0]],"Coupe":[[2017,9,4,0],[2018,10,3,0],[2019,4,9,0],[2020,10,3,0],[2021,3,11,0],[2022,5,9,0],[2023,11,3,0],[2024,2,12,0]],"Matt":[[2018,5,8,0],[2019,3,10,0],[2020,9,4,0],[2021,5,9,0],[2022,6,8,0],[2023,4,10,0],[2024,6,8,0]],"Rinaldi":[[2017,3,10,0],[2018,2,11,0],[2019,9,4,0],[2020,5,8,0],[2021,8,6,0],[2022,6,8,0],[2023,7,7,0]],"Lorenzo":[[2017,8,5,0]],"Pete":[[2018,10,3,0],[2019,3,10,0]]},"schedule":{"Berger":["Frankie","Martir","Antonio","Nicky","Skin","Carmelo","Filippo","Mark","Tone","Grasso","Frankie","Nicky","Melio","Martir"],"Martir":["Grasso","Berger","Nicky","Tone","Frankie","Grasso","Antonio","Carmelo","Filippo","Mark","Melio","Skin","Nicky","Berger"],"Nicky":["Filippo","Filippo","Martir","Berger","Melio","Mark","Tone","Grasso","Antonio","Carmelo","Skin","Berger","Martir","Frankie"],"Antonio":["Mark","Tone","Berger","Filippo","Grasso","Frankie","Martir","Melio","Nicky","Skin","Carmelo","Filippo","Mark","Tone"],"Tone":["Skin","Antonio","Filippo","Martir","Mark","Melio","Nicky","Skin","Berger","Frankie","Grasso","Carmelo","Filippo","Antonio"],"Filippo":["Nicky","Nicky","Tone","Antonio","Carmelo","Skin","Berger","Frankie","Martir","Melio","Mark","Antonio","Tone","Grasso"],"Mark":["Antonio","Carmelo","Melio","Grasso","Tone","Nicky","Frankie","Berger","Skin","Martir","Filippo","Grasso","Antonio","Carmelo"],"Carmelo":["Melio","Mark","Grasso","Skin","Filippo","Berger","Melio","Martir","Frankie","Nicky","Antonio","Tone","Grasso","Mark"],"Grasso":["Martir","Frankie","Carmelo","Mark","Antonio","Martir","Skin","Nicky","Melio","Berger","Tone","Mark","Carmelo","Filippo"],"Melio":["Carmelo","Skin","Mark","Frankie","Nicky","Tone","Carmelo","Antonio","Grasso","Filippo","Martir","Frankie","Berger","Skin"],"Skin":["Tone","Melio","Frankie","Carmelo","Berger","Filippo","Grasso","Tone","Mark","Antonio","Nicky","Martir","Frankie","Melio"],"Frankie":["Berger","Grasso","Skin","Melio","Martir","Antonio","Mark","Filippo","Carmelo","Tone","Berger","Melio","Skin","Nicky"]},"h2h_reg":{"Antonio|Martir":[9,9,0],"Martir|Antonio":[9,9,0],"Antonio|Filippo":[6,5,0],"Filippo|Antonio":[5,6,0],"Antonio|Berger":[6,6,0],"Berger|Antonio":[6,6,0],"Antonio|Skin":[3,7,0],"Skin|Antonio":[7,3,0],"Antonio|Carmelo":[7,1,0],"Carmelo|Antonio":[1,7,0],"Antonio|Melio":[4,5,0],"Melio|Antonio":[5,4,0],"Antonio|Frankie":[4,2,0],"Frankie|Antonio":[2,4,0],"Antonio|Grasso":[2,3,0],"Grasso|Antonio":[3,2,0],"Antonio|Mark":[5,4,0],"Mark|Antonio":[4,5,0],"Antonio|Nicky":[1,0,0],"Nicky|Antonio":[0,1,0],"Antonio|Tone":[0,2,0],"Tone|Antonio":[2,0,0],"Martir|Filippo":[4,3,0],"Filippo|Martir":[3,4,0],"Martir|Berger":[3,9,0],"Berger|Martir":[9,3,0],"Martir|Skin":[5,4,0],"Skin|Martir":[4,5,0],"Martir|Carmelo":[3,3,0],"Carmelo|Martir":[3,3,0],"Martir|Melio":[5,4,0],"Melio|Martir":[4,5,0],"Martir|Frankie":[3,4,0],"Frankie|Martir":[4,3,0],"Martir|Grasso":[4,1,0],"Grasso|Martir":[1,4,0],"Martir|Mark":[3,4,0],"Mark|Martir":[4,3,0],"Martir|Nicky":[0,2,0],"Nicky|Martir":[2,0,0],"Martir|Tone":[1,1,0],"Tone|Martir":[1,1,0],"Filippo|Berger":[3,7,0],"Berger|Filippo":[7,3,0],"Filippo|Skin":[8,8,0],"Skin|Filippo":[8,8,0],"Filippo|Carmelo":[7,10,0],"Carmelo|Filippo":[10,7,0],"Filippo|Melio":[5,1,0],"Melio|Filippo":[1,5,0],"Filippo|Frankie":[2,3,0],"Frankie|Filippo":[3,2,0],"Filippo|Grasso":[3,0,0],"Grasso|Filippo":[0,3,0],"Filippo|Mark":[1,4,0],"Mark|Filippo":[4,1,0],"Filippo|Nicky":[0,3,0],"Nicky|Filippo":[3,0,0],"Filippo|Tone":[1,2,0],"Tone|Filippo":[2,1,0],"Berger|Skin":[4,9,0],"Skin|Berger":[9,4,0],"Berger|Carmelo":[6,7,0],"Carmelo|Berger":[7,6,0],"Berger|Melio":[3,4,0],"Melio|Berger":[4,3,0],"Berger|Frankie":[4,4,0],"Frankie|Berger":[4,4,0],"Berger|Grasso":[1,1,0],"Grasso|Berger":[1,1,0],"Berger|Mark":[4,2,0],"Mark|Berger":[2,4,0],"Berger|Nicky":[1,1,0],"Nicky|Berger":[1,1,0],"Berger|Tone":[1,0,0],"Tone|Berger":[0,1,0],"Skin|Carmelo":[8,9,1],"Carmelo|Skin":[9,8,1],"Skin|Melio":[5,1,0],"Melio|Skin":[1,5,0],"Skin|Frankie":[4,3,0],"Frankie|Skin":[3,4,0],"Skin|Grasso":[3,0,0],"Grasso|Skin":[0,3,0],"Skin|Mark":[3,3,0],"Mark|Skin":[3,3,0],"Skin|Nicky":[0,1,0],"Nicky|Skin":[1,0,0],"Skin|Tone":[2,0,0],"Tone|Skin":[0,2,0],"Carmelo|Melio":[3,5,0],"Melio|Carmelo":[5,3,0],"Carmelo|Frankie":[1,4,0],"Frankie|Carmelo":[4,1,0],"Carmelo|Grasso":[2,2,0],"Grasso|Carmelo":[2,2,0],"Carmelo|Mark":[5,2,0],"Mark|Carmelo":[2,5,0],"Carmelo|Nicky":[1,0,0],"Nicky|Carmelo":[0,1,0],"Carmelo|Tone":[1,0,0],"Tone|Carmelo":[0,1,0],"Melio|Frankie":[5,4,0],"Frankie|Melio":[4,5,0],"Melio|Grasso":[2,0,0],"Grasso|Melio":[0,2,0],"Melio|Mark":[2,2,0],"Mark|Melio":[2,2,0],"Melio|Nicky":[1,2,0],"Nicky|Melio":[2,1,0],"Melio|Tone":[1,2,0],"Tone|Melio":[2,1,0],"Frankie|Grasso":[2,1,0],"Grasso|Frankie":[1,2,0],"Frankie|Mark":[1,1,0],"Mark|Frankie":[1,1,0],"Frankie|Nicky":[2,0,0],"Nicky|Frankie":[0,2,0],"Frankie|Tone":[1,0,0],"Tone|Frankie":[0,1,0],"Grasso|Mark":[1,1,0],"Mark|Grasso":[1,1,0],"Grasso|Nicky":[1,0,0],"Nicky|Grasso":[0,1,0],"Grasso|Tone":[1,0,0],"Tone|Grasso":[0,1,0],"Mark|Nicky":[2,0,0],"Nicky|Mark":[0,2,0],"Mark|Tone":[2,0,0],"Tone|Mark":[0,2,0],"Nicky|Tone":[2,1,0],"Tone|Nicky":[1,2,0],"Mark|Gallo":[1,3,0],"Gallo|Mark":[3,1,0],"Mark|Coupe":[0,3,0],"Coupe|Mark":[3,0,0],"Mark|Matt":[3,2,0],"Matt|Mark":[2,3,0],"Mark|Lorenzo":[1,1,0],"Lorenzo|Mark":[1,1,0],"Mark|Pete":[2,2,0],"Pete|Mark":[2,2,0],"Mark|Rinaldi":[3,0,0],"Rinaldi|Mark":[0,3,0],"Nicky|Gallo":[0,0,0],"Gallo|Nicky":[0,0,0],"Tone|Gallo":[0,0,0],"Gallo|Tone":[0,0,0],"Gallo|Coupe":[4,7,0],"Coupe|Gallo":[7,4,0],"Gallo|Matt":[3,2,0],"Matt|Gallo":[2,3,0],"Gallo|Lorenzo":[0,1,0],"Lorenzo|Gallo":[1,0,0],"Gallo|Pete":[0,1,0],"Pete|Gallo":[1,0,0],"Gallo|Rinaldi":[8,5,0],"Rinaldi|Gallo":[5,8,0],"Coupe|Matt":[6,5,0],"Matt|Coupe":[5,6,0],"Coupe|Lorenzo":[0,1,0],"Lorenzo|Coupe":[1,0,0],"Coupe|Pete":[0,1,0],"Pete|Coupe":[1,0,0],"Coupe|Rinaldi":[6,4,0],"Rinaldi|Coupe":[4,6,0],"Matt|Pete":[1,3,0],"Pete|Matt":[3,1,0],"Matt|Rinaldi":[3,3,0],"Rinaldi|Matt":[3,3,0],"Lorenzo|Rinaldi":[1,0,0],"Rinaldi|Lorenzo":[0,1,0],"Pete|Rinaldi":[1,2,0],"Rinaldi|Pete":[2,1,0],"Gallo|Antonio":[5,6,0],"Antonio|Gallo":[6,5,0],"Gallo|Martir":[5,5,0],"Martir|Gallo":[5,5,0],"Gallo|Filippo":[5,6,0],"Filippo|Gallo":[6,5,0],"Gallo|Berger":[4,2,0],"Berger|Gallo":[2,4,0],"Gallo|Skin":[3,7,2],"Skin|Gallo":[7,3,2],"Gallo|Carmelo":[4,7,0],"Carmelo|Gallo":[7,4,0],"Gallo|Melio":[1,5,0],"Melio|Gallo":[5,1,0],"Gallo|Frankie":[2,2,0],"Frankie|Gallo":[2,2,0],"Gallo|Grasso":[0,1,0],"Grasso|Gallo":[1,0,0],"Coupe|Antonio":[4,2,0],"Antonio|Coupe":[2,4,0],"Coupe|Martir":[4,5,0],"Martir|Coupe":[5,4,0],"Coupe|Filippo":[5,7,0],"Filippo|Coupe":[7,5,0],"Coupe|Berger":[4,2,0],"Berger|Coupe":[2,4,0],"Coupe|Skin":[4,6,0],"Skin|Coupe":[6,4,0],"Coupe|Carmelo":[6,6,0],"Carmelo|Coupe":[6,6,0],"Coupe|Melio":[3,4,0],"Melio|Coupe":[4,3,0],"Coupe|Frankie":[0,7,0],"Frankie|Coupe":[7,0,0],"Coupe|Grasso":[2,0,0],"Grasso|Coupe":[0,2,0],"Matt|Antonio":[2,7,0],"Antonio|Matt":[7,2,0],"Matt|Martir":[4,6,0],"Martir|Matt":[6,4,0],"Matt|Filippo":[0,7,0],"Filippo|Matt":[7,0,0],"Matt|Berger":[5,6,0],"Berger|Matt":[6,5,0],"Matt|Skin":[3,1,0],"Skin|Matt":[1,3,0],"Matt|Carmelo":[3,2,0],"Carmelo|Matt":[2,3,0],"Matt|Melio":[4,5,0],"Melio|Matt":[5,4,0],"Matt|Frankie":[3,5,0],"Frankie|Matt":[5,3,0],"Matt|Grasso":[1,0,0],"Grasso|Matt":[0,1,0],"Lorenzo|Antonio":[1,1,0],"Antonio|Lorenzo":[1,1,0],"Lorenzo|Martir":[2,0,0],"Martir|Lorenzo":[0,2,0],"Lorenzo|Filippo":[1,0,0],"Filippo|Lorenzo":[0,1,0],"Lorenzo|Skin":[1,1,0],"Skin|Lorenzo":[1,1,0],"Lorenzo|Carmelo":[0,1,0],"Carmelo|Lorenzo":[1,0,0],"Pete|Antonio":[0,3,0],"Antonio|Pete":[3,0,0],"Pete|Martir":[0,3,0],"Martir|Pete":[3,0,0],"Pete|Filippo":[1,0,0],"Filippo|Pete":[0,1,0],"Pete|Berger":[2,0,0],"Berger|Pete":[0,2,0],"Pete|Skin":[1,0,0],"Skin|Pete":[0,1,0],"Pete|Carmelo":[1,1,0],"Carmelo|Pete":[1,1,0],"Rinaldi|Antonio":[3,4,0],"Antonio|Rinaldi":[4,3,0],"Rinaldi|Martir":[4,7,0],"Martir|Rinaldi":[7,4,0],"Rinaldi|Filippo":[3,8,0],"Filippo|Rinaldi":[8,3,0],"Rinaldi|Berger":[4,1,0],"Berger|Rinaldi":[1,4,0],"Rinaldi|Skin":[4,5,0],"Skin|Rinaldi":[5,4,0],"Rinaldi|Carmelo":[6,4,0],"Carmelo|Rinaldi":[4,6,0],"Rinaldi|Melio":[1,1,0],"Melio|Rinaldi":[1,1,0],"Rinaldi|Frankie":[1,2,0],"Frankie|Rinaldi":[2,1,0]},"h2h_play":{"Antonio|Martir":[1,1],"Martir|Antonio":[1,1],"Antonio|Filippo":[0,1],"Filippo|Antonio":[1,0],"Antonio|Skin":[2,1],"Skin|Antonio":[1,2],"Antonio|Gallo":[1,0],"Gallo|Antonio":[0,1],"Antonio|Coupe":[2,1],"Coupe|Antonio":[1,2],"Antonio|Lorenzo":[1,0],"Lorenzo|Antonio":[0,1],"Antonio|Pete":[1,0],"Pete|Antonio":[0,1],"Martir|Filippo":[0,1],"Filippo|Martir":[1,0],"Martir|Skin":[0,1],"Skin|Martir":[1,0],"Martir|Mark":[1,0],"Mark|Martir":[0,1],"Martir|Matt":[0,1],"Matt|Martir":[1,0],"Martir|Pete":[0,1],"Pete|Martir":[1,0],"Filippo|Carmelo":[1,0],"Carmelo|Filippo":[0,1],"Filippo|Melio":[0,1],"Melio|Filippo":[1,0],"Filippo|Frankie":[1,1],"Frankie|Filippo":[1,1],"Filippo|Gallo":[0,1],"Gallo|Filippo":[1,0],"Filippo|Coupe":[1,0],"Coupe|Filippo":[0,1],"Filippo|Matt":[0,1],"Matt|Filippo":[1,0],"Filippo|Rinaldi":[0,1],"Rinaldi|Filippo":[1,0],"Berger|Frankie":[0,1],"Frankie|Berger":[1,0],"Berger|Grasso":[0,1],"Grasso|Berger":[1,0],"Berger|Matt":[0,1],"Matt|Berger":[1,0],"Skin|Melio":[2,1],"Melio|Skin":[1,2],"Skin|Frankie":[1,0],"Frankie|Skin":[0,1],"Skin|Grasso":[0,1],"Grasso|Skin":[1,0],"Skin|Gallo":[1,1],"Gallo|Skin":[1,1],"Carmelo|Melio":[0,1],"Melio|Carmelo":[1,0],"Carmelo|Gallo":[0,1],"Gallo|Carmelo":[1,0],"Carmelo|Rinaldi":[0,1],"Rinaldi|Carmelo":[1,0],"Melio|Gallo":[1,0],"Gallo|Melio":[0,1],"Melio|Matt":[1,0],"Matt|Melio":[0,1],"Melio|Rinaldi":[1,0],"Rinaldi|Melio":[0,1],"Frankie|Gallo":[0,1],"Gallo|Frankie":[1,0],"Frankie|Coupe":[0,1],"Coupe|Frankie":[1,0],"Frankie|Rinaldi":[0,1],"Rinaldi|Frankie":[1,0],"Grasso|Mark":[1,0],"Mark|Grasso":[0,1],"Gallo|Coupe":[0,2],"Coupe|Gallo":[2,0],"Coupe|Mark":[0,2],"Mark|Coupe":[2,0]}};
 function showPage(page){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const target=document.getElementById('page-'+page);
@@ -2593,7 +2709,7 @@ Object.entries(divisionTeams).forEach(([division,teams])=>teams.forEach(team=>te
 
 const currentBody=document.getElementById('current-standings');
 const divisionFilter=document.getElementById('division-filter');
-const week1Stats={"Antonio":{"w":2,"l":4,"pf":805.0,"pa":874.3},"Martir":{"w":3,"l":3,"pf":670.3,"pa":736.6},"Filippo":{"w":3,"l":3,"pf":767.2,"pa":738.0},"Berger":{"w":2,"l":4,"pf":722.3,"pa":755.2},"Skin":{"w":4,"l":2,"pf":775.1,"pa":734.4},"Carmelo":{"w":4,"l":2,"pf":820.5,"pa":785.2},"Melio":{"w":2,"l":4,"pf":747.1,"pa":819.2},"Frankie":{"w":3,"l":3,"pf":722.7,"pa":697.4},"Grasso":{"w":2,"l":4,"pf":722.1,"pa":798.0},"Mark":{"w":4,"l":2,"pf":874.7,"pa":767.9},"Nicky":{"w":5,"l":1,"pf":840.1,"pa":697.6},"Tone":{"w":2,"l":4,"pf":677.6,"pa":788.2}};
+const week1Stats={"Antonio":{"w":2,"l":5,"pf":907.0,"pa":1012.1},"Martir":{"w":4,"l":3,"pf":808.1,"pa":838.6},"Filippo":{"w":3,"l":4,"pf":897.8,"pa":873.7},"Berger":{"w":3,"l":4,"pf":858.0,"pa":885.8},"Skin":{"w":5,"l":2,"pf":885.1,"pa":830.1},"Carmelo":{"w":4,"l":3,"pf":946.1,"pa":934.1},"Melio":{"w":3,"l":4,"pf":896.0,"pa":944.8},"Frankie":{"w":3,"l":4,"pf":879.8,"pa":857.0},"Grasso":{"w":2,"l":5,"pf":817.8,"pa":908.0},"Mark":{"w":5,"l":2,"pf":1034.3,"pa":925.0},"Nicky":{"w":5,"l":2,"pf":954.4,"pa":831.1},"Tone":{"w":3,"l":4,"pf":811.1,"pa":902.5}};
 
 // Post-Week-6 playoff model: a calibrated Monte Carlo projection.
 // Current-season scoring is blended with each team's established career scoring baseline.
@@ -3099,7 +3215,6 @@ function mfgaChampionFormerItalics(value){
 })();
 
 </script>
-
 <script>
 /* MFGA_HALL_CHAMPIONS_ROBUST_RENDER */
 (function(){
@@ -3154,8 +3269,6 @@ function mfgaChampionFormerItalics(value){
   else renderHall();
 })();
 </script>
-
-
 <script>
 function switchRecordHistoryTab(target, button){
   const page = document.getElementById('page-record-history');
@@ -3169,8 +3282,6 @@ function switchRecordHistoryTab(target, button){
   return false;
 }
 </script>
-
-
 <script>
 function switchH2HTab(target, button){
   const page=document.getElementById('page-record-history');
@@ -3184,8 +3295,6 @@ function switchH2HTab(target, button){
   return false;
 }
 </script>
-
-
 <script>
 (function(){
   const table=document.querySelector('#current-standings')?.closest('table');
@@ -3269,11 +3378,6 @@ function switchH2HTab(target, button){
   applyDivision();
 })();
 </script>
-
-
-
-
-
 <!-- MFGA 2026 Season target scroll -->
 <script>
 document.addEventListener('click', function(e){
@@ -3287,7 +3391,7 @@ document.addEventListener('click', function(e){
 
 /* FINAL deterministic Keeper Tracker color pass */
 (function(){
-  const keeperCoords = new Set(['1,1','1,2','1,3','1,4','1,5','1,6','1,7','1,8','1,9','1,10','1,11','1,12','2,1','2,2','2,3','2,4','2,5','2,6','2,7','2,8','2,9','2,10','2,11','2,12','3,4','3,8','3,10','4,2','4,12','5,2','5,5','5,10','7,3','7,6','7,9','7,10','8,1','8,2','8,7','9,2','9,5','10,1','10,2','11,7','11,8','11,10','11,12','12,4','12,6','12,7','12,10','12,12','13,2','13,4','13,5','13,9','14,2','14,3','14,4','14,7','14,11','15,1','15,2','15,3','15,4','15,7','15,9','15,11','15,6']);
+  const keeperCoords = new Set(['1,1','1,2','1,3','1,4','1,5','1,6','1,7','1,8','1,9','1,10','1,11','1,12','2,1','2,2','2,3','2,4','2,5','2,6','2,7','2,8','2,9','2,10','2,11','2,12','3,4','3,8','3,10','4,2','4,12','5,2','5,5','5,10','7,3','7,6','7,9','7,10','8,1','8,2','8,7','8,10','9,2','9,5','9,6','10,1','10,2','11,4','11,7','11,8','11,10','11,12','12,4','12,6','12,7','12,10','12,12','13,2','13,4','13,5','13,9','14,2','14,3','14,4','14,7','14,11','15,1','15,2','15,3','15,4','15,7','15,9','15,11','15,6']);
   function applyKeeperColors(){
     const table=document.querySelector('.digital-keeper-table');
     if(!table) return;
@@ -3308,8 +3412,6 @@ document.addEventListener('click', function(e){
   setTimeout(applyKeeperColors,500);
 })();
 </script>
-
-
 <script>
 (function(){
   function enforceHomepageOnlyKeeper(){
@@ -3344,11 +3446,9 @@ document.addEventListener('click', function(e){
   setTimeout(fixFilippoKeeperColumn,500);
 })();
 </script>
-
-
 <script>
 (function(){
-  const redCoords = new Set(['1,1','1,2','1,3','1,4','1,5','1,6','1,7','1,8','1,9','1,10','1,11','1,12','2,1','2,2','2,3','2,4','2,5','2,6','2,7','2,8','2,9','2,10','2,11','2,12','3,4','3,8','3,10','4,2','4,12','5,2','5,5','5,10','7,3','7,6','7,9','7,10','8,1','8,2','8,7','9,2','9,5','10,1','10,2','11,7','11,8','11,10','11,12','12,4','12,6','12,7','12,10','12,12','13,2','13,4','13,5','13,9','14,2','14,3','14,4','14,7','14,11','15,1','15,2','15,3','15,4','15,7','15,9','15,11','15,6']);
+  const redCoords = new Set(['1,1','1,2','1,3','1,4','1,5','1,6','1,7','1,8','1,9','1,10','1,11','1,12','2,1','2,2','2,3','2,4','2,5','2,6','2,7','2,8','2,9','2,10','2,11','2,12','3,4','3,8','3,10','4,2','4,12','5,2','5,5','5,9','5,10','7,3','7,6','7,9','7,10','8,1','8,2','8,7','8,10','9,2','9,5','9,6','10,1','10,2','11,4','11,7','11,8','11,10','11,12','12,4','12,6','12,7','12,10','12,12','13,2','13,4','13,5','13,9','14,2','14,3','14,4','14,7','14,9','14,11','15,1','15,2','15,3','15,4','15,6','15,7','15,9','15,11']);
   function matchKeeperReference(){
     const table = document.querySelector('.digital-keeper-table');
     if(!table) return;
@@ -3358,7 +3458,7 @@ document.addEventListener('click', function(e){
       const cells = Array.from(row.querySelectorAll('td'));
       cells.forEach((cell, cIdx) => {
         const col = cIdx + 1;
-        const isRed = redCoords.has(round + ',' + col);
+        const isRed = redCoords.has(round + ',' + col) || (col === 13 && round <= 2);
         cell.classList.toggle('keeper-red-cell', isRed);
         cell.style.setProperty('background', isRed ? '#ff0000' : '#fff', 'important');
         cell.style.setProperty('color', '#111', 'important');
@@ -3367,8 +3467,11 @@ document.addEventListener('click', function(e){
       });
       const roundCell = row.querySelector('th');
       if(roundCell){
-        roundCell.style.setProperty('background','#0b2342','important');
-        roundCell.style.setProperty('color','#fff','important');
+        const earlyRound = round <= 2;
+        roundCell.style.setProperty('background', earlyRound ? '#ff0000' : '#ffffff','important');
+        roundCell.style.setProperty('background-color', earlyRound ? '#ff0000' : '#ffffff','important');
+        roundCell.style.setProperty('color', earlyRound ? '#000000' : '#111111','important');
+        roundCell.style.setProperty('font-weight','700','important');
       }
     });
   }
@@ -3379,9 +3482,6 @@ document.addEventListener('click', function(e){
   setTimeout(matchKeeperReference,750);
 })();
 </script>
-
-
-
 <script>
 (function(){
   function syncPlayoffByes(){
@@ -3435,6 +3535,5 @@ document.addEventListener('click', function(e){
   },100);
 })();
 </script>
-
 </body>
 </html>
